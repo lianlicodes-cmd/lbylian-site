@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UI/UX Web Design Portfolio &amp; Case Studies · L by Lian</title>
+
+    <meta
+      name="description"
+      content="UI/UX web design by L by Lian — selected case studies in mobile app design, bespoke websites, and digital work for artists, studios, and design-led businesses."
+    />
+
+    <link
+      rel="canonical"
+      href="https://lbylian.com/web-design-case-studies.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="L by Lian" />
+    <meta property="og:locale" content="en_GB" />
+    <meta
+      property="og:title"
+      content="UI/UX Web Design Portfolio &amp; Case Studies · L by Lian"
+    />
+    <meta
+      property="og:description"
+      content="Selected case studies in mobile app design, bespoke websites, and digital work for artists, studios, and design-led businesses."
+    />
+    <meta
+      property="og:url"
+      content="https://lbylian.com/web-design-case-studies.html"
+    />
+    <meta
+      property="og:image"
+      content="https://lbylian.com/sheffield-city-guide-app-ui-ux-design-lian-li-atelierlian-1.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Secret Sheffield city guide app interface on a phone screen, designed by L by Lian."
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DXRXF5L0DJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DXRXF5L0DJ");
+    </script>
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="UI/UX Web Design Portfolio &amp; Case Studies · L by Lian"
+    />
+    <meta
+      name="twitter:description"
+      content="Selected case studies in mobile app design, bespoke websites, and digital work for artists, studios, and design-led businesses."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lbylian.com/sheffield-city-guide-app-ui-ux-design-lian-li-atelierlian-1.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Secret Sheffield city guide app interface on a phone screen, designed by L by Lian."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="theme-color" content="#bff47b" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="fonts/tschichold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                black: "#010101",
+                carrara: "#f1f2ec",
+                sulu: "#bff47b",
+                gray: "#444443",
+                dust: "#949492",
+                accent: "#05e0e9",
+              },
+            },
+            fontFamily: {
+              sans: ['"Syne"', "system-ui", "sans-serif"],
+              display: ['"Syne"', "system-ui", "sans-serif"],
+              serif: ['"Syne"', "system-ui", "sans-serif"],
+            },
+            borderRadius: { xl: "1.25rem", "2xl": "1.5rem" },
+          },
+        },
+        safelist: ["rotate-180", "opacity-100"],
+      };
+    </script>
+
+    <style>
+      :root {
+        --frame: 2mm;
+        --cta: #f37022;
+      }
+
+      body.overflow-hidden {
+        overflow: hidden;
+      }
+
+      .font-hand {
+        font-family: "Syne", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        font-synthesis: none;
+      }
+
+      .font-headline {
+        font-family: "Syne", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      @font-face {
+        font-family: "Tschichold";
+        src: url("fonts/tschichold.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .by-lian {
+        font-family: "Tschichold", serif;
+        letter-spacing: 0.03em;
+      }
+
+      .cta-triangle {
+        margin-left: 1.1rem;
+        display: inline-block;
+        width: clamp(2.8rem, 7vw, 3.6rem);
+        height: clamp(2.8rem, 7vw, 3.6rem);
+      }
+
+      .cta-triangle svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .group:hover .group-hover\:translate-y-0,
+        .group:focus-within .group-focus-within\:translate-y-0,
+        .group:active .group-active\:translate-y-0,
+        .group:hover .group-hover\:-translate-y-full,
+        .group:focus-within .group-focus-within\:-translate-y-full,
+        .group:active .group-active\:-translate-y-full {
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+
+      .edge-x {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .edge-x {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .edge-x {
+          padding-left: 1cm;
+          padding-right: 1cm;
+        }
+      }
+
+      .wrap {
+        max-width: 90rem;
+      }
+
+      @media (min-width: 1280px) {
+        .wrap {
+          max-width: 100rem;
+        }
+      }
+
+      @media (min-width: 1536px) {
+        .wrap {
+          max-width: 112rem;
+        }
+      }
+
+      .fullbleed-lines {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        border: none;
+        background: transparent;
+      }
+
+      .cta-title,
+      .cta-email {
+        color: var(--cta);
+      }
+
+      .cta-gutters {
+        width: 100%;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+
+    <!-- ==================== JSON-LD: CollectionPage ==================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://lbylian.com/web-design-case-studies.html#webpage",
+        "url": "https://lbylian.com/web-design-case-studies.html",
+        "name": "Web Design Case Studies · L by Lian",
+        "description": "A selection of web design case studies by Lian Li, focused on structure, visual hierarchy and how creative work is presented and understood online.",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "L by Lian",
+          "url": "https://lbylian.com/"
+        },
+        "about": [
+          "UX/UI web design",
+          "website structure",
+          "visual hierarchy",
+          "digital art direction",
+          "portfolio design"
+        ],
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://lbylian.com/sheffield-city-guide-app-ui-ux-design-lian-li-atelierlian-1.jpg",
+          "caption": "Secret Sheffield city guide app interface on a phone screen, designed by L by Lian."
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://lbylian.com/#person",
+          "name": "Lian Li",
+          "alternateName": "L by Lian",
+          "url": "https://lbylian.com/",
+          "jobTitle": "UX/UI web designer specialising in structure and art direction"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Selected web design case studies",
+          "itemListOrder": "https://schema.org/ItemListOrderAscending",
+          "numberOfItems": 3,
+          "itemListElement": [
+            {
+              "@type": "CreativeWork",
+              "position": 1,
+              "name": "L by Lian — Creative Studio Website",
+              "url": "https://lbylian.com/case-study-l-by-lian.html",
+              "description": "A focused redesign to improve structure, hierarchy and clarity across a creative studio website."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 2,
+              "name": "Secret Sheffield — Mobile App Design",
+              "url": "https://lbylian.com/case-study-secret-sheffield-app.html",
+              "description": "A mobile-first UX/UI project covering research, information architecture, user flows and prototyping."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 3,
+              "name": "Garden Designer Website — Structure & Image Direction",
+              "url": "https://lbylian.com/catriona-rowbotham-garden-design-case-study.html",
+              "description": "A project focused on structuring a portfolio and directing image selection to improve clarity and presentation."
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+
+  <body class="font-sans antialiased text-[17px] leading-[1.65]">
+    <!-- Skip link -->
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] bg-white text-brand-black px-4 py-2 rounded-full shadow ring-1 ring-black/10"
+    >
+      Skip to content
+    </a>
+
+    <!-- Sulu frame -->
+    <div class="min-h-[100dvh] bg-brand-sulu p-[var(--frame)]">
+      <div
+        class="bg-brand-carrara text-brand-gray min-h-[calc(100dvh-2*var(--frame))] relative"
+      >
+        <!-- HEADER -->
+        <header
+          class="sticky top-0 z-30 bg-gradient-to-b from-brand-carrara/95 to-white/90 backdrop-blur"
+        >
+          <div class="edge-x">
+            <div
+              class="wrap mx-auto flex items-center justify-between pt-1 pb-[3px]"
+            >
+              <div class="m-0">
+                <a
+                  href="index.html"
+                  class="inline-flex items-center gap-2 md:gap-3 whitespace-nowrap group -ml-3 md:-ml-4 lg:-ml-5"
+                  aria-label="L by Lian"
+                >
+                  <svg
+                    class="shrink-0 block h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 text-brand-black"
+                    viewBox="0 0 320 240"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="120"
+                      y="40"
+                      width="56"
+                      height="200"
+                      rx="6"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="200"
+                      y="176"
+                      width="64"
+                      height="64"
+                      rx="4"
+                      fill="currentColor"
+                    />
+                    <circle cx="232" cy="150" r="18" fill="#bff47b" />
+                  </svg>
+
+                  <span
+                    class="by-lian shrink-0 text-brand-gray text-[18px] md:text-[19px] leading-none tracking-[0.04em]"
+                  >
+                    by&nbsp;lian
+                  </span>
+                </a>
+              </div>
+
+              <!-- DESKTOP NAVIGATION -->
+              <nav
+                aria-label="Primary"
+                class="hidden lg:flex items-center gap-6 text-[15px]"
+              >
+                <a
+                  href="index.html"
+                  class="text-brand-black hover:text-brand-sulu"
+                  >Home</a
+                >
+
+                <!-- WORK DROPDOWN (DESKTOP) -->
+                <div class="relative group" id="desktopWorkGroup">
+                  <button
+                    id="desktopWorkButton"
+                    class="inline-flex items-center gap-1 text-brand-black hover:text-brand-sulu focus:outline-none"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="desktopWorkMenu"
+                    type="button"
+                  >
+                    <span>Work</span>
+                    <svg
+                      class="h-4 w-4 transition-transform duration-150 group-focus-within:rotate-180 group-hover:rotate-180 text-brand-accent"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    id="desktopWorkMenu"
+                    role="menu"
+                    class="absolute left-0 top-full z-50 mt-2 w-[170px] rounded-xl bg-white shadow-md border border-brand-accent/30 invisible opacity-0 translate-y-1 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+                  >
+                    <ul class="py-1 text-[13.5px]">
+                      <li>
+                        <a
+                          href="web-design-case-studies.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                          aria-current="page"
+                        >
+                          Web Design
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="collections-gardens.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                        >
+                          Photography
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- SERVICES DROPDOWN (DESKTOP) -->
+                <div class="relative group" id="desktopServicesGroup">
+                  <button
+                    id="desktopServicesButton"
+                    class="inline-flex items-center gap-1 text-brand-black hover:text-brand-sulu focus:outline-none"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="desktopServicesMenu"
+                    type="button"
+                  >
+                    <span>Services</span>
+                    <svg
+                      class="h-4 w-4 transition-transform duration-150 group-focus-within:rotate-180 group-hover:rotate-180 text-brand-accent"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    id="desktopServicesMenu"
+                    role="menu"
+                    class="absolute left-0 top-full z-50 mt-2 w-[170px] rounded-xl bg-white shadow-md border border-brand-accent/30 invisible opacity-0 translate-y-1 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+                  >
+                    <ul class="py-1 text-[13.5px]">
+                      <li>
+                        <a
+                          href="bespoke-websites.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                        >
+                          Bespoke Websites
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="website-refresh.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                        >
+                          Website Refresh
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <a
+                  href="about.html"
+                  class="text-brand-black hover:text-brand-sulu"
+                  >About</a
+                >
+                <a
+                  href="contact.html"
+                  class="text-brand-black hover:text-brand-sulu"
+                  >Contact</a
+                >
+              </nav>
+
+              <!-- MOBILE / IPAD MENU BUTTON -->
+              <div class="flex items-center gap-3 lg:hidden">
+                <button
+                  id="menuBtn"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full text-brand-accent hover:bg-brand-gray/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50"
+                  aria-label="Open menu"
+                  aria-controls="siteMenu"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 7h16M4 12h16M4 17h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Mobile menu -->
+        <nav
+          id="siteMenu"
+          class="fixed z-50 top-[var(--frame)] right-[var(--frame)] h-[calc(100dvh-2*var(--frame))] w-72 max-w-[80vw] bg-brand-carrara shadow-xl translate-x-full transition-transform duration-150"
+          aria-label="Site menu"
+          aria-hidden="true"
+          inert
+        >
+          <div class="flex h-full flex-col">
+            <div
+              class="flex items-center justify-between p-4 border-b border-brand-accent/40"
+            >
+              <span class="text-base font-display text-brand-black">Menu</span>
+              <button
+                id="menuClose"
+                type="button"
+                class="p-2 rounded-full text-brand-accent hover:bg-brand-gray/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40"
+                aria-label="Close menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <ul
+              class="flex-grow overflow-y-auto px-4 py-5 space-y-2.5 text-[15px] leading-6"
+            >
+              <li>
+                <a
+                  href="index.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                  >Home</a
+                >
+              </li>
+
+              <!-- WORK DISCLOSURE (MOBILE) -->
+              <li>
+                <button
+                  id="mobileWorkButton"
+                  type="button"
+                  class="w-full flex items-center justify-between py-1.5 text-brand-black hover:text-brand-sulu"
+                  aria-expanded="false"
+                  aria-controls="mobileWorkPanel"
+                >
+                  <span>Work</span>
+                  <svg
+                    class="h-4 w-4 text-brand-accent transition-transform duration-150"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  id="mobileWorkPanel"
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-150 ease-in-out"
+                  hidden
+                >
+                  <ul
+                    class="pl-4 py-1 space-y-2 border-l border-brand-accent/40"
+                  >
+                    <li>
+                      <a
+                        href="web-design-case-studies.html"
+                        aria-current="page"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                        >Web Design</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="collections-gardens.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                        >Photography</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- SERVICES DISCLOSURE (MOBILE) -->
+              <li>
+                <button
+                  id="mobileServicesButton"
+                  type="button"
+                  class="w-full flex items-center justify-between py-1.5 text-brand-black hover:text-brand-sulu"
+                  aria-expanded="false"
+                  aria-controls="mobileServicesPanel"
+                >
+                  <span>Services</span>
+                  <svg
+                    class="h-4 w-4 text-brand-accent transition-transform duration-150"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  id="mobileServicesPanel"
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-150 ease-in-out"
+                  hidden
+                >
+                  <ul
+                    class="pl-4 py-1 space-y-2 border-l border-brand-accent/40"
+                  >
+                    <li>
+                      <a
+                        href="bespoke-websites.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                      >
+                        Bespoke Websites
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="website-refresh.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                      >
+                        Website Refresh
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a
+                  href="about.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div
+          id="menuOverlay"
+          class="fixed z-40 inset-[var(--frame)] bg-brand-black/60 opacity-0 pointer-events-none transition-opacity duration-150"
+          aria-hidden="true"
+        ></div>
+
+        <!-- MAIN -->
+        <main id="main" class="py-8 md:py-10">
+          <div class="edge-x">
+            <div class="wrap mx-auto">
+              <header class="mb-6 md:mb-8">
+                <h1
+                  class="font-display text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-brand-black"
+                >
+                  UI/UX Web Design
+                </h1>
+
+                <h2
+                  class="mt-3 text-sm tracking-[0.18em] uppercase text-black/50"
+                >
+                  Selected case studies
+                </h2>
+
+                <p class="mt-3 text-black/70 max-w-prose">
+                  Bespoke websites and mobile app design, with a focus on
+                  structure, hierarchy, and how visual material sits on the
+                  page.
+                </p>
+
+                <p class="mt-3 text-sm text-black/60">
+                  Available for web design year-round ·
+                  <a
+                    href="mailto:hello@lbylian.com"
+                    class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                  >
+                    hello@lbylian.com
+                  </a>
+                </p>
+              </header>
+
+              <hr class="my-8 md:my-12 border-0 border-t border-brand-accent" />
+
+              <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- L by Lian -->
+                <article
+                  class="group rounded-2xl overflow-hidden bg-white h-full"
+                >
+                  <a
+                    href="case-study-l-by-lian.html"
+                    class="block h-full"
+                    aria-label="View case study: L by Lian — Creative Studio Redesign"
+                  >
+                    <div class="flex flex-col h-full">
+                      <div
+                        class="relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-brand-sulu/80"
+                      >
+                        <img
+                          src="assets/portfolio-images/lbylian-case-study.jpg"
+                          alt="Preview of the L by Lian creative studio redesign shown on a laptop"
+                          class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
+                          loading="lazy"
+                          decoding="async"
+                          onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/lbylian-case-study.jpg';"
+                        />
+                      </div>
+
+                      <div class="p-4 flex flex-col flex-1">
+                        <h3 class="text-brand-black font-display text-base">
+                          L by Lian | Creative Studio Redesign
+                        </h3>
+                        <p class="mt-1 text-sm text-brand-gray max-w-prose">
+                          A focused redesign to better reflect the work,
+                          strengthen the site’s structure, and make projects
+                          easier to navigate and quicker to understand.
+                        </p>
+
+                        <div
+                          class="mt-3 flex flex-wrap gap-2 text-[11px] text-brand-gray/80"
+                        >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >UX/UI</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >HTML</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Tailwind</span
+                          >
+                        </div>
+
+                        <div class="mt-auto pt-4">
+                          <span
+                            class="inline-flex h-8 items-center justify-center whitespace-nowrap rounded-full bg-brand-sulu text-brand-black font-display text-[12px] leading-[1] px-3 py-1.5 hover:bg-brand-sulu/90 transition-colors"
+                            aria-hidden="true"
+                          >
+                            View Case Study →
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Catriona -->
+                <article
+                  class="group rounded-2xl overflow-hidden bg-white h-full"
+                >
+                  <a
+                    href="catriona-rowbotham-garden-design-case-study.html"
+                    class="block h-full"
+                    aria-label="View case study: Garden Designer’s Studio Website"
+                  >
+                    <div class="flex flex-col h-full">
+                      <div
+                        class="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                      >
+                        <img
+                          src="assets/portfolio-images/catriona-hero-image.jpg"
+                          alt="Preview of the garden designer studio website shown on a laptop"
+                          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                          loading="lazy"
+                          decoding="async"
+                          onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/catriona-hero-image.jpg';"
+                        />
+                      </div>
+
+                      <div class="p-4 flex flex-col flex-1">
+                        <h3 class="text-brand-black font-display text-base">
+                          Garden Designer’s Studio Website
+                        </h3>
+                        <p class="mt-1 text-sm text-brand-gray max-w-prose">
+                          A structured, image-led website designed to strengthen
+                          the portfolio. I supported the use of professional
+                          photography and implemented image SEO to improve how
+                          the work appears and ranks in search.
+                        </p>
+
+                        <div
+                          class="mt-3 flex flex-wrap gap-2 text-[11px] text-brand-gray/80"
+                        >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Photography</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Image SEO</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Portfolio</span
+                          >
+                        </div>
+
+                        <div class="mt-auto pt-4">
+                          <span
+                            class="inline-flex h-8 items-center justify-center whitespace-nowrap rounded-full bg-brand-sulu text-brand-black font-display text-[12px] leading-[1] px-3 py-1.5 hover:bg-brand-sulu/90 transition-colors"
+                            aria-hidden="true"
+                          >
+                            View Case Study →
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Coming Soon -->
+                <article
+                  class="group rounded-2xl overflow-hidden bg-white h-full"
+                >
+                  <div
+                    class="block h-full"
+                    aria-label="Coming soon: Parisian Illustrator Portfolio Site"
+                  >
+                    <div class="flex flex-col h-full">
+                      <div
+                        class="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                      >
+                        <img
+                          src="assets/portfolio-images/nelly-b-case-study1.jpg"
+                          alt="Preview of an image-led portfolio project for a Parisian illustrator"
+                          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                          loading="lazy"
+                          decoding="async"
+                          onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/nelly-b-case-study1.jpg';"
+                        />
+                      </div>
+
+                      <div class="p-4 flex flex-col flex-1">
+                        <h3 class="text-brand-black font-display text-base">
+                          Parisian Illustrator | Portfolio Site
+                        </h3>
+                        <p class="mt-1 text-sm text-brand-gray max-w-prose">
+                          Designing an immersive, visually led portfolio for an
+                          independent artist, shaped to present the work with
+                          the focus and restraint of a gallery.
+                        </p>
+
+                        <div
+                          class="mt-3 flex flex-wrap gap-2 text-[11px] text-brand-gray/80"
+                        >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Art Direction</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Portfolio</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Coming Soon</span
+                          >
+                        </div>
+
+                        <div class="mt-auto pt-4">
+                          <span
+                            class="inline-flex h-8 items-center justify-center whitespace-nowrap rounded-full border border-brand-gray/20 text-brand-black font-display text-[12px] leading-[1] px-3 py-1.5"
+                            aria-hidden="true"
+                          >
+                            Coming Soon
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Secret Sheffield -->
+                <article
+                  class="group rounded-2xl overflow-hidden bg-white h-full"
+                >
+                  <a
+                    href="case-study-secret-sheffield-app.html"
+                    class="block h-full"
+                    aria-label="View case study: Secret Sheffield — City Guide App"
+                  >
+                    <div class="flex flex-col h-full">
+                      <div
+                        class="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                      >
+                        <img
+                          src="sheffield-city-guide-app-ui-ux-design-lian-li-atelierlian-1.jpg"
+                          alt="Secret Sheffield city guide app interface"
+                          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                          loading="lazy"
+                          decoding="async"
+                          onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/sheffield-city-guide-app-ui-ux-design-lian-li-atelierlian-1.jpg';"
+                        />
+                      </div>
+
+                      <div class="p-4 flex flex-col flex-1">
+                        <h3 class="text-brand-black font-display text-base">
+                          Secret Sheffield | City Guide App
+                        </h3>
+                        <p class="mt-1 text-sm text-brand-gray max-w-prose">
+                          A mobile-first UX/UI project focused on local
+                          discovery. Covering research, information
+                          architecture, user flows, and prototyping to create a
+                          clear structure that makes exploring the city fast and
+                          intuitive.
+                        </p>
+
+                        <div
+                          class="mt-3 flex flex-wrap gap-2 text-[11px] text-brand-gray/80"
+                        >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Research</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >IA</span
+                          >
+                          <span class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >Prototype</span
+                          >
+                        </div>
+
+                        <div class="mt-auto pt-4">
+                          <span
+                            class="inline-flex h-8 items-center justify-center whitespace-nowrap rounded-full bg-brand-sulu text-brand-black font-display text-[12px] leading-[1] px-3 py-1.5 hover:bg-brand-sulu/90 transition-colors"
+                            aria-hidden="true"
+                          >
+                            View Case Study →
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              </div>
+
+              <!-- ALSO: Photography card -->
+              <section
+                class="mt-10 md:mt-14"
+                aria-labelledby="also-photography"
+              >
+                <div class="border-t border-brand-accent/40 pt-6 md:pt-8">
+                  <p
+                    class="text-[12px] uppercase tracking-[0.18em] text-black/50 mb-2"
+                  >
+                    Discover
+                  </p>
+
+                  <h2
+                    id="also-photography"
+                    class="font-display text-lg md:text-xl tracking-[-0.01em] text-brand-black mb-2"
+                  >
+                    Garden &amp; landscape photography
+                  </h2>
+
+                  <article
+                    class="group rounded-2xl overflow-hidden bg-white w-full h-full ring-1 ring-brand-accent/20"
+                  >
+                    <a
+                      href="collections-gardens.html"
+                      class="block h-full"
+                      aria-label="View gardens photography collections"
+                    >
+                      <div class="flex flex-col h-full">
+                        <div
+                          class="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                        >
+                          <img
+                            src="giverny-03-water-lily-pond-reflection-3.jpg"
+                            alt="Waterlily pond and reflections at Claude Monet’s garden in Giverny"
+                            class="h-full w-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                            onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/giverny-03-water-lily-pond-reflection-3.jpg';"
+                          />
+                        </div>
+
+                        <div class="p-4 flex flex-col flex-1">
+                          <p
+                            class="text-[12px] uppercase tracking-[0.18em] text-black/50 mb-1"
+                          >
+                            Photography
+                          </p>
+
+                          <h3
+                            class="text-brand-black font-display text-base md:text-lg"
+                          >
+                            Gardens collections &amp; projects
+                          </h3>
+
+                          <p
+                            class="mt-1 text-sm text-brand-gray max-w-prose leading-relaxed"
+                          >
+                            Garden photography with true-to-life colour and
+                            considered composition, ready for websites,
+                            publications, and print.
+                          </p>
+
+                          <div
+                            class="mt-3 flex flex-wrap gap-2 text-[11px] text-brand-gray/80"
+                          >
+                            <span
+                              class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >
+                              Gardens
+                            </span>
+                            <span
+                              class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >
+                              Planting
+                            </span>
+                            <span
+                              class="px-2 py-1 rounded-full bg-brand-gray/5"
+                            >
+                              Seasonal light
+                            </span>
+                          </div>
+
+                          <div class="mt-auto pt-4">
+                            <span
+                              class="inline-flex h-8 items-center justify-center whitespace-nowrap rounded-full bg-brand-sulu text-brand-black font-display text-[12px] leading-[1] px-3 py-1.5 hover:bg-brand-sulu/90 transition-colors"
+                              aria-hidden="true"
+                            >
+                              View Gardens →
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer
+          id="contact"
+          class="border-t border-brand-accent/30 bg-white/40"
+        >
+          <div class="edge-x">
+            <div class="wrap mx-auto py-10 md:py-12">
+              <div class="flex flex-col items-center gap-8">
+                <!-- Logo -->
+                <div class="flex justify-center">
+                  <svg
+                    class="block h-12 w-12 text-brand-black"
+                    viewBox="0 0 320 240"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="120"
+                      y="40"
+                      width="56"
+                      height="200"
+                      rx="6"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="200"
+                      y="176"
+                      width="64"
+                      height="64"
+                      rx="4"
+                      fill="currentColor"
+                    />
+                    <circle cx="232" cy="150" r="18" fill="#bff47b" />
+                  </svg>
+                </div>
+
+                <!-- Contact + studio intro -->
+                <div
+                  class="text-center text-sm text-brand-black/70 max-w-lg space-y-3 leading-relaxed"
+                >
+                  <p>
+                    <a
+                      href="mailto:hello@lbylian.com"
+                      class="hover:text-brand-black transition"
+                    >
+                      hello@lbylian.com
+                    </a>
+                  </p>
+
+                  <p class="text-brand-black">
+                    Web design for garden designers, artists and visually led
+                    studios.
+                  </p>
+
+                  <p class="text-brand-black/60 text-xs max-w-md mx-auto">
+                    L by Lian is a Sheffield-based web design studio focused on
+                    made-to-measure websites for creatives, with selected garden
+                    photography.
+                  </p>
+
+                  <p class="text-xs text-brand-black/70">
+                    Web design projects available year-round.
+                  </p>
+                </div>
+
+                <!-- Social -->
+                <nav aria-label="Social" class="flex items-center gap-3">
+                  <!-- Instagram -->
+                  <a
+                    class="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-brand-accent text-brand-black shadow-sm hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+                    href="https://www.instagram.com/lbylian/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram: @lbylian"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="w-5 h-5 md:w-6 md:h-6"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+                    </svg>
+                  </a>
+
+                  <!-- LinkedIn -->
+                  <a
+                    class="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-brand-accent text-brand-black shadow-sm hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+                    href="https://www.linkedin.com/in/lianli23/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn: Lian Li"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="w-5 h-5 md:w-6 md:h-6"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                      <path
+                        d="M7 17v-7m0-3v.01M11 17v-4.5a2.5 2.5 0 0 1 5 0V17"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                    </svg>
+                  </a>
+                </nav>
+
+                <!-- Legal -->
+                <div class="text-center text-xs text-brand-black space-y-1">
+                  <div>© <span id="year"></span> L by Lian · Sheffield, UK</div>
+
+                  <div
+                    class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-brand-black/70"
+                  >
+                    <a
+                      href="privacy-policy.html"
+                      rel="nofollow"
+                      class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                    >
+                      Privacy Policy
+                    </a>
+
+                    <span aria-hidden="true">•</span>
+
+                    <a
+                      href="t-and-c.html"
+                      rel="nofollow"
+                      class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                    >
+                      Terms &amp; Conditions
+                    </a>
+                  </div>
+
+                  <div class="text-brand-black/60">
+                    By using this website you agree to the Terms &amp;
+                    Conditions.
+                  </div>
+
+                  <div class="text-brand-black/70">
+                    Design &amp; photography by L by Lian.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- JS -->
+        <script>
+          const yearEl = document.getElementById("year");
+          if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+          const $ = (sel) => document.querySelector(sel);
+
+          const btn = $("#menuBtn");
+          const menu = $("#siteMenu");
+          const closeBtn = $("#menuClose");
+          const overlay = $("#menuOverlay");
+          const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches;
+
+          let lastMenuFocusEl = null;
+
+          function getFocusable(container) {
+            if (!container) return [];
+            return Array.from(
+              container.querySelectorAll(
+                'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+              )
+            ).filter(
+              (el) =>
+                !el.hasAttribute("disabled") &&
+                el.getAttribute("aria-hidden") !== "true"
+            );
+          }
+
+          function setMenuA11y(open) {
+            btn?.setAttribute("aria-expanded", String(open));
+            btn?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+            menu?.setAttribute("aria-hidden", open ? "false" : "true");
+            overlay?.setAttribute("aria-hidden", open ? "false" : "true");
+          }
+
+          function openMenu() {
+            if (!menu || !overlay || !btn) return;
+            lastMenuFocusEl = document.activeElement;
+            menu.removeAttribute("inert");
+            menu.classList.remove("translate-x-full");
+            overlay.classList.remove("opacity-0", "pointer-events-none");
+            overlay.classList.add("opacity-100");
+            document.body.classList.add("overflow-hidden");
+            setMenuA11y(true);
+            const focusables = getFocusable(menu);
+            (focusables[0] || closeBtn)?.focus?.();
+          }
+
+          function closeMenu() {
+            if (!menu || !overlay || !btn) return;
+            menu.setAttribute("inert", "");
+            menu.classList.add("translate-x-full");
+            overlay.classList.add("opacity-0", "pointer-events-none");
+            overlay.classList.remove("opacity-100");
+            document.body.classList.remove("overflow-hidden");
+            setMenuA11y(false);
+            (lastMenuFocusEl || btn)?.focus?.();
+          }
+
+          function toggleMenu() {
+            const open = btn?.getAttribute("aria-expanded") === "true";
+            open ? closeMenu() : openMenu();
+          }
+
+          function trapFocus(e) {
+            if (btn?.getAttribute("aria-expanded") !== "true") return;
+            if (e.key !== "Tab") return;
+
+            const focusables = getFocusable(menu);
+            if (!focusables.length) return;
+
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+
+          btn?.addEventListener("click", toggleMenu);
+          closeBtn?.addEventListener("click", closeMenu);
+          overlay?.addEventListener("click", closeMenu);
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeMenu();
+            trapFocus(e);
+          });
+
+          function setupDisclosure(buttonId, panelId) {
+            const button = document.getElementById(buttonId);
+            const panel = document.getElementById(panelId);
+            if (!button || !panel) return;
+
+            const icon = button.querySelector("svg");
+            panel.hidden = true;
+            panel.style.maxHeight = "0px";
+
+            button.addEventListener("click", () => {
+              const expanded = button.getAttribute("aria-expanded") === "true";
+              button.setAttribute("aria-expanded", String(!expanded));
+
+              if (!expanded) {
+                panel.hidden = false;
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                icon?.classList.add("rotate-180");
+              } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                requestAnimationFrame(() => {
+                  panel.style.maxHeight = "0px";
+                  icon?.classList.remove("rotate-180");
+                });
+
+                if (reduceMotion) {
+                  panel.hidden = true;
+                } else {
+                  const onEnd = (event) => {
+                    if (event.propertyName !== "max-height") return;
+                    if (button.getAttribute("aria-expanded") === "false") {
+                      panel.hidden = true;
+                    }
+                    panel.removeEventListener("transitionend", onEnd);
+                  };
+                  panel.addEventListener("transitionend", onEnd);
+                }
+              }
+            });
+
+            if (reduceMotion) panel.style.transition = "none";
+          }
+
+          setupDisclosure("mobileWorkButton", "mobileWorkPanel");
+          setupDisclosure("mobileServicesButton", "mobileServicesPanel");
+
+          function setupDesktopDropdown(groupId, buttonId, menuId) {
+            const group = document.getElementById(groupId);
+            const button = document.getElementById(buttonId);
+            const menu = document.getElementById(menuId);
+            if (!group || !button || !menu) return;
+
+            function setExpanded(value) {
+              button.setAttribute("aria-expanded", value ? "true" : "false");
+            }
+
+            button.addEventListener("click", () => {
+              const expanded = button.getAttribute("aria-expanded") === "true";
+              setExpanded(!expanded);
+
+              if (!expanded) {
+                const first = menu.querySelector(
+                  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                );
+                first?.focus?.();
+              }
+            });
+
+            group.addEventListener("mouseenter", () => setExpanded(true));
+            group.addEventListener("mouseleave", () => setExpanded(false));
+            group.addEventListener("focusin", () => setExpanded(true));
+            group.addEventListener("focusout", (e) => {
+              if (!e.relatedTarget || !group.contains(e.relatedTarget)) {
+                setExpanded(false);
+              }
+            });
+
+            document.addEventListener("keydown", (e) => {
+              if (e.key === "Escape") setExpanded(false);
+            });
+          }
+
+          setupDesktopDropdown(
+            "desktopWorkGroup",
+            "desktopWorkButton",
+            "desktopWorkMenu"
+          );
+          setupDesktopDropdown(
+            "desktopServicesGroup",
+            "desktopServicesButton",
+            "desktopServicesMenu"
+          );
+
+          window.addEventListener("pagehide", () => {
+            document.body.classList.remove("overflow-hidden");
+          });
+
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+              document.body.classList.remove("overflow-hidden");
+            }
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

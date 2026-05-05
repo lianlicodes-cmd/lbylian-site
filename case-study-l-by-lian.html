@@ -1,0 +1,2960 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ==================== META / SEO ==================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Case Study — L by Lian: Restructuring a Dual-Offering Portfolio
+    </title>
+
+    <meta
+      name="description"
+      content="A self-initiated website redesign to clarify a dual offering (web design + photography) through structure, hierarchy, and a calmer client-ready experience."
+    />
+
+    <!-- ==================== CANONICAL ==================== -->
+    <link rel="canonical" href="https://lbylian.com/case-study-website.html" />
+
+    <!-- ==================== OPEN GRAPH ==================== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="L by Lian" />
+    <meta property="og:locale" content="en_GB" />
+    <meta
+      property="og:title"
+      content="Case Study - L by Lian: restructuring a dual-offering portfolio"
+    />
+    <meta
+      property="og:description"
+      content="A self-initiated website redesign to clarify a dual offering (web design + photography) through structure, hierarchy, and a calmer client-ready experience."
+    />
+    <meta
+      property="og:url"
+      content="https://lbylian.com/case-study-website.html"
+    />
+    <meta
+      property="og:image"
+      content="https://lbylian.com/images/case-study-og.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="L by Lian website case study preview"
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DXRXF5L0DJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DXRXF5L0DJ");
+    </script>
+
+    <!-- ==================== TWITTER / X ==================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Case Study - L by Lian: restructuring a dual-offering portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="A self-initiated website redesign to clarify a dual offering (web design + photography) through structure, hierarchy, and a calmer client-ready experience."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lbylian.com/images/case-study-og.jpg"
+    />
+
+    <!-- ==================== FONTS ==================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="fonts/tschichold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ==================== TAILWIND (CDN) ==================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ==================== TAILWIND CONFIG ==================== -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                black: "#010101",
+                carrara: "#f1f2ec",
+                sulu: "#bff47b",
+                gray: "#444443",
+                dust: "#949492",
+                accent: "#05e0e9",
+                pink: "#ff1fa9",
+              },
+            },
+            fontFamily: {
+              sans: ['"Syne"', "ui-sans-serif", "system-ui"],
+              display: ['"Syne"', "ui-sans-serif", "system-ui"],
+            },
+            borderRadius: { xl: "1.25rem", "2xl": "1.5rem" },
+          },
+        },
+        safelist: ["rotate-180", "opacity-100"],
+      };
+    </script>
+
+    <!-- ==================== CUSTOM STYLES ==================== -->
+    <style>
+      :root {
+        --frame: 2mm;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Syne", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      body.lb-open,
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      .hd1 {
+        font-size: clamp(2.15rem, 4.2vw, 3rem);
+        line-height: 1.12;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .hd2 {
+        font-size: clamp(1.6rem, 2.3vw, 2.1rem);
+        line-height: 1.25;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      main p,
+      main ul,
+      main ol {
+        font-size: 0.98rem;
+        line-height: 1.7;
+        font-weight: 400;
+        color: #111827;
+      }
+
+      .lede {
+        font-size: clamp(1.05rem, 0.6vw + 1rem, 1.25rem);
+        line-height: 1.7;
+        color: #374151;
+      }
+
+      .font-hand {
+        font-family: "Syne" !important;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        font-synthesis: none;
+      }
+
+      .font-headline {
+        font-family: "Syne" !important;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      @font-face {
+        font-family: "Tschichold";
+        src: url("fonts/tschichold.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .by-lian {
+        font-family: "Tschichold", serif;
+        letter-spacing: 0.03em;
+      }
+
+      .rule-squares {
+        --sq: 1.5mm;
+        --rule: #bff47b;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+      .rule-squares::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: var(--sq);
+        background: repeating-linear-gradient(
+          90deg,
+          var(--rule) 0 calc(var(--sq)),
+          transparent calc(var(--sq)) calc(var(--sq) * 2)
+        );
+        pointer-events: none;
+      }
+      @media (min-width: 1024px) {
+        .rule-squares {
+          --sq: 1.95mm;
+        }
+      }
+
+      .edge-x {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      @media (min-width: 640px) {
+        .edge-x {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .edge-x {
+          padding-left: 1cm;
+          padding-right: 1cm;
+        }
+      }
+
+      .wrap {
+        max-width: 90rem;
+      }
+      @media (min-width: 1280px) {
+        .wrap {
+          max-width: 100rem;
+        }
+      }
+      @media (min-width: 1536px) {
+        .wrap {
+          max-width: 112rem;
+        }
+      }
+
+      .dot-grid {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23bff47b'/%3E%3C/svg%3E");
+        background-size: 12px 12px;
+        background-repeat: repeat;
+      }
+
+      .pill {
+        background: #bff47b;
+        color: #000;
+        border: 1px solid #bff47b;
+        border-radius: 9999px;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        transition: background 160ms ease, border-color 160ms ease,
+          color 160ms ease, transform 160ms ease;
+      }
+      .pill:hover,
+      .pill:focus-visible {
+        background: #05e0e9;
+        border-color: #05e0e9;
+        color: #000;
+        transform: translateY(-1px);
+      }
+
+      .lb-item img {
+        max-height: 70vh;
+      }
+
+      .equal-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .equal-grow {
+        flex: 1 1 auto;
+      }
+
+      /* ==================== STEPPER (header swap) ==================== */
+      #headerNav,
+      #headerStepper {
+        transition: opacity 240ms ease, transform 240ms ease;
+      }
+
+      #headerStepper {
+        transform: translateY(-6px);
+      }
+
+      body.stepper-mode #headerNav {
+        opacity: 0;
+        transform: translateY(-6px);
+        pointer-events: none;
+      }
+
+      body.stepper-mode #headerStepper {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      #pageStepper {
+        transition: opacity 260ms ease, transform 260ms ease;
+      }
+
+      /* ======= CYAN DOT BAND (spills past hero + fades out) ======= */
+      #dotsBand {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        transform: translateX(-50%);
+        height: clamp(900px, 120vh, 1600px);
+        pointer-events: none;
+        z-index: 0;
+
+        background-color: #f1f2ec;
+        background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2714%27%20height%3D%2714%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%271.2%27%20fill%3D%27%2305e0e9%27%20fill-opacity%3D%270.45%27/%3E%3C/svg%3E");
+        background-size: 14px 14px;
+        background-repeat: repeat;
+
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          black 0%,
+          black 70%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          black 0%,
+          black 70%,
+          transparent 100%
+        );
+      }
+
+      /* Rounded-corner halo fix */
+      .clip-fix {
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+        mask-image: radial-gradient(white, black);
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        white-space: nowrap;
+        clip: rect(0, 0, 0, 0);
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lian Li",
+        "alternateName": "L by Lian",
+        "url": "https://lbylian.com/",
+        "jobTitle": "UX/UI designer and garden photographer",
+        "description": "Lian Li is a UK-based UX/UI designer and garden photographer working under the name L by Lian, creating mobile-first websites with clear structure, thoughtful visual hierarchy, and strong image direction.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "L by Lian",
+          "url": "https://lbylian.com/"
+        },
+        "sameAs": [
+          "https://www.instagram.com/lbylian/",
+          "https://www.linkedin.com/in/lianli23/"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Case Study — L by Lian: Restructuring a Creative Portfolio Website",
+        "description": "A self-initiated website redesign focused on clarifying the structure, hierarchy and presentation of a creative portfolio to create a calmer, clearer and more client-ready experience.",
+        "author": {
+          "@type": "Person",
+          "name": "Lian Li",
+          "alternateName": "L by Lian",
+          "url": "https://lbylian.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "L by Lian",
+          "url": "https://lbylian.com/"
+        },
+        "url": "https://lbylian.com/case-study-website.html",
+        "mainEntityOfPage": "https://lbylian.com/case-study-website.html"
+      }
+    </script>
+  </head>
+
+  <body class="text-brand-black font-sans overflow-x-hidden relative">
+    <div class="min-h-[100dvh] bg-brand-sulu p-[var(--frame)]">
+      <div
+        class="bg-brand-carrara min-h-[calc(100dvh-2*var(--frame))] relative"
+      >
+        <!-- ==================== HEADER ==================== -->
+        <header
+          id="siteHeader"
+          class="sticky top-0 z-30 bg-gradient-to-b from-brand-carrara/95 to-white/90 backdrop-blur"
+        >
+          <div class="edge-x">
+            <div class="wrap mx-auto relative pt-1 pb-[3px]">
+              <!-- NORMAL HEADER -->
+              <div id="headerNav" class="flex items-center justify-between">
+                <div class="m-0">
+                  <a
+                    href="index.html"
+                    class="inline-flex items-center gap-2 md:gap-3 whitespace-nowrap group -ml-3 md:-ml-4 lg:-ml-5"
+                    aria-label="L by Lian"
+                  >
+                    <svg
+                      class="shrink-0 block h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 text-brand-black"
+                      viewBox="0 0 320 240"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="120"
+                        y="40"
+                        width="56"
+                        height="200"
+                        rx="6"
+                        fill="currentColor"
+                      />
+                      <rect
+                        x="200"
+                        y="176"
+                        width="64"
+                        height="64"
+                        rx="4"
+                        fill="currentColor"
+                      />
+                      <circle cx="232" cy="150" r="18" fill="#bff47b" />
+                    </svg>
+                    <span
+                      class="by-lian shrink-0 text-brand-gray text-[18px] md:text-[19px] leading-none tracking-[0.04em]"
+                    >
+                      by&nbsp;lian
+                    </span>
+                  </a>
+                </div>
+
+                <!-- DESKTOP NAV -->
+                <nav
+                  aria-label="Primary"
+                  class="hidden lg:flex items-center gap-6 text-[15px]"
+                >
+                  <a
+                    href="index.html"
+                    class="text-brand-black hover:text-brand-sulu"
+                    >Home</a
+                  >
+
+                  <!-- WORK DROPDOWN (DESKTOP) -->
+                  <div class="relative group" id="desktopWorkGroup">
+                    <button
+                      id="desktopWorkButton"
+                      class="inline-flex items-center gap-1 text-brand-black hover:text-brand-sulu focus:outline-none"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      aria-controls="desktopWorkMenu"
+                      type="button"
+                    >
+                      <span>Work</span>
+                      <svg
+                        class="h-4 w-4 transition-transform duration-150 group-focus-within:rotate-180 group-hover:rotate-180 text-brand-accent"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      id="desktopWorkMenu"
+                      role="menu"
+                      class="absolute left-0 top-full z-50 mt-2 w-[170px] rounded-xl bg-white shadow-md border border-brand-accent/30 invisible opacity-0 translate-y-1 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+                    >
+                      <ul class="py-1 text-[13.5px]">
+                        <li>
+                          <a
+                            href="web-design-case-studies.html"
+                            class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                            role="menuitem"
+                          >
+                            Web Design
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="collections-gardens.html"
+                            class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                            role="menuitem"
+                          >
+                            Photography
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- SERVICES DROPDOWN (DESKTOP) -->
+                  <div class="relative group" id="desktopServicesGroup">
+                    <button
+                      id="desktopServicesButton"
+                      class="inline-flex items-center gap-1 text-brand-black hover:text-brand-sulu focus:outline-none"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      aria-controls="desktopServicesMenu"
+                      type="button"
+                    >
+                      <span>Services</span>
+                      <svg
+                        class="h-4 w-4 transition-transform duration-150 group-focus-within:rotate-180 group-hover:rotate-180 text-brand-accent"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      id="desktopServicesMenu"
+                      role="menu"
+                      class="absolute left-0 top-full z-50 mt-2 w-[170px] rounded-xl bg-white shadow-md border border-brand-accent/30 invisible opacity-0 translate-y-1 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+                    >
+                      <ul class="py-1 text-[13.5px]">
+                        <li>
+                          <a
+                            href="bespoke-websites.html"
+                            class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                            role="menuitem"
+                          >
+                            Bespoke Websites
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="website-refresh.html"
+                            class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                            role="menuitem"
+                          >
+                            Website Refresh
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <a
+                    href="about.html"
+                    class="text-brand-black hover:text-brand-sulu"
+                    >About</a
+                  >
+                  <a
+                    href="contact.html"
+                    class="text-brand-black hover:text-brand-sulu"
+                    >Contact</a
+                  >
+                </nav>
+
+                <!-- MOBILE HAMBURGER -->
+                <button
+                  id="menuBtn"
+                  class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-brand-accent hover:bg-brand-gray/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50"
+                  aria-label="Open menu"
+                  aria-controls="siteMenu"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 7h16M4 12h16M4 17h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- STICKY STEPPER HEADER -->
+              <div
+                id="headerStepper"
+                aria-hidden="true"
+                class="absolute inset-0 flex items-center gap-4 opacity-0 pointer-events-none"
+              >
+                <h1 class="m-0">
+                  <a
+                    href="index.html"
+                    class="inline-flex items-center gap-2 md:gap-3 whitespace-nowrap group -ml-3 md:-ml-4 lg:-ml-5"
+                    aria-label="L by Lian"
+                    tabindex="-1"
+                  >
+                    <svg
+                      class="shrink-0 block h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 text-brand-black"
+                      viewBox="0 0 320 240"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="120"
+                        y="40"
+                        width="56"
+                        height="200"
+                        rx="6"
+                        fill="currentColor"
+                      />
+                      <rect
+                        x="200"
+                        y="176"
+                        width="64"
+                        height="64"
+                        rx="4"
+                        fill="currentColor"
+                      />
+                      <circle cx="232" cy="150" r="18" fill="#bff47b" />
+                    </svg>
+                    <span
+                      class="by-lian shrink-0 text-brand-gray text-[18px] md:text-[19px] leading-none"
+                    >
+                      by&nbsp;lian
+                    </span>
+                  </a>
+                </h1>
+
+                <nav
+                  class="flex-1 overflow-x-auto"
+                  aria-label="Case study steps"
+                >
+                  <ol
+                    class="flex items-center justify-end gap-2 md:gap-3 min-w-max"
+                  >
+                    <li>
+                      <a
+                        href="#before"
+                        class="step-link inline-flex items-center gap-2 rounded-full px-2 py-1 hover:bg-black/5"
+                        tabindex="-1"
+                      >
+                        <span
+                          class="step-dot h-9 w-9 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold text-sm"
+                          >1</span
+                        >
+                        <span class="hidden xl:inline text-xs text-brand-gray"
+                          >Before</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#structure"
+                        class="step-link inline-flex items-center gap-2 rounded-full px-2 py-1 hover:bg-black/5"
+                        tabindex="-1"
+                      >
+                        <span
+                          class="step-dot h-9 w-9 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold text-sm"
+                          >2</span
+                        >
+                        <span class="hidden xl:inline text-xs text-brand-gray"
+                          >Structure</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#screens"
+                        class="step-link inline-flex items-center gap-2 rounded-full px-2 py-1 hover:bg-black/5"
+                        tabindex="-1"
+                      >
+                        <span
+                          class="step-dot h-9 w-9 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold text-sm"
+                          >3</span
+                        >
+                        <span class="hidden xl:inline text-xs text-brand-gray"
+                          >Screens</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#build-qa"
+                        class="step-link inline-flex items-center gap-2 rounded-full px-2 py-1 hover:bg-black/5"
+                        tabindex="-1"
+                      >
+                        <span
+                          class="step-dot h-9 w-9 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold text-sm"
+                          >4</span
+                        >
+                        <span class="hidden xl:inline text-xs text-brand-gray"
+                          >Build &amp; QA</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#results"
+                        class="step-link inline-flex items-center gap-2 rounded-full px-2 py-1 hover:bg-black/5"
+                        tabindex="-1"
+                      >
+                        <span
+                          class="step-dot h-9 w-9 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold text-sm"
+                          >5</span
+                        >
+                        <span class="hidden xl:inline text-xs text-brand-gray"
+                          >Results</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#validation"
+                        class="step-link inline-flex items-center gap-2 rounded-full px-2 py-1 hover:bg-black/5"
+                        tabindex="-1"
+                      >
+                        <span
+                          class="step-dot h-9 w-9 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold text-sm"
+                          >6</span
+                        >
+                        <span class="hidden xl:inline text-xs text-brand-gray"
+                          >Validation</span
+                        >
+                      </a>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- ==================== MOBILE MENU ==================== -->
+        <nav
+          id="siteMenu"
+          class="fixed z-50 top-[var(--frame)] right-[var(--frame)] h-[calc(100dvh-2*var(--frame))] w-72 max-w-[80vw] bg-brand-carrara shadow-xl translate-x-full transition-transform duration-150"
+          aria-label="Site menu"
+          aria-hidden="true"
+          inert
+        >
+          <div class="flex h-full flex-col">
+            <div
+              class="flex items-center justify-between p-4 border-b border-brand-accent/40"
+            >
+              <span class="text-base font-display text-brand-black">Menu</span>
+              <button
+                id="menuClose"
+                type="button"
+                class="p-2 rounded-full text-brand-accent hover:bg-brand-gray/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40"
+                aria-label="Close menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <ul
+              class="flex-grow overflow-y-auto px-4 py-5 space-y-2.5 text-[15px] leading-6"
+            >
+              <li>
+                <a
+                  href="index.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                  >Home</a
+                >
+              </li>
+
+              <!-- WORK ACCORDION -->
+              <li>
+                <button
+                  id="mobileWorkBtn"
+                  type="button"
+                  class="w-full flex items-center justify-between py-1.5 text-brand-black hover:text-brand-sulu"
+                  aria-expanded="false"
+                  aria-controls="mobileWorkPanel"
+                >
+                  <span>Work</span>
+                  <svg
+                    class="h-4 w-4 text-brand-accent transition-transform duration-150"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="mobileWorkPanel"
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-150 ease-in-out"
+                  hidden
+                >
+                  <ul
+                    class="pl-4 py-1 space-y-2 border-l border-brand-accent/40"
+                  >
+                    <li>
+                      <a
+                        href="web-design-case-studies.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                        >Web Design</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="collections-gardens.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                        >Photography</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- SERVICES ACCORDION -->
+              <li>
+                <button
+                  id="mobileServicesBtn"
+                  type="button"
+                  class="w-full flex items-center justify-between py-1.5 text-brand-black hover:text-brand-sulu"
+                  aria-expanded="false"
+                  aria-controls="mobileServicesPanel"
+                >
+                  <span>Services</span>
+                  <svg
+                    class="h-4 w-4 text-brand-accent transition-transform duration-150"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="mobileServicesPanel"
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-150 ease-in-out"
+                  hidden
+                >
+                  <ul
+                    class="pl-4 py-1 space-y-2 border-l border-brand-accent/40"
+                  >
+                    <li>
+                      <a
+                        href="bespoke-websites.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                        >Bespoke Websites</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="website-refresh.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                        >Website Refresh</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a
+                  href="about.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div
+          id="menuOverlay"
+          class="fixed z-40 inset-[var(--frame)] bg-brand-black/60 opacity-0 pointer-events-none transition-opacity duration-150"
+          aria-hidden="true"
+        ></div>
+
+        <main id="main" class="relative z-10">
+          <!-- ==================== HERO ==================== -->
+          <section class="bg-transparent">
+            <div class="wrap mx-auto edge-x pt-8 md:pt-10">
+              <!-- Video hero -->
+              <div
+                class="rounded-[26px] border-2 border-brand-sulu p-[2px] bg-transparent"
+              >
+                <div
+                  class="relative rounded-[24px] bg-black overflow-hidden clip-fix h-[42vh] min-h-[320px] sm:h-[48vh] sm:min-h-[420px] lg:h-[68vh] lg:min-h-[560px]"
+                >
+                  <p class="sr-only" id="caseHeroDesc">
+                    Short looping studio video of Lian Li coding.
+                  </p>
+
+                  <video
+                    id="caseHeroVideo"
+                    class="absolute inset-0 block w-full h-full object-cover object-center rounded-[24px] opacity-0 transition-opacity duration-500 bg-black [transform:translateZ(0)] [backface-visibility:hidden] [outline:1px_solid_transparent]"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    aria-describedby="caseHeroDesc"
+                  >
+                    <source
+                      src="https://lianlicodes-cmd.github.io/my-website/lbylian-video.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== HEADLINE BAND (after hero video) ==================== -->
+          <section class="edge-x mt-8 md:mt-12">
+            <div class="wrap mx-auto py-10 md:py-16">
+              <div
+                class="relative grid grid-cols-1 md:grid-cols-12 md:gap-12 lg:gap-16 items-start"
+              >
+                <!-- Lime arrow -->
+                <svg
+                  class="hidden md:block absolute left-0 top-10 md:w-[160px] lg:w-[200px] xl:w-[240px] h-auto text-brand-sulu pointer-events-none z-0"
+                  viewBox="0 0 160 160"
+                  aria-hidden="true"
+                >
+                  <polygon points="0,16 0,144 160,80" fill="currentColor" />
+                </svg>
+
+                <div class="md:col-span-3 relative"></div>
+
+                <div
+                  class="md:col-span-9 md:pl-4 lg:pl-8 space-y-5 relative z-10"
+                >
+                  <h1
+                    class="font-headline text-brand-black max-w-[13ch] md:max-w-[15ch] text-[clamp(2.6rem,6vw,5.2rem)] leading-[0.96] tracking-[-0.02em] font-semibold"
+                  >
+                    Restructuring<br />
+                    L by Lian’s website
+                  </h1>
+
+                  <p
+                    class="text-sm md:text-base text-brand-gray max-w-[32ch] md:max-w-[40ch] md:ml-1 lg:ml-2"
+                  >
+                    To present web design and photography as one practice.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SEPARATOR -->
+          <hr class="border-0 border-t border-brand-accent w-full" />
+
+          <section class="wrap mx-auto edge-x mt-10 pb-4 md:pb-6">
+            <div class="max-w-3xl">
+              <div class="h-px w-16 bg-brand-accent mb-4"></div>
+
+              <h2 class="text-xl font-headline tracking-tight">
+                My role in this project
+              </h2>
+
+              <p
+                class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+              >
+                I led the project end-to-end: defining the structure, designing
+                the interface, building the front-end, and validating the
+                experience with usability testing.
+              </p>
+
+              <ul
+                class="mt-4 text-sm text-brand-gray leading-relaxed space-y-2 pl-0"
+              >
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-[6px] h-2 w-2 rounded-full bg-brand-accent shrink-0"
+                  ></span>
+                  <span
+                    >UX: information architecture and navigation structure</span
+                  >
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-[6px] h-2 w-2 rounded-full bg-brand-accent shrink-0"
+                  ></span>
+                  <span
+                    >UI: layout, typography, colour system, and components</span
+                  >
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-[6px] h-2 w-2 rounded-full bg-brand-accent shrink-0"
+                  ></span>
+                  <span
+                    >Build: HTML, Tailwind CSS, JavaScript, and GitHub Pages
+                    deployment</span
+                  >
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-[6px] h-2 w-2 rounded-full bg-brand-accent shrink-0"
+                  ></span>
+                  <span
+                    >Validation: usability testing with five participants</span
+                  >
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-[6px] h-2 w-2 rounded-full bg-brand-accent shrink-0"
+                  ></span>
+                  <span
+                    >SEO: technical SEO, metadata, and AI-search
+                    optimisation</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ==================== CONTEXT ==================== -->
+          <section id="context" class="mt-10 md:mt-14">
+            <div class="wrap mx-auto edge-x">
+              <div class="grid gap-10 md:grid-cols-12 items-start">
+                <div class="md:col-span-5 md:sticky md:top-24 self-start">
+                  <article
+                    class="rounded-2xl bg-white/60 p-6 md:p-8 border-2 border-brand-sulu/45"
+                  >
+                    <h2
+                      class="text-3xl md:text-4xl font-headline tracking-tight"
+                    >
+                      The What
+                    </h2>
+                    <div class="mt-4 h-px w-16 bg-brand-accent"></div>
+
+                    <p
+                      class="mt-6 text-sm md:text-base text-brand-gray leading-relaxed"
+                    >
+                      This self-initiated case study looks at the redesign of my
+                      own portfolio website. The challenge was to present two
+                      related areas of work — web design and photography —
+                      without making the site feel split or unclear.
+                    </p>
+
+                    <p
+                      class="mt-6 text-sm md:text-base text-brand-gray leading-relaxed"
+                    >
+                      The redesign gives web design a clearer lead role, while
+                      keeping photography as part of the overall practice rather
+                      than a separate experience.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="md:col-span-7">
+                  <div class="space-y-8">
+                    <!-- PROJECT SUMMARY -->
+                    <article
+                      class="rounded-2xl bg-white/60 p-6 md:p-8 border-2 border-brand-sulu/45"
+                      aria-labelledby="project-summary-title"
+                    >
+                      <h2
+                        id="project-summary-title"
+                        class="text-3xl md:text-4xl font-headline tracking-tight"
+                      >
+                        Project Summary
+                      </h2>
+                      <div class="mt-4 h-px w-16 bg-brand-accent"></div>
+
+                      <dl class="mt-6 grid gap-y-5 sm:grid-cols-2 sm:gap-x-10">
+                        <div>
+                          <dt
+                            class="text-xs uppercase tracking-[0.18em] text-brand-dust"
+                          >
+                            Project
+                          </dt>
+                          <dd
+                            class="mt-1 text-sm md:text-base text-brand-gray leading-relaxed"
+                          >
+                            L by Lian — website redesign
+                          </dd>
+                        </div>
+
+                        <div>
+                          <dt
+                            class="text-xs uppercase tracking-[0.18em] text-brand-dust"
+                          >
+                            Focus
+                          </dt>
+                          <dd
+                            class="mt-1 text-sm md:text-base text-brand-gray leading-relaxed"
+                          >
+                            Presenting web design first, with photography as a
+                            supporting discipline
+                          </dd>
+                        </div>
+
+                        <div>
+                          <dt
+                            class="text-xs uppercase tracking-[0.18em] text-brand-dust"
+                          >
+                            Role
+                          </dt>
+                          <dd
+                            class="mt-1 text-sm md:text-base text-brand-gray leading-relaxed"
+                          >
+                            UX, UI, information architecture, visual direction
+                            and front-end build
+                          </dd>
+                        </div>
+
+                        <div>
+                          <dt
+                            class="text-xs uppercase tracking-[0.18em] text-brand-dust"
+                          >
+                            Tools
+                          </dt>
+                          <dd
+                            class="mt-1 text-sm md:text-base text-brand-gray leading-relaxed"
+                          >
+                            Figma, HTML, Tailwind CSS
+                          </dd>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                          <dt
+                            class="text-xs uppercase tracking-[0.18em] text-brand-dust"
+                          >
+                            Outcome
+                          </dt>
+                          <dd
+                            class="mt-1 text-sm md:text-base text-brand-gray leading-relaxed max-w-prose"
+                          >
+                            A more coherent structure where web design leads and
+                            photography supports the overall identity of the
+                            practice.
+                          </dd>
+                        </div>
+                      </dl>
+                    </article>
+
+                    <!-- THE WHY -->
+                    <article
+                      class="rounded-2xl bg-white/60 p-6 md:p-8 border-2 border-brand-sulu/45"
+                    >
+                      <h2
+                        class="text-3xl md:text-4xl font-headline tracking-tight"
+                      >
+                        The Why
+                      </h2>
+                      <div class="mt-4 h-px w-16 bg-brand-accent"></div>
+
+                      <p
+                        class="mt-6 text-sm md:text-base text-brand-gray leading-relaxed max-w-prose"
+                      >
+                        Adobe Portfolio is built for photography, which made it
+                        difficult to present my web design work in a clear and
+                        intentional way. To show website projects properly, I
+                        had to create a separate site, and the templates limited
+                        how the work could be structured and experienced.
+                      </p>
+
+                      <p
+                        class="mt-6 text-sm md:text-base text-brand-gray leading-relaxed max-w-prose"
+                      >
+                        The result felt fragmented and harder to understand than
+                        it should be.
+                      </p>
+                    </article>
+
+                    <!-- THE HOW -->
+                    <article
+                      class="rounded-2xl bg-white/60 p-6 md:p-8 border-2 border-brand-sulu/45"
+                    >
+                      <h2
+                        class="text-3xl md:text-4xl font-headline tracking-tight"
+                      >
+                        The How
+                      </h2>
+                      <div class="mt-4 h-px w-16 bg-brand-accent"></div>
+
+                      <p
+                        class="mt-6 text-sm md:text-base text-brand-gray leading-relaxed max-w-prose"
+                      >
+                        I designed and built a custom static site so I could
+                        control layout, navigation, and pacing properly. I
+                        organised the work around case studies rather than loose
+                        pages, which makes the site easier to scan and easier to
+                        grow over time.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== ON-PAGE STEPPER ==================== -->
+          <section
+            id="pageStepper"
+            class="mt-10 md:mt-12 mb-14 md:mb-20 lg:mb-24 opacity-0 translate-y-2"
+            aria-label="Case study steps"
+          >
+            <div class="wrap mx-auto edge-x">
+              <div class="relative">
+                <div
+                  aria-hidden="true"
+                  class="md:hidden absolute left-1/2 -translate-x-1/2 top-6 bottom-6 w-px bg-brand-sulu/70"
+                ></div>
+
+                <div
+                  aria-hidden="true"
+                  class="hidden md:block absolute left-6 right-6 top-6 h-px bg-brand-sulu/70"
+                ></div>
+
+                <ol
+                  class="flex flex-col items-center gap-10 md:flex-row md:justify-between md:items-start md:gap-0"
+                >
+                  <li
+                    class="relative z-10 flex flex-col items-center md:flex-1"
+                  >
+                    <a
+                      href="#before"
+                      class="step-link group flex flex-col items-center"
+                    >
+                      <span
+                        class="step-dot h-12 w-12 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold"
+                        >1</span
+                      >
+                      <p class="mt-3 text-xs text-brand-gray text-center">
+                        Before
+                      </p>
+                    </a>
+                  </li>
+
+                  <li
+                    class="relative z-10 flex flex-col items-center md:flex-1"
+                  >
+                    <a
+                      href="#structure"
+                      class="step-link group flex flex-col items-center"
+                    >
+                      <span
+                        class="step-dot h-12 w-12 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold"
+                        >2</span
+                      >
+                      <p class="mt-3 text-xs text-brand-gray text-center">
+                        Structure
+                      </p>
+                    </a>
+                  </li>
+
+                  <li
+                    class="relative z-10 flex flex-col items-center md:flex-1"
+                  >
+                    <a
+                      href="#screens"
+                      class="step-link group flex flex-col items-center"
+                    >
+                      <span
+                        class="step-dot h-12 w-12 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold"
+                        >3</span
+                      >
+                      <p class="mt-3 text-xs text-brand-gray text-center">
+                        Screens
+                      </p>
+                    </a>
+                  </li>
+
+                  <li
+                    class="relative z-10 flex flex-col items-center md:flex-1"
+                  >
+                    <a
+                      href="#build-qa"
+                      class="step-link group flex flex-col items-center"
+                    >
+                      <span
+                        class="step-dot h-12 w-12 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold"
+                        >4</span
+                      >
+                      <p class="mt-3 text-xs text-brand-gray text-center">
+                        Build &amp; QA
+                      </p>
+                    </a>
+                  </li>
+
+                  <li
+                    class="relative z-10 flex flex-col items-center md:flex-1"
+                  >
+                    <a
+                      href="#results"
+                      class="step-link group flex flex-col items-center"
+                    >
+                      <span
+                        class="step-dot h-12 w-12 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold"
+                        >5</span
+                      >
+                      <p class="mt-3 text-xs text-brand-gray text-center">
+                        Results
+                      </p>
+                    </a>
+                  </li>
+
+                  <li
+                    class="relative z-10 flex flex-col items-center md:flex-1"
+                  >
+                    <a
+                      href="#validation"
+                      class="step-link group flex flex-col items-center"
+                    >
+                      <span
+                        class="step-dot h-12 w-12 rounded-full border border-brand-sulu/60 bg-brand-carrara text-brand-black grid place-items-center font-semibold"
+                        >6</span
+                      >
+                      <p class="mt-3 text-xs text-brand-gray text-center">
+                        Validation
+                      </p>
+                    </a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== BEFORE ==================== -->
+          <section
+            class="wrap mx-auto edge-x pb-12 md:pb-16 scroll-mt-24"
+            id="before"
+          >
+            <div
+              class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 ring-1 ring-brand-pink/25 overflow-hidden"
+            >
+              <div
+                class="pointer-events-none absolute inset-0 dot-grid opacity-[0.14]"
+              ></div>
+
+              <div class="relative space-y-10">
+                <header class="max-w-3xl">
+                  <h2 class="text-2xl md:text-4xl font-headline tracking-tight">
+                    Before
+                  </h2>
+                  <p
+                    class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                  >
+                    The previous site was built on Adobe Portfolio when
+                    photography was still my main focus. As my work shifted
+                    towards UI/UX and web design, the platform’s template
+                    structure made it harder to show both areas of work in a way
+                    that felt clear and intentional.
+                  </p>
+
+                  <p
+                    class="mt-6 text-sm md:text-base text-brand-gray leading-relaxed"
+                  >
+                    As the amount of work grew, it also became harder to shape
+                    proper case studies. Navigation, pacing, and emphasis were
+                    limited by the platform, so the site often needed extra
+                    explanation instead of letting visitors understand it for
+                    themselves.
+                  </p>
+                </header>
+
+                <div class="grid gap-6 md:grid-cols-2">
+                  <figure
+                    class="overflow-hidden rounded-2xl border-2 border-brand-sulu/45 bg-white/70 shadow-sm"
+                  >
+                    <img
+                      src="assets/portfolio-images/adobelianli.png"
+                      alt="Screenshot of the previous photography portfolio built with Adobe Portfolio."
+                      width="1800"
+                      height="1200"
+                      class="w-full h-auto bg-white/80"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/adobelianli.png';"
+                    />
+                    <figcaption
+                      class="px-4 py-3 text-xs text-brand-dust border-t border-brand-sulu/35"
+                    >
+                      Old photography portfolio
+                    </figcaption>
+                  </figure>
+
+                  <figure
+                    class="overflow-hidden rounded-2xl border-2 border-brand-sulu/45 bg-white/70 shadow-sm"
+                  >
+                    <img
+                      src="assets/portfolio-images/adobelianli2.png"
+                      alt="Screenshot of the previous mobile-first web design portfolio built with Adobe Portfolio."
+                      width="1800"
+                      height="1200"
+                      class="w-full h-auto bg-white/80"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/adobelianli2.png';"
+                    />
+                    <figcaption
+                      class="px-4 py-3 text-xs text-brand-dust border-t border-brand-sulu/35"
+                    >
+                      Old mobile-first web design portfolio
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div
+                  class="rounded-2xl border-2 border-brand-sulu/35 bg-white/60 px-5 py-4 text-xs text-brand-dust"
+                >
+                  Showing both web design and photography meant maintaining two
+                  separate websites, which made the overall practice harder to
+                  present as one coherent offering.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== STRUCTURE + STYLE GUIDE (SIDE-BY-SIDE) ==================== -->
+          <section
+            class="wrap mx-auto edge-x pb-12 md:pb-16 scroll-mt-24"
+            id="structure"
+          >
+            <div class="grid gap-6 lg:grid-cols-2 items-stretch">
+              <section
+                class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 ring-2 ring-brand-sulu/40 overflow-hidden flex flex-col h-full"
+                aria-label="Structure and navigation decisions"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 dot-grid opacity-[0.10]"
+                ></div>
+
+                <header class="relative max-w-3xl">
+                  <h2 class="text-2xl md:text-4xl font-headline tracking-tight">
+                    Structure &amp; navigation decisions
+                  </h2>
+                  <p
+                    class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                  >
+                    The strongest decision in this project was separating two
+                    disciplines while keeping the experience cohesive.
+                  </p>
+                </header>
+
+                <article
+                  class="relative mt-10 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm flex flex-col h-full"
+                >
+                  <div
+                    class="mt-2 flex-1 overflow-hidden rounded-2xl bg-white shadow-sm border border-black/10 h-[420px] md:h-[520px]"
+                  >
+                    <img
+                      src="assets/portfolio-images/sitemaplbylian.png"
+                      alt="Figma sitemap diagram showing the site navigation hierarchy and user paths across Home, UI/UX Web Design, Photography, Shop, About, and Contact."
+                      class="w-full h-full object-contain bg-white/80"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/sitemaplbylian.png';"
+                    />
+                  </div>
+
+                  <p class="mt-4 text-sm text-brand-gray leading-relaxed">
+                    <span class="font-semibold text-brand-black">Outcome:</span>
+                    primary web-design route, separate photography section,
+                    simplified mobile navigation.
+                  </p>
+
+                  <p class="mt-3 text-xs text-brand-dust">
+                    This sitemap shows how the site is organised so visitors can
+                    find things fast.
+                  </p>
+                </article>
+              </section>
+
+              <section
+                id="style-guide"
+                class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 border-2 border-brand-sulu/45 overflow-hidden flex flex-col h-full scroll-mt-24"
+                aria-label="Style guide"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 dot-grid opacity-[0.10]"
+                ></div>
+
+                <header class="relative max-w-3xl">
+                  <h2 class="text-2xl md:text-4xl font-headline tracking-tight">
+                    Style guide
+                  </h2>
+                  <p
+                    class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                  >
+                    A single style board to keep type, colour, and components
+                    consistent.
+                  </p>
+                </header>
+
+                <article class="relative mt-10 flex flex-col h-full">
+                  <div
+                    class="flex-1 overflow-hidden rounded-2xl bg-white/70 shadow-sm ring-1 ring-black/10 h-[420px] md:h-[520px]"
+                  >
+                    <img
+                      src="assets/portfolio-images/style.png"
+                      alt="Figma style guide board showing typography, colour palette, iconography, and button styles."
+                      class="w-full h-full object-cover object-top bg-white/80 scale-[1.06] origin-top"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/style.png';"
+                    />
+                  </div>
+                </article>
+              </section>
+            </div>
+          </section>
+
+          <!-- ==================== SCREENS ==================== -->
+          <section
+            class="wrap mx-auto edge-x pb-12 md:pb-16 scroll-mt-24"
+            id="screens"
+          >
+            <div
+              class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 ring-1 ring-brand-pink/25 overflow-hidden"
+            >
+              <div
+                class="pointer-events-none absolute inset-0 dot-grid opacity-[0.14]"
+              ></div>
+
+              <div class="relative">
+                <header class="max-w-3xl">
+                  <h2 class="text-2xl md:text-4xl font-headline tracking-tight">
+                    Screens
+                  </h2>
+                  <p
+                    class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                  >
+                    Screens that prove hierarchy:
+                    <span class="font-semibold text-brand-black"
+                      >primary path</span
+                    >,
+                    <span class="font-semibold text-brand-black"
+                      >secondary exploration</span
+                    >,
+                    <span class="font-semibold text-brand-black"
+                      >optional depth</span
+                    >.
+                  </p>
+                </header>
+
+                <div class="mt-10 grid gap-6 items-stretch">
+                  <div class="h-full">
+                    <button
+                      type="button"
+                      class="lb-item w-full text-left h-full"
+                      data-src="assets/portfolio-images/index.png"
+                      data-alt="Screenshot of the website homepage showing the header navigation and hero intro section."
+                      aria-label="Open homepage screenshot"
+                    >
+                      <figure
+                        class="overflow-hidden rounded-2xl border-2 border-brand-sulu/45 bg-white/70 shadow-sm hover:shadow-md transition-shadow equal-card"
+                      >
+                        <img
+                          src="assets/portfolio-images/index.png"
+                          alt="Screenshot of the website homepage showing the header navigation and hero intro section."
+                          width="1800"
+                          height="1200"
+                          class="w-full h-auto object-cover bg-white/80"
+                          loading="lazy"
+                          decoding="async"
+                          onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/index.png';"
+                        />
+                        <figcaption
+                          class="px-5 py-4 text-xs text-brand-dust border-t-2 border-brand-sulu/35 mt-auto"
+                        >
+                          Homepage - primary path (web design) is immediate.
+                        </figcaption>
+                      </figure>
+                    </button>
+                  </div>
+
+                  <div class="h-full">
+                    <button
+                      type="button"
+                      class="lb-item w-full text-left h-full"
+                      data-src="assets/portfolio-images/services.png"
+                      data-alt="Screenshot of the services page/section showing service offerings laid out as headings and cards."
+                      aria-label="Open services screenshot"
+                    >
+                      <figure
+                        class="overflow-hidden rounded-2xl border-2 border-brand-sulu/45 bg-white/70 shadow-sm hover:shadow-md transition-shadow equal-card"
+                      >
+                        <img
+                          src="assets/portfolio-images/services.png"
+                          alt="Screenshot of the services page/section showing service offerings laid out as headings and cards."
+                          width="1800"
+                          height="1200"
+                          class="w-full h-auto object-cover bg-white/80"
+                          loading="lazy"
+                          decoding="async"
+                          onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/services.png';"
+                        />
+                        <figcaption
+                          class="px-5 py-4 text-xs text-brand-dust border-t-2 border-brand-sulu/35 mt-auto"
+                        >
+                          Service page - clear headings, easy pacing, and an
+                          obvious next step.
+                        </figcaption>
+                      </figure>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- MINI CONTACT CTA (after screens) -->
+          <section class="pb-10 md:pb-12" aria-label="Call to action">
+            <div class="edge-x">
+              <div class="wrap mx-auto">
+                <div
+                  class="rounded-2xl bg-white/60 ring-1 ring-brand-accent/60 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+                >
+                  <div class="max-w-xl">
+                    <p
+                      class="text-[12px] uppercase tracking-[0.18em] text-black/50 mb-2"
+                    >
+                      Let’s work together
+                    </p>
+
+                    <h2
+                      class="font-display text-2xl md:text-3xl font-semibold tracking-[-0.02em] text-brand-black"
+                    >
+                      Make it obvious. Make it beautiful.
+                    </h2>
+
+                    <p class="mt-2 text-black/70 text-sm md:text-base">
+                      I design and refine websites so people can understand what
+                      you do.
+                    </p>
+
+                    <p class="mt-3 text-xs text-brand-dust">
+                      Designed + built by me • validated with 5 users
+                    </p>
+                  </div>
+
+                  <div class="flex flex-wrap items-center gap-3">
+                    <a
+                      href="mailto:hello@lbylian.com?subject=Project%20enquiry%20-%20Website%20design"
+                      class="inline-flex items-center px-5 h-11 rounded-full bg-brand-sulu text-brand-black font-display shadow-sm hover:bg-brand-sulu/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40 transition"
+                    >
+                      Start a project
+                    </a>
+
+                    <a
+                      href="contact.html"
+                      class="inline-flex items-center px-5 h-11 rounded-full bg-transparent text-brand-black font-display ring-1 ring-brand-accent/40 hover:bg-brand-accent/10 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40 transition"
+                    >
+                      Book a quick call
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== BUILD & QA ==================== -->
+          <section
+            class="wrap mx-auto edge-x pb-12 md:pb-16 scroll-mt-24"
+            id="build-qa"
+          >
+            <div
+              class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 ring-2 ring-brand-sulu/40 overflow-hidden"
+            >
+              <div
+                class="pointer-events-none absolute inset-0 dot-grid opacity-[0.10]"
+              ></div>
+
+              <header class="relative max-w-3xl">
+                <h2 class="text-2xl md:text-4xl font-headline tracking-tight">
+                  Build &amp; QA
+                </h2>
+                <p
+                  class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                >
+                  How I planned, built, and checked the site.
+                </p>
+              </header>
+
+              <div
+                class="relative mt-10 grid gap-6 md:grid-cols-12 items-stretch"
+              >
+                <article
+                  class="md:col-span-6 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm equal-card"
+                >
+                  <h3 class="text-xl font-headline">
+                    Design and build process
+                  </h3>
+                  <div class="mt-4 h-[2px] bg-brand-sulu/40"></div>
+
+                  <p class="mt-4 text-sm text-brand-gray leading-relaxed">
+                    I began with hand-drawn wireframes to work through layout
+                    and navigation, then moved into Figma for the moodboard,
+                    low-fidelity wireframes, and site map. From there, I built
+                    the site in code and refined it as the structure became
+                    clearer.
+                  </p>
+
+                  <p class="mt-4 text-sm text-brand-gray leading-relaxed">
+                    I also use Copilot to help spot errors and speed up
+                    troubleshooting while I work. The design decisions and final
+                    edits are still mine, and I check the site myself across
+                    different screen sizes before publishing.
+                  </p>
+
+                  <p class="mt-4 text-xs text-brand-dust">
+                    Tools: Figma, HTML/CSS, Tailwind, JavaScript, GitHub Pages.
+                  </p>
+
+                  <p class="mt-3 text-xs text-brand-dust">
+                    In short: wireframes → Figma → build in code → refine →
+                    test.
+                  </p>
+                </article>
+
+                <article
+                  class="md:col-span-6 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm equal-card"
+                >
+                  <h3 class="text-xl font-headline">What I checked</h3>
+                  <div class="mt-4 h-[2px] bg-brand-sulu/40"></div>
+
+                  <ul
+                    class="mt-4 space-y-2 text-sm text-brand-gray leading-relaxed equal-grow"
+                  >
+                    <li>• Mobile and desktop layout behaviour.</li>
+                    <li>
+                      • Menu open and close states, including keyboard access.
+                    </li>
+                    <li>• Links, image loading, and console errors.</li>
+                    <li>
+                      • Lightbox open and close behaviour, including Esc and
+                      overlay click.
+                    </li>
+                    <li>
+                      • Accessibility basics such as contrast, focus visibility,
+                      and reduced motion.
+                    </li>
+                  </ul>
+
+                  <div
+                    class="mt-6 rounded-2xl bg-white/60 border-2 border-brand-sulu/35 p-4"
+                  >
+                    <p class="text-xs text-brand-dust">Accessibility</p>
+                    <ul
+                      class="mt-2 space-y-2 text-sm text-brand-gray leading-relaxed"
+                    >
+                      <li>
+                        • Keyboard access for the menu and lightbox, with
+                        visible focus states.
+                      </li>
+                      <li>• Contrast checks and clear labels.</li>
+                      <li>
+                        • Interactions that remain comfortable with reduced
+                        motion enabled.
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== RESULTS ==================== -->
+          <section
+            class="wrap mx-auto edge-x pb-12 md:pb-16 scroll-mt-24"
+            id="results"
+          >
+            <div
+              class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 ring-1 ring-brand-pink/25 overflow-hidden"
+            >
+              <div
+                class="pointer-events-none absolute inset-0 dot-grid opacity-[0.14]"
+              ></div>
+
+              <header class="relative max-w-3xl">
+                <h2 class="text-2xl md:text-4xl font-headline tracking-tight">
+                  Results
+                </h2>
+                <p
+                  class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                >
+                  Early signals from usability testing and direct feedback (no
+                  analytics baseline yet).
+                </p>
+              </header>
+
+              <div
+                class="relative mt-8 grid gap-6 md:grid-cols-12 items-stretch"
+              >
+                <article
+                  class="md:col-span-4 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm equal-card"
+                >
+                  <h3 class="text-xl font-headline">Clear first impression</h3>
+                  <div class="mt-4 h-[2px] bg-brand-sulu/40"></div>
+                  <p
+                    class="mt-4 text-sm text-brand-gray leading-relaxed equal-grow"
+                  >
+                    Most people understood what I do within the first few
+                    seconds.
+                  </p>
+                </article>
+
+                <article
+                  class="md:col-span-4 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm equal-card"
+                >
+                  <h3 class="text-xl font-headline">Self-navigation</h3>
+                  <div class="mt-4 h-[2px] bg-brand-sulu/40"></div>
+                  <p
+                    class="mt-4 text-sm text-brand-gray leading-relaxed equal-grow"
+                  >
+                    People were able to find web design work and contact details
+                    without needing help.
+                  </p>
+                </article>
+
+                <article
+                  class="md:col-span-4 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm equal-card"
+                >
+                  <h3 class="text-xl font-headline">Mobile clarity</h3>
+                  <div class="mt-4 h-[2px] bg-brand-sulu/40"></div>
+                  <p
+                    class="mt-4 text-sm text-brand-gray leading-relaxed equal-grow"
+                  >
+                    Simpler labels and clearer cues reduced hesitation on
+                    mobile.
+                  </p>
+                </article>
+              </div>
+
+              <p class="relative mt-8 text-sm text-brand-gray max-w-3xl">
+                Summary:
+                <span class="font-semibold text-brand-black">
+                  The new structure makes the offer easier to understand and
+                  removes the need for explanation.
+                </span>
+              </p>
+            </div>
+          </section>
+
+          <!-- ==================== VALIDATION + CONSTRAINTS ==================== -->
+          <section
+            class="wrap mx-auto edge-x pb-12 md:pb-16 scroll-mt-24"
+            id="validation-constraints"
+          >
+            <div class="grid gap-6 lg:grid-cols-2 items-start">
+              <!-- VALIDATION -->
+              <section id="validation" class="scroll-mt-24">
+                <div
+                  class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 ring-2 ring-brand-sulu/40 overflow-hidden h-full"
+                >
+                  <div
+                    class="pointer-events-none absolute inset-0 dot-grid opacity-[0.10]"
+                  ></div>
+
+                  <header class="relative max-w-3xl">
+                    <h2
+                      class="text-2xl md:text-4xl font-headline tracking-tight"
+                    >
+                      Validation
+                    </h2>
+
+                    <p
+                      class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                    >
+                      I tested the site with
+                      <span class="font-semibold text-brand-black"
+                        >5 people (ages 35–60)</span
+                      >
+                      to see how easily they could understand and move through
+                      it, especially on mobile.
+                    </p>
+                  </header>
+
+                  <div
+                    class="relative mt-10 grid gap-6 md:grid-cols-12 items-stretch"
+                  >
+                    <article
+                      class="md:col-span-6 rounded-2xl border-2 border-brand-accent/45 bg-white/70 p-6 shadow-sm equal-card"
+                    >
+                      <h3 class="text-xl font-headline">What I tested</h3>
+                      <div class="mt-4 h-[2px] bg-brand-accent/40"></div>
+
+                      <ul
+                        class="mt-4 space-y-2 text-sm text-brand-gray leading-relaxed equal-grow"
+                      >
+                        <li>
+                          • Can people understand what I do within a few
+                          seconds?
+                        </li>
+                        <li>• Can they find web design work quickly?</li>
+                        <li>
+                          • Can they locate photography without confusion?
+                        </li>
+                        <li>• Can they reach Contact easily?</li>
+                        <li>
+                          • Does the navigation feel straightforward on mobile?
+                        </li>
+                      </ul>
+
+                      <p class="mt-4 text-xs text-brand-dust">
+                        Sample: 5 participants, ages 35–60.
+                      </p>
+                    </article>
+
+                    <article
+                      class="md:col-span-6 rounded-2xl border-2 border-brand-accent/45 bg-white/70 p-6 shadow-sm equal-card"
+                    >
+                      <h3 class="text-xl font-headline">
+                        What changed after testing
+                      </h3>
+                      <div class="mt-4 h-[2px] bg-brand-accent/40"></div>
+
+                      <ul
+                        class="mt-4 space-y-2 text-sm text-brand-gray leading-relaxed equal-grow"
+                      >
+                        <li>
+                          • Replaced some navigation dots with arrows for
+                          clearer direction.
+                        </li>
+                        <li>• Simplified labels to reduce hesitation.</li>
+                        <li>• Reduced competing calls to action.</li>
+                        <li>
+                          • Adjusted spacing on mobile to improve scanning.
+                        </li>
+                      </ul>
+
+                      <div
+                        class="mt-5 rounded-2xl bg-brand-carrara p-4 border-2 border-brand-accent/25"
+                      >
+                        <p class="text-xs text-brand-dust">Result</p>
+                        <p class="mt-2 text-sm text-brand-gray leading-relaxed">
+                          Testers described the site as easy to use and were
+                          able to move through it without guidance.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </section>
+
+              <!-- CONSTRAINTS -->
+              <section id="constraints" class="scroll-mt-24">
+                <div
+                  class="relative rounded-2xl bg-white/60 text-brand-black p-7 md:p-12 ring-2 ring-brand-sulu/40 overflow-hidden h-full"
+                >
+                  <div
+                    class="pointer-events-none absolute inset-0 dot-grid opacity-[0.10]"
+                  ></div>
+
+                  <header class="relative max-w-3xl">
+                    <h2
+                      class="text-2xl md:text-4xl font-headline tracking-tight"
+                    >
+                      Constraints
+                    </h2>
+                    <p
+                      class="mt-4 text-sm md:text-base text-brand-gray leading-relaxed"
+                    >
+                      These constraints shaped the decisions and explain why the
+                      structure works the way it does.
+                    </p>
+                  </header>
+
+                  <div
+                    class="relative mt-10 grid gap-6 md:grid-cols-12 items-stretch"
+                  >
+                    <article
+                      class="md:col-span-6 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm equal-card"
+                    >
+                      <h3 class="text-xl font-headline">Project constraints</h3>
+                      <div class="mt-4 h-[2px] bg-brand-sulu/40"></div>
+
+                      <ul
+                        class="mt-4 space-y-2 text-sm text-brand-gray leading-relaxed equal-grow"
+                      >
+                        <li>
+                          • One-person project (strategy, design, build, QA).
+                        </li>
+                        <li>
+                          • Needed full layout control beyond template
+                          platforms.
+                        </li>
+                        <li>
+                          • Photography needed to remain part of the work, not
+                          only illustrative.
+                        </li>
+                        <li>• Tone needed to feel relevant.</li>
+                      </ul>
+                    </article>
+
+                    <article
+                      class="md:col-span-6 rounded-2xl border-2 border-brand-sulu/45 bg-white/70 p-6 shadow-sm equal-card"
+                    >
+                      <h3 class="text-xl font-headline">Design constraints</h3>
+                      <div class="mt-4 h-[2px] bg-brand-sulu/40"></div>
+
+                      <ul
+                        class="mt-4 space-y-2 text-sm text-brand-gray leading-relaxed equal-grow"
+                      >
+                        <li>
+                          • People scan quickly, so structure needs to be
+                          obvious.
+                        </li>
+                        <li>
+                          • Two disciplines need to coexist without competing.
+                        </li>
+                        <li>
+                          • Mobile-first: reduce effort and avoid dense layouts.
+                        </li>
+                        <li>
+                          • Labels need to feel familiar and easy to follow.
+                        </li>
+                      </ul>
+                    </article>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <!-- ==================== LIGHTBOX ==================== -->
+          <div
+            id="lightbox"
+            class="fixed inset-0 z-[100] hidden"
+            aria-hidden="true"
+          >
+            <div class="absolute inset-0 bg-brand-black/80"></div>
+
+            <div class="relative wrap mx-auto h-full edge-x py-6 flex flex-col">
+              <div class="flex items-center justify-between gap-3 text-white">
+                <div class="min-w-0">
+                  <p id="lbAlt" class="text-sm font-semibold truncate">Image</p>
+                  <p class="text-xs text-white/70">
+                    Click outside or press Esc to close
+                  </p>
+                </div>
+                <button
+                  id="lbClose"
+                  class="rounded-full bg-white/10 px-3 py-2 text-sm font-semibold hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                  aria-label="Close lightbox"
+                  type="button"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div
+                class="mt-4 flex-1 rounded-2xl bg-black/20 border border-brand-pink/35 overflow-hidden flex items-center justify-center"
+              >
+                <img
+                  id="lbImg"
+                  class="max-h-[78vh] w-auto max-w-full object-contain"
+                  src=""
+                  alt=""
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- SEPARATOR -->
+          <hr class="border-0 border-t border-brand-accent w-full" />
+
+          <!-- Explore more -->
+          <section
+            class="edge-x mt-6 md:mt-10 pb-12 md:pb-16"
+            aria-label="Explore more work"
+          >
+            <div class="wrap mx-auto space-y-6 md:space-y-8">
+              <div class="space-y-1">
+                <div class="kicker">Explore More</div>
+                <h2 class="font-headline hd2 text-brand-black">Related Work</h2>
+              </div>
+
+              <div
+                class="explore-grid grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4"
+              >
+                <a
+                  href="explore-ui-ux-web-design.html"
+                  class="group block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40"
+                  aria-label="Browse case studies"
+                >
+                  <div
+                    class="flex flex-col h-full rounded-xl ring-1 ring-black/10 overflow-hidden bg-white"
+                  >
+                    <div
+                      class="card-media-wrap relative aspect-[4/3] overflow-hidden"
+                    >
+                      <img
+                        src="sheffield-city-guide-app.jpg"
+                        alt="Secret Sheffield — city guide app (UI/UX case study)"
+                        width="2048"
+                        height="2022"
+                        class="card-media absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/sheffield-city-guide-app.jpg';"
+                      />
+
+                      <span
+                        class="card-arrow card-arrow--prev"
+                        aria-hidden="true"
+                      >
+                        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+                          <polygon
+                            points="20,12 52,32 20,52"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+
+                    <div class="p-3 flex flex-col flex-1">
+                      <h3
+                        class="text-brand-black text-[15px] font-light tracking-wide"
+                      >
+                        Browse case studies
+                      </h3>
+                      <p class="mt-1 text-[12px] text-brand-gray">
+                        Website structure, UX/UI decisions, and mobile-first
+                        design.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="giverny.html"
+                  class="group block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40"
+                  aria-label="Open Giverny garden photography gallery"
+                >
+                  <div
+                    class="flex flex-col h-full rounded-xl ring-1 ring-black/10 overflow-hidden bg-white"
+                  >
+                    <div
+                      class="card-media-wrap relative aspect-[4/3] overflow-hidden"
+                    >
+                      <img
+                        src="giverny-03-water-lily-pond-reflection-3.jpg"
+                        alt="Waterlily pond and reflections in Claude Monet’s garden at Giverny."
+                        class="card-media absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/giverny-03-water-lily-pond-reflection-3.jpg';"
+                      />
+
+                      <span class="card-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+                          <polygon
+                            points="20,12 52,32 20,52"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+
+                    <div class="p-3 flex flex-col flex-1">
+                      <h3
+                        class="text-brand-black text-[15px] font-light tracking-wide"
+                      >
+                        Giverny · Step Inside Monet’s Garden
+                      </h3>
+                      <p class="mt-1 text-[12px] text-brand-gray">
+                        Waterlilies, enclosed paths, and painterly views from
+                        Claude Monet’s home.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Spacer before footer -->
+          <section class="edge-x pb-16 md:pb-20" aria-hidden="true"></section>
+
+          <section class="wrap mx-auto edge-x pb-12">
+            <div class="max-w-2xl text-sm text-brand-gray">
+              <p class="font-semibold text-brand-black">About the author</p>
+              <p class="mt-2">
+                Lian Li is a UX/UI designer and garden photographer working
+                under the name L by Lian. She designs mobile-first websites with
+                clear structure, thoughtful visual hierarchy, and strong image
+                direction.
+              </p>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+          <footer
+            id="contact"
+            class="border-t border-brand-accent/30 bg-white/40"
+          >
+            <div class="edge-x">
+              <div class="wrap mx-auto py-10 md:py-12">
+                <div class="flex flex-col items-center gap-8">
+                  <!-- Logo -->
+                  <div class="flex justify-center">
+                    <svg
+                      class="block h-12 w-12 text-brand-black"
+                      viewBox="0 0 320 240"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="120"
+                        y="40"
+                        width="56"
+                        height="200"
+                        rx="6"
+                        fill="currentColor"
+                      />
+                      <rect
+                        x="200"
+                        y="176"
+                        width="64"
+                        height="64"
+                        rx="4"
+                        fill="currentColor"
+                      />
+                      <circle cx="232" cy="150" r="18" fill="#bff47b" />
+                    </svg>
+                  </div>
+
+                  <!-- Contact + studio intro -->
+                  <div
+                    class="text-center text-sm text-brand-black/70 max-w-lg space-y-3 leading-relaxed"
+                  >
+                    <p>
+                      <a
+                        href="mailto:hello@lbylian.com"
+                        class="hover:text-brand-black transition"
+                      >
+                        hello@lbylian.com
+                      </a>
+                    </p>
+
+                    <p class="text-brand-black">
+                      Web design for garden designers, artists and visually led
+                      studios.
+                    </p>
+
+                    <p class="text-brand-black/60 text-xs max-w-md mx-auto">
+                      L by Lian is a Sheffield-based web design studio focused
+                      on made-to-measure websites for creatives, with selected
+                      garden photography.
+                    </p>
+
+                    <p class="text-xs text-brand-black/70">
+                      Web design projects available year-round.
+                    </p>
+                  </div>
+
+                  <!-- Social -->
+                  <nav aria-label="Social" class="flex items-center gap-3">
+                    <!-- Instagram -->
+                    <a
+                      class="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-brand-accent text-brand-black shadow-sm hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+                      href="https://www.instagram.com/lbylian/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram: @lbylian"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="w-5 h-5 md:w-6 md:h-6"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                        />
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="3.5"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                        />
+                        <circle
+                          cx="17.5"
+                          cy="6.5"
+                          r="1.2"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a
+                      class="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-brand-accent text-brand-black shadow-sm hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+                      href="https://www.linkedin.com/in/lianli23/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn: Lian Li"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="w-5 h-5 md:w-6 md:h-6"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                        />
+                        <path
+                          d="M7 17v-7m0-3v.01M11 17v-4.5a2.5 2.5 0 0 1 5 0V17"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                        />
+                      </svg>
+                    </a>
+                  </nav>
+
+                  <!-- Legal -->
+                  <div class="text-center text-xs text-brand-black space-y-1">
+                    <div>
+                      © <span id="year"></span> L by Lian · Sheffield, UK
+                    </div>
+
+                    <div
+                      class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-brand-black/70"
+                    >
+                      <a
+                        href="privacy-policy.html"
+                        rel="nofollow"
+                        class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                      >
+                        Privacy Policy
+                      </a>
+
+                      <span aria-hidden="true">•</span>
+
+                      <a
+                        href="t-and-c.html"
+                        rel="nofollow"
+                        class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                      >
+                        Terms &amp; Conditions
+                      </a>
+                    </div>
+
+                    <div class="text-brand-black/60">
+                      By using this website you agree to the Terms &amp;
+                      Conditions.
+                    </div>
+
+                    <div class="text-brand-black/70">
+                      Design &amp; photography by L by Lian.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+          <!-- Back to top -->
+          <button
+            id="backToTop"
+            type="button"
+            class="hidden fixed bottom-[calc(var(--frame)+14px)] right-[calc(var(--frame)+14px)] z-50 rounded-full bg-brand-accent text-brand-black shadow-lg h-12 w-12 md:h-14 md:w-14 inline-flex items-center justify-center hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+            aria-label="Back to top"
+            title="Back to top"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              class="h-5 w-5 md:h-6 md:w-6"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 5l-7 7m7-7l7 7M12 5v14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        function init() {
+          // Footer year
+          const yearEl = document.getElementById("year");
+          if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+          const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches;
+
+          // Back to top
+          const backToTop = document.getElementById("backToTop");
+          if (backToTop) {
+            const THRESHOLD = 300;
+            const toggle = () => {
+              const hidden = window.scrollY < THRESHOLD;
+              backToTop.classList.toggle("hidden", hidden);
+              backToTop.classList.toggle("flex", !hidden);
+            };
+            toggle();
+            window.addEventListener("scroll", toggle, { passive: true });
+            backToTop.addEventListener("click", () =>
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            );
+          }
+
+          // Mobile menu
+          const menuBtn = document.getElementById("menuBtn");
+          const siteMenu = document.getElementById("siteMenu");
+          const menuClose = document.getElementById("menuClose");
+          const menuOverlay = document.getElementById("menuOverlay");
+
+          const getFocusable = (container) => {
+            if (!container) return [];
+            return Array.from(
+              container.querySelectorAll(
+                'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+              )
+            ).filter(
+              (el) =>
+                !el.hasAttribute("disabled") &&
+                el.getAttribute("aria-hidden") !== "true"
+            );
+          };
+
+          let lastMenuFocusEl = null;
+
+          const setMenuA11y = (open) => {
+            menuBtn?.setAttribute("aria-expanded", String(open));
+            menuBtn?.setAttribute(
+              "aria-label",
+              open ? "Close menu" : "Open menu"
+            );
+            siteMenu?.setAttribute("aria-hidden", open ? "false" : "true");
+            menuOverlay?.setAttribute("aria-hidden", open ? "false" : "true");
+          };
+
+          const openMenu = () => {
+            if (!siteMenu || !menuBtn || !menuOverlay) return;
+            lastMenuFocusEl = document.activeElement;
+            siteMenu.removeAttribute("inert");
+            siteMenu.classList.remove("translate-x-full");
+            menuOverlay.classList.remove("opacity-0", "pointer-events-none");
+            menuOverlay.classList.add("opacity-100");
+            document.body.classList.add("menu-open");
+            setMenuA11y(true);
+
+            const focusables = getFocusable(siteMenu);
+            (focusables[0] || menuClose)?.focus?.();
+          };
+
+          const closeMenu = () => {
+            if (!siteMenu || !menuBtn || !menuOverlay) return;
+            siteMenu.setAttribute("inert", "");
+            siteMenu.classList.add("translate-x-full");
+            menuOverlay.classList.add("opacity-0", "pointer-events-none");
+            menuOverlay.classList.remove("opacity-100");
+            document.body.classList.remove("menu-open");
+            setMenuA11y(false);
+
+            [
+              ["mobileWorkBtn", "mobileWorkPanel"],
+              ["mobileServicesBtn", "mobileServicesPanel"],
+            ].forEach(([btnId, panelId]) => {
+              const button = document.getElementById(btnId);
+              const panel = document.getElementById(panelId);
+              if (!button || !panel) return;
+              button.setAttribute("aria-expanded", "false");
+              panel.style.maxHeight = "0px";
+              panel.hidden = true;
+              const icon = button.querySelector("svg");
+              icon?.classList.remove("rotate-180");
+            });
+
+            (lastMenuFocusEl || menuBtn)?.focus?.();
+          };
+
+          const toggleMenu = () => {
+            const isOpen = menuBtn?.getAttribute("aria-expanded") === "true";
+            isOpen ? closeMenu() : openMenu();
+          };
+
+          const trapMenuFocus = (e) => {
+            if (menuBtn?.getAttribute("aria-expanded") !== "true") return;
+            if (e.key !== "Tab") return;
+
+            const focusables = getFocusable(siteMenu);
+            if (!focusables.length) return;
+
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          };
+
+          menuBtn?.addEventListener("click", toggleMenu);
+          menuClose?.addEventListener("click", closeMenu);
+          menuOverlay?.addEventListener("click", closeMenu);
+
+          // Mobile disclosure panels
+          function setupDisclosure(buttonId, panelId) {
+            const button = document.getElementById(buttonId);
+            const panel = document.getElementById(panelId);
+            if (!button || !panel) return;
+            const icon = button.querySelector("svg");
+
+            panel.hidden = true;
+            panel.style.maxHeight = "0px";
+
+            button.addEventListener("click", () => {
+              const expanded = button.getAttribute("aria-expanded") === "true";
+              button.setAttribute("aria-expanded", String(!expanded));
+
+              if (!expanded) {
+                panel.hidden = false;
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                icon?.classList.add("rotate-180");
+              } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                requestAnimationFrame(() => {
+                  panel.style.maxHeight = "0px";
+                  icon?.classList.remove("rotate-180");
+                });
+
+                if (reduceMotion) {
+                  panel.hidden = true;
+                } else {
+                  const onEnd = (event) => {
+                    if (event.propertyName !== "max-height") return;
+                    if (button.getAttribute("aria-expanded") === "false") {
+                      panel.hidden = true;
+                    }
+                    panel.removeEventListener("transitionend", onEnd);
+                  };
+                  panel.addEventListener("transitionend", onEnd);
+                }
+              }
+            });
+
+            if (reduceMotion) panel.style.transition = "none";
+          }
+
+          setupDisclosure("mobileWorkBtn", "mobileWorkPanel");
+          setupDisclosure("mobileServicesBtn", "mobileServicesPanel");
+
+          // Desktop dropdown accessibility
+          function setupDesktopDropdown(groupId, buttonId) {
+            const group = document.getElementById(groupId);
+            const button = document.getElementById(buttonId);
+            if (!group || !button) return;
+
+            const setExpanded = (value) =>
+              button.setAttribute("aria-expanded", value ? "true" : "false");
+
+            button.addEventListener("click", () => {
+              const expanded = button.getAttribute("aria-expanded") === "true";
+              setExpanded(!expanded);
+
+              if (!expanded) {
+                const menuId = button.getAttribute("aria-controls");
+                const menu = menuId ? document.getElementById(menuId) : null;
+                const first = menu?.querySelector(
+                  'a,button,[tabindex]:not([tabindex="-1"])'
+                );
+                first?.focus?.();
+              }
+            });
+
+            group.addEventListener("mouseenter", () => setExpanded(true));
+            group.addEventListener("mouseleave", () => setExpanded(false));
+            group.addEventListener("focusin", () => setExpanded(true));
+            group.addEventListener("focusout", (event) => {
+              const next = event.relatedTarget;
+              if (!next || !group.contains(next)) setExpanded(false);
+            });
+          }
+
+          setupDesktopDropdown("desktopWorkGroup", "desktopWorkButton");
+          setupDesktopDropdown("desktopServicesGroup", "desktopServicesButton");
+
+          // Lightbox
+          const lb = document.getElementById("lightbox");
+          const lbImg = document.getElementById("lbImg");
+          const lbAlt = document.getElementById("lbAlt");
+          const lbClose = document.getElementById("lbClose");
+          const items = Array.from(document.querySelectorAll(".lb-item"));
+          let lastLbFocus = null;
+
+          const openLightbox = (btn) => {
+            if (!lb || !lbImg) return;
+            const src = btn.dataset.src;
+            if (!src) return;
+
+            const alt = btn.dataset.alt || "Image";
+            lbImg.src = src;
+            lbImg.alt = alt;
+            if (lbAlt) lbAlt.textContent = alt;
+
+            lastLbFocus = btn;
+            lb.classList.remove("hidden");
+            lb.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lb-open");
+            lbClose?.focus();
+          };
+
+          const closeLightbox = () => {
+            if (!lb || !lbImg) return;
+            lb.classList.add("hidden");
+            lb.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("lb-open");
+            lbImg.src = "";
+            lastLbFocus?.focus();
+          };
+
+          items.forEach((btn) =>
+            btn.addEventListener("click", () => openLightbox(btn))
+          );
+          lbClose?.addEventListener("click", closeLightbox);
+
+          lb?.addEventListener("click", (e) => {
+            if (!lb) return;
+            const overlay = lb.firstElementChild;
+            if (e.target === lb || (overlay && e.target === overlay)) {
+              closeLightbox();
+            }
+          });
+
+          // Scroll lock cleanup on navigation
+          window.addEventListener("pagehide", () => {
+            document.body.classList.remove("menu-open", "lb-open");
+          });
+
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+              document.body.classList.remove("menu-open", "lb-open");
+            }
+          });
+
+          window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+              if (menuBtn?.getAttribute("aria-expanded") === "true")
+                closeMenu();
+              if (lb && !lb.classList.contains("hidden")) closeLightbox();
+
+              if (
+                document
+                  .getElementById("desktopWorkButton")
+                  ?.getAttribute("aria-expanded") === "true"
+              ) {
+                document
+                  .getElementById("desktopWorkButton")
+                  .setAttribute("aria-expanded", "false");
+              }
+
+              if (
+                document
+                  .getElementById("desktopServicesButton")
+                  ?.getAttribute("aria-expanded") === "true"
+              ) {
+                document
+                  .getElementById("desktopServicesButton")
+                  .setAttribute("aria-expanded", "false");
+              }
+            }
+
+            trapMenuFocus(e);
+
+            // Lightbox focus trap
+            if (lb && !lb.classList.contains("hidden") && e.key === "Tab") {
+              const focusables = Array.from(
+                lb.querySelectorAll(
+                  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                )
+              );
+              if (!focusables.length) return;
+
+              const first = focusables[0];
+              const last = focusables[focusables.length - 1];
+
+              if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+              } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+              }
+            }
+          });
+
+          // ===== STEPPER =====
+          const pageStepper = document.getElementById("pageStepper");
+          const siteHeader = document.getElementById("siteHeader");
+          const headerNav = document.getElementById("headerNav");
+          const headerStepper = document.getElementById("headerStepper");
+
+          if (pageStepper && siteHeader && headerNav && headerStepper) {
+            const headerStepperFocusable = Array.from(
+              headerStepper.querySelectorAll("a, button, [tabindex]")
+            );
+            const headerNavFocusable = Array.from(
+              headerNav.querySelectorAll("a, button, [tabindex]")
+            );
+
+            const setTabbable = (els, tabbable) => {
+              els.forEach((el) => {
+                if (!(el instanceof HTMLElement)) return;
+                el.setAttribute("tabindex", tabbable ? "0" : "-1");
+              });
+            };
+
+            const revealObs = new IntersectionObserver(
+              (entries) => {
+                const entry = entries[0];
+                if (!entry || !entry.isIntersecting) return;
+                pageStepper.classList.remove("opacity-0", "translate-y-2");
+                pageStepper.classList.add("opacity-100", "translate-y-0");
+                revealObs.disconnect();
+              },
+              { threshold: 0.2 }
+            );
+            revealObs.observe(pageStepper);
+
+            function setHeaderMode(isStepperMode) {
+              document.body.classList.toggle("stepper-mode", isStepperMode);
+              headerStepper.setAttribute(
+                "aria-hidden",
+                isStepperMode ? "false" : "true"
+              );
+              headerNav.setAttribute(
+                "aria-hidden",
+                isStepperMode ? "true" : "false"
+              );
+              setTabbable(headerStepperFocusable, isStepperMode);
+              setTabbable(headerNavFocusable, !isStepperMode);
+            }
+
+            function updateHeaderSwap() {
+              const headerRect = siteHeader.getBoundingClientRect();
+              const stepperRect = pageStepper.getBoundingClientRect();
+              const headerH = headerRect.height || 0;
+              const passed = stepperRect.bottom <= headerH + 8;
+              setHeaderMode(passed);
+            }
+
+            let ticking = false;
+            function onScrollOrResize() {
+              if (ticking) return;
+              ticking = true;
+              requestAnimationFrame(() => {
+                updateHeaderSwap();
+                ticking = false;
+              });
+            }
+
+            window.addEventListener("scroll", onScrollOrResize, {
+              passive: true,
+            });
+            window.addEventListener("resize", onScrollOrResize);
+            updateHeaderSwap();
+
+            const stepLinks = Array.from(
+              document.querySelectorAll(".step-link")
+            );
+            const hrefs = stepLinks
+              .map((a) => a.getAttribute("href"))
+              .filter(
+                (href) => href && href.startsWith("#") && href.length > 1
+              );
+
+            const targets = Array.from(new Set(hrefs))
+              .map((href) => document.querySelector(href))
+              .filter((el) => el instanceof HTMLElement);
+
+            function setActiveStep(hash) {
+              const dots = document.querySelectorAll(".step-dot");
+              dots.forEach((dot) => {
+                dot.classList.remove("bg-brand-accent", "border-brand-accent");
+                dot.classList.add("bg-brand-carrara", "border-brand-sulu/60");
+              });
+
+              stepLinks
+                .filter((a) => a.getAttribute("href") === hash)
+                .forEach((a) => {
+                  const dot = a.querySelector(".step-dot");
+                  if (!dot) return;
+                  dot.classList.remove(
+                    "bg-brand-carrara",
+                    "border-brand-sulu/60"
+                  );
+                  dot.classList.add("bg-brand-accent", "border-brand-accent");
+                });
+            }
+
+            function getActiveSection() {
+              if (!targets.length) return null;
+
+              const headerRect = siteHeader.getBoundingClientRect();
+              const headerH = headerRect.height || 0;
+              const triggerY = headerH + 24;
+
+              let active = targets[0];
+
+              targets.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= triggerY) {
+                  active = section;
+                }
+              });
+
+              return active;
+            }
+
+            function updateActiveStepFromScroll() {
+              const activeSection = getActiveSection();
+              if (!activeSection || !activeSection.id) return;
+              setActiveStep(`#${activeSection.id}`);
+            }
+
+            stepLinks.forEach((link) => {
+              link.addEventListener("click", () => {
+                const hash = link.getAttribute("href");
+                if (!hash) return;
+
+                requestAnimationFrame(() => {
+                  setActiveStep(hash);
+                });
+
+                window.setTimeout(() => {
+                  setActiveStep(hash);
+                }, 220);
+              });
+            });
+
+            if (targets.length) {
+              updateActiveStepFromScroll();
+
+              window.addEventListener(
+                "scroll",
+                () => {
+                  updateActiveStepFromScroll();
+                },
+                { passive: true }
+              );
+
+              window.addEventListener("resize", updateActiveStepFromScroll);
+            }
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+
+    <script>
+      // HERO video: fade in once it can render a frame
+      (function () {
+        const v = document.getElementById("caseHeroVideo");
+        if (!v) return;
+
+        const show = () => v.classList.add("opacity-100");
+
+        v.addEventListener("loadeddata", show, { once: true });
+        v.addEventListener("canplay", show, { once: true });
+
+        if (v.readyState >= 2) show();
+
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (reduceMotion) {
+          v.pause();
+          v.removeAttribute("autoplay");
+          v.controls = true;
+          show();
+        }
+      })();
+    </script>
+  </body>
+</html>

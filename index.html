@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Web Design for Garden Designers, Artists and Creative Studios | L by Lian
+    </title>
+
+    <meta
+      name="description"
+      content="Bespoke web design for garden designers, artists and creative studios — with clear structure, strong imagery, accessibility, performance and selected garden photography."
+    />
+
+    <link rel="canonical" href="https://lbylian.com/" />
+
+    <link rel="alternate" hreflang="en-GB" href="https://lbylian.com/" />
+    <link
+      rel="alternate"
+      hreflang="fr"
+      href="https://lbylian.com/index-fr.html"
+    />
+    <link rel="alternate" hreflang="x-default" href="https://lbylian.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="L by Lian" />
+    <meta property="og:locale" content="en_GB" />
+    <meta
+      property="og:title"
+      content="Web Design for Garden Designers, Artists and Creative Studios | L by Lian"
+    />
+    <meta
+      property="og:description"
+      content="Bespoke web design for garden designers, artists and creative studios — with clear structure, strong imagery, accessibility, performance."
+    />
+    <meta property="og:url" content="https://lbylian.com/" />
+    <meta
+      property="og:image"
+      content="https://lbylian.com/assets/portfolio-images/lbylian-hero.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="UX/UI website and digital design work by L by Lian"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lbylian" />
+    <meta name="twitter:creator" content="@lbylian" />
+    <meta
+      name="twitter:title"
+      content="Web Design for Garden Designers, Artists and Creative Studios | L by Lian"
+    />
+    <meta
+      name="twitter:description"
+      content="Bespoke web design for garden designers, artists and creative studios — with clear structure, strong imagery, accessibility, performance and selected garden photography."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lbylian.com/assets/portfolio-images/lbylian-hero.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="UX/UI website and digital design work by L by Lian"
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DXRXF5L0DJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DXRXF5L0DJ");
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <meta name="theme-color" content="#bff47b" />
+
+    <!-- ==================== FONTS ==================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="fonts/tschichold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload hero image (LCP) -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/portfolio-images/lbylian-hero.jpg"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                black: "#010101",
+                carrara: "#f1f2ec",
+                sulu: "#bff47b",
+                gray: "#444443",
+                dust: "#949492",
+                accent: "#05e0e9",
+                pink: "#ff1fa9",
+              },
+            },
+            fontFamily: {
+              sans: ['"Syne"', "system-ui", "sans-serif"],
+              display: ['"Syne"'],
+              serif: ["serif"],
+            },
+            borderRadius: { xl: "1.25rem", "2xl": "1.5rem" },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ============================================================
+   CSS CUSTOM PROPERTIES & BASE STYLES
+   ============================================================ */
+
+      :root {
+        --frame: 2mm;
+      }
+
+      body.overflow-hidden {
+        overflow: hidden;
+      }
+
+      .font-hand {
+        font-family: "Syne", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        font-synthesis: none;
+      }
+
+      @font-face {
+        font-family: "Tschichold";
+        src: url("fonts/tschichold.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .by-lian {
+        font-family: "Tschichold", Georgia, serif;
+        font-weight: normal;
+        font-style: normal;
+        letter-spacing: 0.01em;
+        font-synthesis: none;
+      }
+      .rule-squares {
+        --sq: 1.5mm;
+        --rule: #bff47b;
+        position: relative;
+        width: 100%;
+        height: var(--sq);
+      }
+
+      .rule-squares::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--rule) 0 calc(var(--sq)),
+          transparent calc(var(--sq)) calc(var(--sq) * 2)
+        );
+        pointer-events: none;
+      }
+
+      @media (min-width: 1024px) {
+        .rule-squares {
+          --sq: 1.95mm;
+        }
+      }
+
+      .poster {
+        font-size: clamp(2.25rem, 7.5vw, 5rem);
+        line-height: 1.1;
+      }
+
+      .edge-x {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      @media (min-width: 640px) {
+        .edge-x {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .edge-x {
+          padding-left: 1cm;
+          padding-right: 1cm;
+        }
+      }
+
+      .wrap {
+        max-width: 90rem;
+      }
+      @media (min-width: 1280px) {
+        .wrap {
+          max-width: 100rem;
+        }
+      }
+      @media (min-width: 1536px) {
+        .wrap {
+          max-width: 112rem;
+        }
+      }
+
+      .font-headline {
+        font-family: "Syne", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .cta-triangle {
+        margin-left: 1.1rem;
+        display: inline-block;
+        width: clamp(2.8rem, 7vw, 3.6rem);
+        height: clamp(2.8rem, 7vw, 3.6rem);
+      }
+      .cta-triangle svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .corner {
+        display: inline-block;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .group:hover .group-hover\:translate-y-0,
+        .group:focus-within .group-focus-within\:translate-y-0,
+        .group:active .group-active\:translate-y-0,
+        .group:hover .group-hover\:-translate-y-full,
+        .group:focus-within .group-focus-within\:-translate-y-full,
+        .group:active .group-active\:-translate-y-full {
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+
+      .dot-grid {
+        background: radial-gradient(#949492 1px, transparent 1px) 0 0/12px 12px;
+        opacity: 0.35;
+      }
+      .phone {
+        border-radius: 28px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35),
+          0 8px 20px rgba(0, 0, 0, 0.22),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+        background: #111;
+        overflow: hidden;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-animates * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+
+      /* ============================================================
+   ANIMATIONS & MOTION (marquee, reduced-motion overrides)
+   ============================================================ */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .marquee-track {
+        animation: marquee 12s linear infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .marquee-track {
+          animation: none;
+        }
+      }
+
+      /* ============================================================
+   TESTIMONIALS / QUOTES SECTION STYLES
+   ============================================================ */
+
+      .quote-mark {
+        font-size: clamp(80px, 14vw, 180px);
+        line-height: 0.6;
+        opacity: 0.18;
+      }
+      .clip-band-angled {
+        clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+      }
+      .band-tight {
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+      }
+      @media (min-width: 768px) {
+        .band-tight {
+          padding-top: 3.5rem;
+          padding-bottom: 4rem;
+        }
+      }
+
+      .qwrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+      .qmark {
+        color: #fff;
+        font-weight: 900;
+        font-size: clamp(28px, 5vw, 64px);
+        line-height: 0.8;
+        opacity: 0.9;
+        display: inline-block;
+        transform: translateY(0.05em);
+      }
+
+      .quote-arrows {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: clamp(14px, 2.8vw, 24px);
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        pointer-events: none;
+      }
+      #quotes figure {
+        padding-bottom: clamp(3.5rem, 6vw, 4.5rem);
+      }
+      .quote-arrows > * {
+        pointer-events: auto;
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .arrow-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(191, 244, 123, 0.22);
+        border: 1.5px solid #bff47b;
+        color: #05e0e9;
+        transition: transform 120ms ease-out, background-color 120ms ease-out;
+      }
+      .arrow-btn:hover {
+        background: rgba(191, 244, 123, 0.32);
+        transform: translateY(-1px);
+      }
+      .arrow-btn:active {
+        transform: translateY(0);
+      }
+      .arrow-btn:focus-visible {
+        outline: 3px solid #05e0e9;
+        outline-offset: 3px;
+      }
+      .arrow-btn svg {
+        width: 30px;
+        height: 30px;
+        stroke: currentColor;
+      }
+
+      .band-carrara {
+        background: #f1f2ec;
+        position: relative;
+      }
+      .band-carrara::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: radial-gradient(rgba(68, 68, 67, 0.18) 1px, transparent 1px)
+            0 0/14px 14px,
+          linear-gradient(
+            135deg,
+            transparent 0 70%,
+            rgba(5, 224, 233, 0.1) 70% 72%,
+            transparent 72%
+          ),
+          linear-gradient(
+            -135deg,
+            transparent 0 80%,
+            rgba(191, 244, 123, 0.1) 80% 82%,
+            transparent 82%
+          );
+        pointer-events: none;
+      }
+      .band-carrara .edge-x {
+        position: relative;
+        z-index: 10;
+      }
+      .band-carrara .quote-arrows {
+        position: relative;
+        z-index: 10;
+      }
+      .band-carrara .qmark,
+      .band-carrara .quote-close::after {
+        color: #bff47b !important;
+        opacity: 1;
+      }
+
+      .belt-frame {
+        position: relative;
+        padding: 1.25rem 1.6rem 1.7rem;
+      }
+      @media (min-width: 768px) {
+        .belt-frame {
+          padding: 2.2rem 2.6rem 2.1rem;
+        }
+      }
+      .belt-frame::before {
+        content: "";
+        position: absolute;
+        inset: 0.6rem 0.9rem;
+        border-radius: 1.5rem;
+        border: 2px solid #bff47b;
+        pointer-events: none;
+        z-index: 5;
+      }
+
+      /* ============================================================
+   CLIENTS BELT / MARQUEE SECTION STYLES
+   ============================================================ */
+
+      .clients-band .belt-frame::before,
+      .clients-band .belt-frame::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #bff47b;
+        border: none;
+        border-radius: 0;
+        pointer-events: none;
+        z-index: 5;
+      }
+      .clients-band .belt-frame::before {
+        top: 0;
+      }
+      .clients-band .belt-frame::after {
+        bottom: 0;
+      }
+
+      .clients-band {
+        position: relative;
+        background: #f1f2ec;
+      }
+      .clients-band::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: radial-gradient(
+              rgba(5, 224, 233, 0.16) 1px,
+              transparent 1px
+            )
+            0 0/14px 14px,
+          linear-gradient(
+            120deg,
+            transparent 0 42%,
+            rgba(191, 244, 123, 0.18) 42% 44%,
+            transparent 44% 100%
+          ),
+          linear-gradient(
+            -120deg,
+            transparent 0 68%,
+            rgba(5, 224, 233, 0.18) 68% 70%,
+            transparent 70% 100%
+          );
+      }
+      .clients-band-inner {
+        position: relative;
+        z-index: 10;
+      }
+      .clients-band .edge-x {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .clients-band .wrap {
+        max-width: none;
+      }
+      .clients-belt {
+        position: relative;
+        overflow: hidden;
+      }
+      .clients-belt::before,
+      .clients-belt::after {
+        content: none !important;
+      }
+
+      .client-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        border: none;
+        box-shadow: none;
+        background: #00063d;
+        font-family: "Syne", system-ui, sans-serif;
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: #fff;
+        transition: transform 150ms ease-out, background-color 150ms ease-out;
+      }
+
+      .client-pill span {
+        opacity: 1;
+      }
+
+      .client-pill:hover {
+        background: #050b55;
+        transform: translateY(-1px);
+      }
+
+      .client-pill:focus-visible {
+        outline: 2px solid #05e0e9;
+        outline-offset: 2px;
+      }
+
+      @media (min-width: 1024px) {
+        #quotes blockquote {
+          max-width: 78ch;
+          text-wrap: balance;
+        }
+      }
+
+      .dot-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .dot-list li {
+        position: relative;
+        padding-left: 1.2rem;
+      }
+      .dot-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background-color: #05e0e9;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+
+    <!-- ==================== JSON-LD: WebSite + Person + ProfessionalService ==================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://lbylian.com/#website",
+            "url": "https://lbylian.com/",
+            "name": "L by Lian",
+            "description": "Bespoke web design with clear structure, strong hierarchy and cohesive art direction for designers, artists and creative studios.",
+            "inLanguage": "en-GB",
+            "publisher": { "@id": "https://lbylian.com/#business" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://lbylian.com/#lian-li",
+            "name": "Lian Li",
+            "alternateName": "L by Lian",
+            "url": "https://lbylian.com/",
+            "jobTitle": "UX/UI web designer specialising in structure and art direction",
+            "description": "Lian Li is a UK-based UX/UI web designer working under the name L by Lian. She structures content, clarifies navigation and directs how work is presented so it is clear, coherent and easy to understand.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Sheffield",
+              "addressCountry": "GB"
+            },
+            "sameAs": [
+              "https://www.instagram.com/lbylian/",
+              "https://www.linkedin.com/in/lianli23/"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://lbylian.com/#business",
+            "name": "L by Lian",
+            "url": "https://lbylian.com/",
+            "email": "hello@lbylian.com",
+            "description": "A web design studio focused on website structure, visual hierarchy, navigation and art direction for designers, artists and creative studios.",
+            "areaServed": [
+              { "@type": "City", "name": "Sheffield" },
+              { "@type": "City", "name": "London" },
+              { "@type": "City", "name": "Paris" }
+            ],
+            "founder": { "@id": "https://lbylian.com/#lian-li" },
+            "knowsAbout": [
+              "UX/UI web design",
+              "website structure",
+              "visual hierarchy",
+              "digital art direction",
+              "content organisation",
+              "portfolio design"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "hello@lbylian.com",
+                "availableLanguage": ["en", "fr"]
+              }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/lbylian/",
+              "https://www.linkedin.com/in/lianli23/"
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body class="font-sans antialiased text-[17px] leading-[1.65]">
+    <!-- Sulu frame (kept) -->
+    <div class="min-h-[100dvh] bg-brand-sulu p-[var(--frame)]">
+      <div
+        class="bg-brand-carrara text-brand-gray min-h-[calc(100dvh-2*var(--frame))] relative"
+      >
+        <!-- ==================== HEADER ==================== -->
+        <header
+          class="sticky top-0 z-30 bg-gradient-to-b from-brand-carrara/95 to-white/90 backdrop-blur"
+        >
+          <div class="edge-x">
+            <div
+              class="wrap mx-auto flex items-center justify-between pt-1 pb-[3px]"
+            >
+              <!-- LOGO -->
+              <div class="m-0">
+                <a
+                  href="index.html"
+                  class="inline-flex items-center gap-2 md:gap-3 whitespace-nowrap group -ml-3 md:-ml-4 lg:-ml-5"
+                  aria-label="L by Lian"
+                >
+                  <svg
+                    class="shrink-0 block h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 text-brand-black"
+                    viewBox="0 0 320 240"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="120"
+                      y="40"
+                      width="56"
+                      height="200"
+                      rx="6"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="200"
+                      y="176"
+                      width="64"
+                      height="64"
+                      rx="4"
+                      fill="currentColor"
+                    />
+                    <circle cx="232" cy="150" r="18" fill="#bff47b" />
+                  </svg>
+                  <span
+                    class="by-lian shrink-0 text-brand-gray text-[18px] md:text-[19px] leading-none tracking-[0.04em]"
+                  >
+                    by&nbsp;lian
+                  </span>
+                </a>
+              </div>
+
+              <!-- DESKTOP NAVIGATION -->
+              <nav
+                aria-label="Primary"
+                class="hidden lg:flex items-center gap-6 text-[15px]"
+              >
+                <a
+                  href="index.html"
+                  class="text-brand-black hover:text-brand-sulu"
+                  aria-current="page"
+                  >Home</a
+                >
+
+                <!-- WORK DROPDOWN (DESKTOP) -->
+                <div class="relative group" id="desktopWorkGroup">
+                  <button
+                    id="desktopWorkButton"
+                    class="inline-flex items-center gap-1 text-brand-black hover:text-brand-sulu focus:outline-none"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="desktopWorkMenu"
+                    type="button"
+                  >
+                    <span>Work</span>
+                    <svg
+                      class="h-4 w-4 transition-transform duration-150 group-focus-within:rotate-180 group-hover:rotate-180 text-brand-accent"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    id="desktopWorkMenu"
+                    role="menu"
+                    class="absolute left-0 top-full z-50 mt-2 w-[170px] rounded-xl bg-white shadow-md border border-brand-accent/30 invisible opacity-0 translate-y-1 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+                  >
+                    <ul class="py-1 text-[13.5px]">
+                      <li>
+                        <a
+                          href="web-design-case-studies.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                        >
+                          Web Design
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="collections-gardens.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                        >
+                          Photography
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- SERVICES DROPDOWN (DESKTOP) -->
+                <div class="relative group" id="desktopServicesGroup">
+                  <button
+                    id="desktopServicesButton"
+                    class="inline-flex items-center gap-1 text-brand-black hover:text-brand-sulu focus:outline-none"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="desktopServicesMenu"
+                    type="button"
+                  >
+                    <span>Services</span>
+                    <svg
+                      class="h-4 w-4 transition-transform duration-150 group-focus-within:rotate-180 group-hover:rotate-180 text-brand-accent"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    id="desktopServicesMenu"
+                    role="menu"
+                    class="absolute left-0 top-full z-50 mt-2 w-[170px] rounded-xl bg-white shadow-md border border-brand-accent/30 invisible opacity-0 translate-y-1 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+                  >
+                    <ul class="py-1 text-[13.5px]">
+                      <li>
+                        <a
+                          href="bespoke-websites.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                        >
+                          Bespoke Websites
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="website-refresh.html"
+                          class="block px-2.5 py-[6px] text-brand-black hover:bg-brand-accent/10 rounded-md text-center tracking-[0.01em]"
+                          role="menuitem"
+                        >
+                          Website Refresh
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <a
+                  href="about.html"
+                  class="text-brand-black hover:text-brand-sulu"
+                  >About</a
+                >
+                <a
+                  href="contact.html"
+                  class="text-brand-black hover:text-brand-sulu"
+                  >Contact</a
+                >
+
+                <!-- DESKTOP LANGUAGE TOGGLE -->
+                <div
+                  class="hidden lg:flex items-center rounded-full border border-brand-accent/40 bg-white/70 px-1 py-1"
+                  aria-label="Language selector"
+                >
+                  <a
+                    href="index.html"
+                    hreflang="en"
+                    lang="en"
+                    aria-current="page"
+                    class="inline-flex items-center justify-center rounded-full bg-brand-sulu px-3 py-1 text-[13px] font-medium text-brand-black"
+                    >EN</a
+                  >
+                  <span class="text-brand-black/30 text-xs" aria-hidden="true"
+                    >|</span
+                  >
+                  <a
+                    href="index-fr.html"
+                    hreflang="fr"
+                    lang="fr"
+                    class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[13px] font-medium text-brand-black/70 transition hover:text-brand-black"
+                    >FR</a
+                  >
+                </div>
+              </nav>
+
+              <!-- MOBILE / IPAD LANGUAGE + MENU BUTTON -->
+              <div class="flex items-center gap-3 lg:hidden">
+                <div
+                  class="flex items-center rounded-full border border-brand-accent/40 bg-white/70 px-1 py-1"
+                  aria-label="Language selector"
+                >
+                  <a
+                    href="index.html"
+                    hreflang="en"
+                    lang="en"
+                    aria-current="page"
+                    class="inline-flex items-center justify-center rounded-full bg-brand-sulu px-3 py-1 text-[13px] font-medium text-brand-black"
+                    >EN</a
+                  >
+                  <span class="text-brand-black/30 text-xs" aria-hidden="true"
+                    >|</span
+                  >
+                  <a
+                    href="index-fr.html"
+                    hreflang="fr"
+                    lang="fr"
+                    class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[13px] font-medium text-brand-black/70 transition hover:text-brand-black"
+                    >FR</a
+                  >
+                </div>
+
+                <button
+                  id="menuBtn"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full text-brand-accent hover:bg-brand-gray/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50"
+                  aria-label="Open menu"
+                  aria-controls="siteMenu"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 7h16M4 12h16M4 17h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- ==================== MOBILE MENU ==================== -->
+        <nav
+          id="siteMenu"
+          class="fixed z-50 top-[var(--frame)] right-[var(--frame)] h-[calc(100dvh-2*var(--frame))] w-72 max-w-[80vw] bg-brand-carrara shadow-xl translate-x-full transition-transform duration-150"
+          aria-label="Site menu"
+          aria-hidden="true"
+          inert
+        >
+          <div class="flex h-full flex-col">
+            <!-- MOBILE MENU TOP BAR -->
+            <div
+              class="flex items-center justify-between p-4 border-b border-brand-accent/40"
+            >
+              <span class="text-base font-display text-brand-black">Menu</span>
+
+              <button
+                id="menuClose"
+                type="button"
+                class="p-2 rounded-full text-brand-accent hover:bg-brand-gray/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40"
+                aria-label="Close menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- MOBILE MENU LINKS -->
+            <ul
+              class="flex-grow overflow-y-auto px-4 py-5 space-y-2.5 text-[15px] leading-6"
+            >
+              <li>
+                <a
+                  href="index.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                  aria-current="page"
+                >
+                  Home
+                </a>
+              </li>
+
+              <!-- WORK -->
+              <li>
+                <button
+                  id="disclosureBtn"
+                  type="button"
+                  class="w-full flex items-center justify-between py-1.5 text-brand-black hover:text-brand-sulu"
+                  aria-expanded="false"
+                  aria-controls="disclosurePanel"
+                >
+                  <span>Work</span>
+                  <svg
+                    class="h-4 w-4 text-brand-accent transition-transform duration-150"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  id="disclosurePanel"
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-150 ease-in-out"
+                  hidden
+                >
+                  <ul
+                    class="pl-4 py-1 space-y-2 border-l border-brand-accent/40"
+                  >
+                    <li>
+                      <a
+                        href="web-design-case-studies.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                      >
+                        Web Design
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="collections-gardens.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                      >
+                        Photography
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- SERVICES -->
+              <li>
+                <button
+                  id="servicesDisclosureBtn"
+                  type="button"
+                  class="w-full flex items-center justify-between py-1.5 text-brand-black hover:text-brand-sulu"
+                  aria-expanded="false"
+                  aria-controls="servicesDisclosurePanel"
+                >
+                  <span>Services</span>
+                  <svg
+                    class="h-4 w-4 text-brand-accent transition-transform duration-150"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.17l3.71-2.94a.75.75 0 011.04 1.08l-4.23 3.35a.75.75 0 01-.94 0L5.21 8.31a.75.75 0 01.02-1.1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  id="servicesDisclosurePanel"
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-150 ease-in-out"
+                  hidden
+                >
+                  <ul
+                    class="pl-4 py-1 space-y-2 border-l border-brand-accent/40"
+                  >
+                    <li>
+                      <a
+                        href="bespoke-websites.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                      >
+                        Bespoke Websites
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="website-refresh.html"
+                        class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                      >
+                        Website Refresh
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a
+                  href="about.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                >
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  class="block py-1.5 text-brand-black hover:text-brand-sulu"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- ==================== MENU OVERLAY ==================== -->
+        <div
+          id="menuOverlay"
+          class="fixed z-40 inset-[var(--frame)] bg-brand-black/60 opacity-0 pointer-events-none transition-opacity duration-150"
+          aria-hidden="true"
+        ></div>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main id="main">
+          <!-- HERO -->
+          <section class="mb-0">
+            <div
+              class="relative w-full h-[60svh] sm:h-[70svh] md:h-[80svh] lg:h-[88svh] overflow-hidden"
+            >
+              <div class="absolute inset-0 dot-grid z-0"></div>
+
+              <!-- Static hero fallback (SEO + LCP) -->
+
+              <img
+                src="assets/portfolio-images/lbylian-hero.jpg"
+                alt="UX/UI website and mobile interface design work by L by Lian."
+                width="1600"
+                height="1067"
+                class="absolute inset-0 w-full h-full object-cover z-10"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/lbylian-hero.jpg';"
+              />
+
+              <div
+                id="heroStage"
+                class="hero-animates absolute inset-0 z-20"
+              ></div>
+
+              <noscript>
+                <img
+                  src="assets/portfolio-images/catriona-case.jpg"
+                  alt="Soft summer light over a tranquil urban garden photographed by L by Lian."
+                  width="1600"
+                  height="1067"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+              </noscript>
+
+              <div
+                class="absolute right-4 bottom-4 sm:right-6 sm:bottom-6 z-30 flex items-center gap-3"
+              >
+                <a
+                  href="web-design-case-studies.html"
+                  class="inline-flex items-center justify-center px-4 sm:px-5 h-10 sm:h-11 rounded-full bg-brand-sulu text-brand-black text-sm sm:text-[15px] leading-none whitespace-nowrap font-display shadow-sm hover:bg-brand-sulu/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40 transition"
+                >
+                  View case studies
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- HEADLINE BAND -->
+          <div class="edge-x">
+            <div class="wrap mx-auto pt-7 md:pt-10 lg:pt-14">
+              <div
+                id="arrowStage"
+                class="relative grid grid-cols-1 md:grid-cols-12 md:gap-12 lg:gap-16 items-start"
+              >
+                <!-- Sulu arrow -->
+                <svg
+                  id="suluArrow"
+                  class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 md:w-[160px] lg:w-[200px] xl:w-[240px] h-auto text-brand-sulu pointer-events-none z-0"
+                  viewBox="0 0 160 160"
+                  aria-hidden="true"
+                >
+                  <polygon points="0,16 0,144 160,80" fill="currentColor" />
+                </svg>
+
+                <div class="md:col-span-3 relative"></div>
+
+                <div class="md:col-span-9 md:pl-4 lg:pl-8">
+                  <!-- Location Eyebrow -->
+                  <p
+                    class="text-xs uppercase tracking-[0.28em] text-brand-gray/80 md:ml-1 lg:ml-2"
+                  >
+                    Sheffield
+                    <span
+                      class="text-brand-accent inline-block align-middle text-[2em] leading-none"
+                      >&middot;</span
+                    >
+                    London
+                    <span
+                      class="text-brand-accent inline-block align-middle text-[2em] leading-none"
+                      >&middot;</span
+                    >
+                    Paris
+                  </p>
+
+                  <!-- Headline -->
+                  <h1
+                    class="mt-6 poster font-headline text-brand-black max-w-xl md:max-w-2xl xl:max-w-3xl leading-[1.08] md:leading-[1.02] tracking-[-0.02em]"
+                  >
+                    <span class="block">Your work is already good.</span>
+                  </h1>
+
+                  <!-- Supporting copy -->
+                  <p
+                    id="subline"
+                    class="mt-6 md:mt-8 text-xl md:text-2xl lg:text-3xl text-brand-black/80 max-w-xl md:max-w-2xl leading-snug opacity-0 translate-y-3 transition-all duration-[1200ms] ease-[cubic-bezier(.2,.8,.2,1)]"
+                  >
+                    I make it easier to see.
+                  </p>
+
+                  <p
+                    class="mt-3 md:mt-4 text-sm md:text-base text-brand-black/70 max-w-xl md:max-w-2xl leading-relaxed"
+                  >
+                    For clients to choose you.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr
+            class="mt-12 md:mt-16 mb-8 md:mb-10 border-0 border-t border-brand-accent w-full"
+          />
+
+          <!-- FEATURED WORK -->
+          <section
+            id="work"
+            class="py-12 md:py-16 border-y border-brand-accent/30 bg-white/40"
+          >
+            <div class="edge-x">
+              <div class="wrap mx-auto grid md:grid-cols-2 gap-6 items-start">
+                <figure class="group">
+                  <img
+                    src="sheffield-city-guide-app.jpg"
+                    alt="Secret Sheffield — city guide app case study"
+                    width="2048"
+                    height="2022"
+                    class="h-[300px] sm:h-[360px] md:h-[420px] w-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-[1.03]"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/sheffield-city-guide-app.jpg';"
+                  />
+
+                  <figcaption class="mt-2 text-sm text-black/60">
+                    Secret Spot: Sheffield — a city guide concept designed to
+                    make local discovery simple and enjoyable.
+                  </figcaption>
+                </figure>
+
+                <div class="pt-1">
+                  <p
+                    class="text-[12px] uppercase tracking-[0.18em] text-black/50 mb-1"
+                  >
+                    Selected work
+                  </p>
+
+                  <h2
+                    class="font-display text-3xl font-semibold tracking-[-0.01em]"
+                  >
+                    Web design
+                  </h2>
+
+                  <p class="mt-3 text-black/70 leading-[1.65] max-w-prose">
+                    for garden designers, independent artists, and creative
+                    studios
+                  </p>
+
+                  <a
+                    href="web-design-case-studies.html"
+                    class="mt-5 inline-flex items-center justify-center px-4 sm:px-5 h-10 sm:h-11 rounded-full bg-brand-sulu text-brand-black text-sm sm:text-[15px] leading-none whitespace-nowrap font-display shadow-sm hover:bg-brand-sulu/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40 transition"
+                  >
+                    View case studies
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mt-12 md:mt-16 pb-10 md:pb-14">
+            <div class="edge-x">
+              <div class="wrap mx-auto">
+                <p
+                  class="text-[12px] uppercase tracking-[0.18em] text-black/50 mb-2"
+                >
+                  What I do
+                </p>
+
+                <h2
+                  class="font-display text-2xl md:text-3xl font-semibold tracking-[-0.02em] text-brand-black"
+                >
+                  Work with more than one angle
+                </h2>
+
+                <p class="mt-3 text-black/70 text-sm md:text-base max-w-prose">
+                  Some work is strong, but not immediately understood. I change
+                  how it’s seen.
+                </p>
+
+                <p class="mt-3 text-black/70 text-sm md:text-base max-w-prose">
+                  I work closely with you to decide what appears first, what
+                  holds attention, and what can be removed. I organise
+                  structure, refine hierarchy, and edit images so the work reads
+                  clearly and quickly.
+                </p>
+
+                <ul class="mt-4 space-y-1.5 text-sm text-black/80 dot-list">
+                  <li>Clarifying what is seen first</li>
+                  <li>Restructuring pages so projects read instantly</li>
+                  <li>Editing content and images to remove friction</li>
+                  <li>Making the site feel coherent, not assembled</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- TESTIMONIALS -->
+          <section
+            class="relative isolate band-tight band-carrara bg-white/40 border-y border-brand-accent/30"
+          >
+            <div class="edge-x">
+              <div class="wrap mx-auto">
+                <div class="belt-frame">
+                  <div
+                    id="quotes"
+                    class="relative mt-1 md:mt-2"
+                    aria-live="polite"
+                  >
+                    <!-- testimonial injected by JS -->
+                  </div>
+
+                  <div class="quote-arrows">
+                    <nav aria-label="Testimonial navigation">
+                      <button
+                        id="quotePrev"
+                        type="button"
+                        class="arrow-btn"
+                        aria-label="Previous testimonial"
+                      >
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M14 18l-6-6 6-6"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                          />
+                        </svg>
+                      </button>
+
+                      <button
+                        id="quoteNext"
+                        type="button"
+                        class="arrow-btn"
+                        aria-label="Next testimonial"
+                      >
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M10 6l6 6-6 6"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                          />
+                        </svg>
+                      </button>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOW I WORK -->
+          <section class="py-16 md:py-24">
+            <div class="edge-x">
+              <div class="wrap mx-auto">
+                <div class="max-w-2xl mb-12">
+                  <h2
+                    class="font-display text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-brand-black"
+                  >
+                    How I work
+                  </h2>
+
+                  <p class="mt-3 text-black/70">
+                    Most websites are judged in seconds. What matters is what
+                    people see first, what they understand quickly, and what
+                    makes them keep reading. I help you get that right.
+                  </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-x-10 gap-y-12">
+                  <article>
+                    <div class="text-brand-black text-sm">01</div>
+                    <div class="rule-squares mt-2"></div>
+
+                    <h3
+                      class="mt-5 font-display text-2xl font-semibold text-brand-black"
+                    >
+                      First conversation
+                    </h3>
+
+                    <p class="mt-2 text-black/70">
+                      We start with a call. I ask direct questions, challenge
+                      anything unclear, and help you focus on what actually
+                      needs to be seen first.
+                    </p>
+                  </article>
+
+                  <article>
+                    <div class="text-brand-black text-sm">02</div>
+                    <div class="rule-squares mt-2"></div>
+
+                    <h3
+                      class="mt-5 font-display text-2xl font-semibold text-brand-black"
+                    >
+                      Shape and structure
+                    </h3>
+
+                    <p class="mt-2 text-black/70">
+                      You send copy, images, and whatever you have. I sort it,
+                      remove what weakens the message, and structure everything
+                      so people move through it easily.
+                    </p>
+                  </article>
+
+                  <article>
+                    <div class="text-brand-black text-sm">03</div>
+                    <div class="rule-squares mt-2"></div>
+
+                    <h3
+                      class="mt-5 font-display text-2xl font-semibold text-brand-black"
+                    >
+                      Refine and launch
+                    </h3>
+
+                    <p class="mt-2 text-black/70">
+                      We review together and make the final decisions. I suggest
+                      what to adjust, tighten, or cut so the site feels clear
+                      fast and is ready to go live.
+                    </p>
+                  </article>
+                </div>
+
+                <p class="mt-16 md:mt-24 text-sm text-black/60">
+                  You can read more about my background and process on the
+                  <a
+                    href="about.html"
+                    class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                  >
+                    About page </a
+                  >.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- MINI CONTACT CTA -->
+          <section class="pt-2 pb-8 md:pt-2 md:pb-10">
+            <div class="edge-x">
+              <div class="wrap mx-auto">
+                <div
+                  class="rounded-2xl bg-white/60 ring-1 ring-brand-accent/60 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5 md:gap-8"
+                >
+                  <div class="max-w-xl">
+                    <p
+                      class="text-[12px] uppercase tracking-[0.18em] text-black/50 mb-2"
+                    >
+                      Contact
+                    </p>
+
+                    <h2
+                      class="font-display text-2xl md:text-3xl font-semibold tracking-[-0.02em] text-brand-black"
+                    >
+                      Ready to make the site work harder?
+                    </h2>
+                    <p class="mt-2 text-black/70 text-sm md:text-base md:whitespace-nowrap">
+                      Send what you have. I’ll show you what’s working, what’s not, and how to improve it.
+                    </p>
+                  </div>
+
+                  <div
+                    class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 w-full md:w-auto"
+                  >
+                    <a
+                      href="mailto:hello@lbylian.com"
+                      class="inline-flex items-center justify-center px-4 sm:px-5 min-h-[44px] rounded-full bg-brand-sulu text-brand-black text-sm sm:text-[15px] text-center leading-tight font-display shadow-sm hover:bg-brand-sulu/90"
+                    >
+                      Share your work
+                    </a>
+
+                    <a
+                      href="contact.html"
+                      class="inline-flex items-center justify-center px-4 sm:px-5 min-h-[44px] rounded-full ring-1 ring-brand-accent/40 text-brand-black text-sm sm:text-[15px] text-center leading-tight hover:bg-brand-accent/10"
+                    >
+                      Contact
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CLIENTS BELT -->
+          <section
+            aria-label="Selected clients"
+            class="clients-band bg-white/40"
+          >
+            <div class="edge-x">
+              <div
+                class="wrap mx-auto py-12 md:py-16 belt-frame clients-band-inner"
+              >
+                <div class="flex flex-col gap-2 mb-3">
+                  <h3
+                    class="font-display text-sm sm:text-base tracking-[-0.02em] text-brand-black"
+                  >
+                    Who I've worked with
+                  </h3>
+                  <p
+                    class="max-w-2xl text-[13px] sm:text-sm text-brand-black/70 leading-relaxed"
+                  >
+                    Paris → London → Sheffield. First through photography in
+                    Elle, Cosmopolitan, Libération, Madame Figaro, Vanity Fair.
+                    Campaigns for creative agencies. Now digital design for
+                    studios who make real work.
+                  </p>
+                </div>
+
+                <div class="clients-belt">
+                  <div
+                    class="marquee-track flex gap-4 md:gap-6 whitespace-nowrap"
+                  >
+                    <div class="flex gap-4 md:gap-6 shrink-0 pr-6">
+                      <div class="client-pill"><span>BETC · Paris</span></div>
+                      <div class="client-pill">
+                        <span>Young &amp; Rubicam · Paris</span>
+                      </div>
+                      <div class="client-pill"><span>DDB · Paris</span></div>
+                      <div class="client-pill">
+                        <span>Eurostar Magazine</span>
+                      </div>
+                      <div class="client-pill"><span>Elle · FR</span></div>
+                      <div class="client-pill">
+                        <span>Cosmopolitan · UK / FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Libération · FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Madame Figaro · FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Saatchi &amp; Saatchi · FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Catriona Rowbotham</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Vanity Fair · UK</span>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex gap-4 md:gap-6 shrink-0 pr-6"
+                      aria-hidden="true"
+                    >
+                      <div class="client-pill"><span>BETC · Paris</span></div>
+                      <div class="client-pill">
+                        <span>Young &amp; Rubicam · Paris</span>
+                      </div>
+                      <div class="client-pill"><span>DDB · Paris</span></div>
+                      <div class="client-pill">
+                        <span>Eurostar Magazine</span>
+                      </div>
+                      <div class="client-pill"><span>Elle · FR</span></div>
+                      <div class="client-pill">
+                        <span>Cosmopolitan · UK / FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Libération · FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Madame Figaro · FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Saatchi &amp; Saatchi · FR</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Catriona Rowbotham Garden Designs</span>
+                      </div>
+                      <div class="client-pill">
+                        <span>Vanity Fair · UK</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p
+                    class="mt-3 text-[12px] text-brand-black/50 tracking-[0.16em] uppercase"
+                  >
+                    Editorial, advertising &amp; digital commissions
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Back to top -->
+          <button
+            id="backToTop"
+            class="fixed z-50 invisible opacity-0 pointer-events-none flex items-center justify-center rounded-full bg-brand-accent text-brand-black shadow-lg ring-1 ring-black/10 right-[calc(var(--frame)+16px)] bottom-[calc(var(--frame)+16px)] w-12 h-12 md:w-14 md:h-14 hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+            aria-label="Back to top"
+            title="Back to top"
+            type="button"
+          >
+            <svg
+              viewBox="0 0 100 100"
+              class="w-6 h-6 md:w-7 md:h-7"
+              aria-hidden="true"
+            >
+              <path
+                d="M20 65 L50 35 L80 65 L70 65 L50 45 L30 65 Z"
+                fill="#ff1fa9"
+                stroke="#ff1fa9"
+                stroke-width="6"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </main>
+
+        <!-- FOOTER -->
+        <footer
+          id="contact"
+          class="border-t border-brand-accent/30 bg-white/40"
+        >
+          <div class="edge-x">
+            <div class="wrap mx-auto py-10 md:py-12">
+              <div class="flex flex-col items-center gap-8">
+                <!-- Logo -->
+                <div class="flex justify-center">
+                  <svg
+                    class="block h-12 w-12 text-brand-black"
+                    viewBox="0 0 320 240"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="120"
+                      y="40"
+                      width="56"
+                      height="200"
+                      rx="6"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="200"
+                      y="176"
+                      width="64"
+                      height="64"
+                      rx="4"
+                      fill="currentColor"
+                    />
+                    <circle cx="232" cy="150" r="18" fill="#bff47b" />
+                  </svg>
+                </div>
+
+                <!-- Contact + studio intro -->
+                <div
+                  class="text-center text-sm text-brand-black/70 max-w-lg space-y-3 leading-relaxed"
+                >
+                  <p>
+                    <a
+                      href="mailto:hello@lbylian.com"
+                      class="hover:text-brand-black transition"
+                    >
+                      hello@lbylian.com
+                    </a>
+                  </p>
+
+                  <p class="text-brand-black">
+                    Made-to-measure websites for garden designers, artists and
+                    creative studios, with selected garden photography.
+                  </p>
+
+                  <p class="text-brand-black/60 text-xs max-w-md mx-auto">
+                    L by Lian is a Sheffield-based studio working across web
+                    design, image curation, and selected photographic
+                    commissions.
+                  </p>
+
+                  <p class="text-xs text-brand-black/70">
+                    Web design projects available year-round. Photography
+                    commissions by enquiry.
+                  </p>
+                </div>
+
+                <!-- Social -->
+                <nav aria-label="Social" class="flex items-center gap-3">
+                  <!-- Instagram -->
+                  <a
+                    class="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-brand-accent text-brand-black shadow-sm hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+                    href="https://www.instagram.com/lbylian/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram: @lbylian"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="w-5 h-5 md:w-6 md:h-6"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+                    </svg>
+                  </a>
+
+                  <!-- LinkedIn -->
+                  <a
+                    class="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-brand-accent text-brand-black shadow-sm hover:bg-brand-accent/90 active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+                    href="https://www.linkedin.com/in/lianli23/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn: Lian Li"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="w-5 h-5 md:w-6 md:h-6"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                      <path
+                        d="M7 17v-7m0-3v.01M11 17v-4.5a2.5 2.5 0 0 1 5 0V17"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      />
+                    </svg>
+                  </a>
+                </nav>
+
+                <!-- Legal -->
+                <div class="text-center text-xs text-brand-black space-y-1">
+                  <div>© <span id="year"></span> L by Lian · Sheffield, UK</div>
+
+                  <div
+                    class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-brand-black/70"
+                  >
+                    <a
+                      href="privacy-policy.html"
+                      rel="nofollow"
+                      class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                    >
+                      Privacy Policy
+                    </a>
+
+                    <span aria-hidden="true">•</span>
+
+                    <a
+                      href="t-and-c.html"
+                      rel="nofollow"
+                      class="underline decoration-brand-accent decoration-2 underline-offset-4 hover:text-brand-black"
+                    >
+                      Terms &amp; Conditions
+                    </a>
+                  </div>
+
+                  <div class="text-brand-black/60">
+                    By using this website you agree to the Terms &amp;
+                    Conditions.
+                  </div>
+
+                  <div class="text-brand-black/70">
+                    Design &amp; photography by L by Lian.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- JS (menu + disclosure + year + image fallbacks) -->
+        <script>
+          // Fallback helper: try multiple URLs in order
+          function nextSrc(img) {
+            const urls = Array.prototype.slice.call(arguments, 1);
+            const i = parseInt(img.dataset.fbi || "0", 10);
+            if (i >= urls.length) {
+              img.onerror = null;
+              return;
+            }
+            img.dataset.fbi = i + 1;
+            img.src = urls[i];
+          }
+
+          document.addEventListener("DOMContentLoaded", () => {
+            const yearEl = document.getElementById("year");
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            const $ = (sel) => document.querySelector(sel);
+            const btn = $("#menuBtn"),
+              menu = $("#siteMenu"),
+              closeBtn = $("#menuClose"),
+              overlay = $("#menuOverlay"),
+              disBtn = $("#disclosureBtn"),
+              panel = $("#disclosurePanel");
+
+            const servicesDisBtn = $("#servicesDisclosureBtn"),
+              servicesPanel = $("#servicesDisclosurePanel");
+
+            const reduceMotion = window.matchMedia(
+              "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            function openMenu() {
+              menu.removeAttribute("inert");
+              menu.classList.remove("translate-x-full");
+              overlay.classList.remove("opacity-0", "pointer-events-none");
+              overlay.classList.add("opacity-100");
+              document.body.classList.add("overflow-hidden");
+              btn.setAttribute("aria-expanded", "true");
+              menu.setAttribute("aria-hidden", "false");
+            }
+
+            function closeMenu() {
+              menu.setAttribute("inert", "");
+              menu.classList.add("translate-x-full");
+              overlay.classList.add("opacity-0", "pointer-events-none");
+              overlay.classList.remove("opacity-100");
+              document.body.classList.remove("overflow-hidden");
+              btn.setAttribute("aria-expanded", "false");
+              menu.setAttribute("aria-hidden", "true");
+            }
+
+            btn?.addEventListener("click", openMenu);
+            closeBtn?.addEventListener("click", closeMenu);
+            overlay?.addEventListener("click", closeMenu);
+
+            document.addEventListener("keydown", (e) => {
+              if (e.key === "Escape") closeMenu();
+            });
+
+            disBtn?.addEventListener("click", () => {
+              const expanded = disBtn.getAttribute("aria-expanded") === "true";
+              disBtn.setAttribute("aria-expanded", String(!expanded));
+              (disBtn.querySelector("svg") || {}).classList?.toggle?.(
+                "rotate-180",
+                !expanded
+              );
+
+              if (!expanded) {
+                panel.hidden = false;
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              } else {
+                panel.style.maxHeight = "0px";
+                if (reduceMotion) {
+                  panel.hidden = true;
+                } else {
+                  const onEnd = (event) => {
+                    if (event.propertyName !== "max-height") return;
+                    if (disBtn.getAttribute("aria-expanded") === "false")
+                      panel.hidden = true;
+                    panel.removeEventListener("transitionend", onEnd);
+                  };
+                  panel.addEventListener("transitionend", onEnd);
+                }
+              }
+            });
+
+            if (panel) {
+              panel.hidden = true;
+              if (reduceMotion) panel.style.transition = "none";
+            }
+
+            servicesDisBtn?.addEventListener("click", () => {
+              const expanded =
+                servicesDisBtn.getAttribute("aria-expanded") === "true";
+
+              servicesDisBtn.setAttribute("aria-expanded", String(!expanded));
+              (servicesDisBtn.querySelector("svg") || {}).classList?.toggle?.(
+                "rotate-180",
+                !expanded
+              );
+
+              if (!expanded) {
+                servicesPanel.hidden = false;
+                servicesPanel.style.maxHeight =
+                  servicesPanel.scrollHeight + "px";
+              } else {
+                servicesPanel.style.maxHeight = "0px";
+                if (reduceMotion) {
+                  servicesPanel.hidden = true;
+                } else {
+                  const onEnd = (event) => {
+                    if (event.propertyName !== "max-height") return;
+                    if (
+                      servicesDisBtn.getAttribute("aria-expanded") === "false"
+                    ) {
+                      servicesPanel.hidden = true;
+                    }
+                    servicesPanel.removeEventListener("transitionend", onEnd);
+                  };
+                  servicesPanel.addEventListener("transitionend", onEnd);
+                }
+              }
+            });
+
+            if (servicesPanel) {
+              servicesPanel.hidden = true;
+              if (reduceMotion) servicesPanel.style.transition = "none";
+            }
+
+            /* Desktop Work dropdown */
+            const desktopWorkBtn = document.getElementById("desktopWorkButton");
+            const desktopWorkMenu = document.getElementById("desktopWorkMenu");
+            const desktopWorkGroup =
+              document.getElementById("desktopWorkGroup");
+
+            if (desktopWorkBtn && desktopWorkMenu && desktopWorkGroup) {
+              const setDesktopExpanded = (value) =>
+                desktopWorkBtn.setAttribute(
+                  "aria-expanded",
+                  value ? "true" : "false"
+                );
+
+              desktopWorkBtn.addEventListener("click", () => {
+                const expanded =
+                  desktopWorkBtn.getAttribute("aria-expanded") === "true";
+                setDesktopExpanded(!expanded);
+                if (!expanded) {
+                  const first = desktopWorkMenu.querySelector(
+                    "a[href], button:not([disabled])"
+                  );
+                  first?.focus?.();
+                }
+              });
+
+              desktopWorkGroup.addEventListener("mouseenter", () =>
+                setDesktopExpanded(true)
+              );
+              desktopWorkGroup.addEventListener("mouseleave", () =>
+                setDesktopExpanded(false)
+              );
+              desktopWorkGroup.addEventListener("focusin", () =>
+                setDesktopExpanded(true)
+              );
+              desktopWorkGroup.addEventListener("focusout", (e) => {
+                if (
+                  !e.relatedTarget ||
+                  !desktopWorkGroup.contains(e.relatedTarget)
+                )
+                  setDesktopExpanded(false);
+              });
+
+              document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") setDesktopExpanded(false);
+              });
+            }
+
+            /* Desktop Services dropdown */
+            const desktopServicesBtn = document.getElementById(
+              "desktopServicesButton"
+            );
+            const desktopServicesMenu = document.getElementById(
+              "desktopServicesMenu"
+            );
+            const desktopServicesGroup = document.getElementById(
+              "desktopServicesGroup"
+            );
+
+            if (
+              desktopServicesBtn &&
+              desktopServicesMenu &&
+              desktopServicesGroup
+            ) {
+              const setDesktopServicesExpanded = (value) =>
+                desktopServicesBtn.setAttribute(
+                  "aria-expanded",
+                  value ? "true" : "false"
+                );
+
+              desktopServicesBtn.addEventListener("click", () => {
+                const expanded =
+                  desktopServicesBtn.getAttribute("aria-expanded") === "true";
+                setDesktopServicesExpanded(!expanded);
+                if (!expanded) {
+                  const first = desktopServicesMenu.querySelector(
+                    "a[href], button:not([disabled])"
+                  );
+                  first?.focus?.();
+                }
+              });
+
+              desktopServicesGroup.addEventListener("mouseenter", () =>
+                setDesktopServicesExpanded(true)
+              );
+              desktopServicesGroup.addEventListener("mouseleave", () =>
+                setDesktopServicesExpanded(false)
+              );
+              desktopServicesGroup.addEventListener("focusin", () =>
+                setDesktopServicesExpanded(true)
+              );
+              desktopServicesGroup.addEventListener("focusout", (e) => {
+                if (
+                  !e.relatedTarget ||
+                  !desktopServicesGroup.contains(e.relatedTarget)
+                ) {
+                  setDesktopServicesExpanded(false);
+                }
+              });
+
+              document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") setDesktopServicesExpanded(false);
+              });
+            }
+
+            window.addEventListener("pagehide", () =>
+              document.body.classList.remove("overflow-hidden")
+            );
+            document.addEventListener("visibilitychange", () => {
+              if (document.visibilityState === "hidden")
+                document.body.classList.remove("overflow-hidden");
+            });
+          });
+        </script>
+
+        <!-- BACK TO TOP -->
+        <script>
+          (function () {
+            const backToTop = document.getElementById("backToTop");
+            if (!backToTop) return;
+
+            const toggle = () => {
+              backToTop.classList.toggle("invisible", window.scrollY < 400);
+              backToTop.classList.toggle("opacity-0", window.scrollY < 400);
+              backToTop.classList.toggle(
+                "pointer-events-none",
+                window.scrollY < 400
+              );
+            };
+
+            backToTop.addEventListener("click", () => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            toggle();
+            window.addEventListener("scroll", toggle, {
+              passive: true,
+            });
+          })();
+        </script>
+
+        <!-- JS: Hero slideshow (phone row + image slides) -->
+
+        <script>
+          (() => {
+            const stage = document.getElementById("heroStage");
+            if (!stage) return;
+
+            const prefersReduced = window.matchMedia(
+              "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            const motionDuration = 2600;
+            const stillDuration = 3200;
+            const slideDuration = motionDuration + stillDuration;
+            const fadeDuration = 800;
+
+            const phoneRiseDuration = 700;
+            const phoneTick = 450;
+            const phoneStillDuration = 3600;
+
+            let idx = 0;
+            const modes = ["top", "bottom", "center"];
+            const slides = [
+              {
+                type: "image",
+                src: "assets/portfolio-images/catriona-hero-image.jpg",
+                alt: "Soft summer light over a tranquil urban garden",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/catriona-hero-image.jpg",
+              },
+              {
+                type: "image",
+                src: "assets/portfolio-images/lbylian-hero.jpg",
+                alt: "Digital design mockup showing L by Lian across multiple Apple devices.",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/lbylian-hero.jpg",
+                speedFactor: 0.6,
+                fit: "auto",
+                bg: "#050608",
+              },
+              {
+                type: "phonesRow",
+                phones: [
+                  {
+                    src: "1.png",
+                    fallback:
+                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/1.png",
+                  },
+                  {
+                    src: "2.png",
+                    fallback:
+                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/2.png",
+                  },
+                  {
+                    src: "3.png",
+                    fallback:
+                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/3.png",
+                  },
+                  {
+                    src: "4.png",
+                    fallback:
+                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/4.png",
+                  },
+                  {
+                    src: "5.png",
+                    fallback:
+                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/5.png",
+                  },
+                ],
+              },
+            ];
+
+            const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+            function showHeroPlaceholder() {
+              stage.innerHTML = `
+<div class="absolute inset-0 flex items-center justify-center px-6 text-center">
+  <div class="rounded-2xl bg-white/70 ring-1 ring-black/10 px-5 py-4 backdrop-blur">
+    <p class="text-sm md:text-base text-brand-black font-semibold">Preview unavailable</p>
+    <p class="mt-1 text-xs md:text-sm text-brand-gray">Hero images couldn’t be loaded.</p>
+  </div>
+</div>
+`;
+            }
+
+            function makeFrame(source) {
+              const isContain = source.fit === "contain";
+
+              const wrap = document.createElement("figure");
+              wrap.className = isContain
+                ? "absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center"
+                : "absolute inset-0 w-full h-full overflow-hidden";
+
+              if (source.bg) wrap.style.backgroundColor = source.bg;
+
+              const img = document.createElement("img");
+              img.src = source.src;
+              img.alt = source.alt || "";
+              img.loading = "eager";
+              img.decoding = "async";
+
+              if (isContain) {
+                wrap.style.padding = "clamp(12px, 3vw, 28px)";
+                img.className =
+                  "w-full h-full object-contain will-change-transform";
+                img.style.maxWidth = "1400px";
+                img.style.maxHeight = "100%";
+              } else {
+                img.className =
+                  "absolute inset-0 w-full h-full object-cover will-change-transform";
+              }
+
+              wrap.appendChild(img);
+              return { wrap, img };
+            }
+
+            async function showImage(slide, mode) {
+              const source =
+                slide && typeof slide === "object" ? slide : { src: slide };
+
+              stage.style.backgroundImage = "none";
+              stage.style.backgroundColor = source.bg || "#050608";
+
+              const speedFactor = source.speedFactor || 1;
+              const totalSlideDuration = slideDuration * speedFactor;
+              const motionMs = motionDuration * speedFactor;
+
+              const { wrap, img } = makeFrame(source);
+              stage.innerHTML = "";
+              stage.appendChild(wrap);
+
+              const loadOk = await new Promise((resolve) => {
+                const done = (ok) => resolve(ok);
+                img.onload = () => done(true);
+
+                if (source.fallback) {
+                  img.onerror = () => {
+                    img.onerror = null;
+                    img.src = source.fallback;
+
+                    img.onload = () => done(true);
+                    img.onerror = () => done(false);
+                  };
+                } else {
+                  img.onerror = () => done(false);
+                }
+              });
+
+              if (!loadOk) {
+                showHeroPlaceholder();
+                await wait(totalSlideDuration);
+                return;
+              }
+
+              if (!prefersReduced) {
+                const common = {
+                  duration: motionMs,
+                  easing: "cubic-bezier(.2,.8,.2,1)",
+                  fill: "both",
+                };
+
+                if (mode === "top") {
+                  img.animate(
+                    [
+                      {
+                        transform: "translate3d(0,-30%,0) scale(1.05)",
+                        opacity: 0,
+                      },
+                      {
+                        transform: "translate3d(0,0,0) scale(1)",
+                        opacity: 1,
+                      },
+                    ],
+                    common
+                  );
+                } else if (mode === "bottom") {
+                  img.animate(
+                    [
+                      {
+                        transform: "translate3d(0,30%,0) scale(1.05)",
+                        opacity: 0,
+                      },
+                      {
+                        transform: "translate3d(0,0,0) scale(1)",
+                        opacity: 1,
+                      },
+                    ],
+                    common
+                  );
+                } else {
+                  wrap.animate(
+                    [
+                      { clipPath: "inset(50% 0 50% 0)", opacity: 0 },
+                      { clipPath: "inset(0 0 0 0)", opacity: 1 },
+                    ],
+                    common
+                  );
+
+                  img.animate(
+                    [{ transform: "scale(1.06)" }, { transform: "scale(1)" }],
+                    {
+                      duration: motionMs,
+                      easing: "ease-out",
+                      fill: "both",
+                    }
+                  );
+                }
+              }
+
+              const visibleDuration = Math.max(
+                0,
+                totalSlideDuration - fadeDuration
+              );
+              await wait(visibleDuration);
+
+              wrap.animate([{ opacity: 1 }, { opacity: 0 }], {
+                duration: fadeDuration,
+                easing: "cubic-bezier(.2,.8,.2,1)",
+                fill: "forwards",
+              });
+
+              await wait(fadeDuration);
+            }
+
+            function setPhonesBackground() {
+              const local = "03-evening-pathway-detail.jpg";
+              const fallback =
+                "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/03-evening-pathway-detail.jpg";
+
+              stage.style.backgroundSize = "cover";
+              stage.style.backgroundPosition = "center";
+              stage.style.backgroundRepeat = "no-repeat";
+
+              const bg = new Image();
+              bg.onload = () =>
+                (stage.style.backgroundImage = `url('${local}')`);
+              bg.onerror = () =>
+                (stage.style.backgroundImage = `url('${fallback}')`);
+              bg.src = local;
+            }
+
+            async function showPhonesRow(phones) {
+              stage.innerHTML = "";
+              setPhonesBackground();
+
+              const isSmall = window.matchMedia("(max-width: 640px)").matches;
+              const isMedium = window.matchMedia("(max-width: 1024px)").matches;
+
+              const visiblePhones = isSmall
+                ? phones.slice(0, 2)
+                : isMedium
+                ? phones.slice(0, 3)
+                : phones;
+
+              const row = document.createElement("div");
+              row.className =
+                "relative w-full h-full flex items-center justify-center gap-[clamp(0.75rem,2vw,2.5rem)]";
+              stage.appendChild(row);
+
+              const tick = prefersReduced ? 0 : phoneTick;
+
+              const results = await Promise.all(
+                visiblePhones.map((phone, i) => {
+                  const ph = document.createElement("div");
+                  ph.className =
+                    "phone w-[42vw] max-w-[240px] min-w-[140px] aspect-[9/19.5] bg-black/70 overflow-hidden rounded-[1.8rem] shadow-xl opacity-0";
+
+                  const img = document.createElement("img");
+                  img.src = phone.src;
+                  img.alt = "";
+                  img.loading = "eager";
+                  img.decoding = "async";
+                  img.className = "w-full h-full object-cover";
+
+                  const loaded = new Promise((resolve) => {
+                    img.onload = () => resolve(true);
+
+                    if (phone.fallback) {
+                      img.onerror = () => {
+                        img.onerror = null;
+                        img.src = phone.fallback;
+
+                        img.onload = () => resolve(true);
+                        img.onerror = () => resolve(false);
+                      };
+                    } else {
+                      img.onerror = () => resolve(false);
+                    }
+                  });
+
+                  ph.appendChild(img);
+                  row.appendChild(ph);
+
+                  if (!prefersReduced) {
+                    ph.animate(
+                      [
+                        {
+                          transform: "translate3d(0,40px,0) scale(.95)",
+                          opacity: 0,
+                        },
+                        {
+                          transform: "translate3d(0,0,0) scale(1)",
+                          opacity: 1,
+                        },
+                      ],
+                      {
+                        duration: phoneRiseDuration,
+                        delay: i * tick,
+                        easing: "cubic-bezier(.2,.8,.2,1)",
+                        fill: "forwards",
+                      }
+                    );
+                  } else {
+                    ph.style.opacity = 1;
+                  }
+
+                  return loaded;
+                })
+              );
+
+              if (!results.some(Boolean)) {
+                showHeroPlaceholder();
+                await wait(phoneRiseDuration + phoneStillDuration);
+                return;
+              }
+
+              const total =
+                (visiblePhones.length - 1) * tick +
+                phoneRiseDuration +
+                phoneStillDuration;
+              const visibleDuration = Math.max(0, total - fadeDuration);
+              await wait(visibleDuration);
+
+              row.animate([{ opacity: 1 }, { opacity: 0 }], {
+                duration: fadeDuration,
+                easing: "cubic-bezier(.2,.8,.2,1)",
+                fill: "forwards",
+              });
+
+              await wait(fadeDuration);
+            }
+
+            async function loop() {
+              const s = slides[idx % slides.length];
+              let mode = modes[idx % modes.length];
+
+              if (s.type === "image" && s.fit === "contain") mode = "center";
+
+              if (document.visibilityState === "hidden") {
+                await wait(slideDuration);
+              } else if (s.type === "phonesRow") {
+                await showPhonesRow(s.phones);
+              } else {
+                await showImage(s, mode);
+              }
+
+              idx++;
+              requestAnimationFrame(loop);
+            }
+
+            (async () => {
+              const first = slides[0];
+              let mode = modes[0];
+
+              if (first.type === "image" && first.fit === "contain")
+                mode = "center";
+
+              if (first.type === "phonesRow") await showPhonesRow(first.phones);
+              else await showImage(first, mode);
+
+              idx = 1;
+              requestAnimationFrame(loop);
+            })();
+          })();
+        </script>
+
+        <!-- TESTIMONIALS -->
+        <script>
+          (function () {
+            const quotesEl = document.getElementById("quotes");
+            const prevBtn = document.getElementById("quotePrev");
+            const nextBtn = document.getElementById("quoteNext");
+            if (!quotesEl || !prevBtn || !nextBtn) return;
+
+            const testimonials = [
+              {
+                quote: `Working with Lian made a clear difference. She brought clarity to the structure and presentation, and handled images, SEO and performance.
+
+She also photographed nine projects, which elevated the overall result.
+
+Since the update, visits and engagement have increased. The site is more coherent, easier to navigate, and reflects the quality of my work.`,
+                author: "Catriona Rowbotham",
+                role: "Catriona Rowbotham Garden Designs",
+                img: "Catriona Rowbotham-1.jpg",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Catriona%20Rowbotham-1.jpg",
+                alt: "Portrait of Catriona Rowbotham",
+                noFrame: false,
+              },
+              {
+                quote:
+                  "Work that goes above and beyond the brief, showing depth of thinking and a clear grounding in real-world design practice.",
+                author: "Antony Conboy",
+                role: "Mentor, CourseCareers UI/UX Design",
+                img: "antonyconboy.png",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/antonyconboy.png",
+                alt: "Portrait of Antony Conboy",
+                noFrame: false,
+              },
+              {
+                quote:
+                  "Lian est une photographe d’une grande sensibilité. Elle sait mettre en valeur ses sujets et trouver le détail qui rend l’image unique. Au Madame Figaro je lui ai confié plusieurs mandats; fiable, responsable et excellente dans ses relations avec la rédaction et ses sujets.",
+                translation:
+                  "Lian is a photographer of great sensitivity. She knows how to showcase her subjects and find the small detail that makes an image unique. At Madame Figaro I entrusted her with several assignments; reliable, responsible, and excellent with the editorial team and her subjects.",
+                author: "Sophie Perraudin",
+                role: "Madame Figaro",
+                img: "Sophie Perraudin-1.jpg",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Sophie%20Perraudin-1.jpg",
+                alt: "Portrait of Sophie Perraudin",
+                noFrame: false,
+              },
+              {
+                quote:
+                  "One word that stands out is how Lian works: simply. She listens to the brief and turns it into storytelling images. Her easy-going, kind energy warms even stern sitters. Even with awful weather or tight locations, she solves problems fast and delivers beautiful photographs.",
+                author: "Christian Kirk Jensen",
+                role: "Danish Pastry Design",
+                img: "Christian Kirk Jensen -1.jpg",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Christian%20Kirk%20Jensen%20-1.jpg",
+                alt: "Portrait of Christian Kirk Jensen",
+                noFrame: false,
+              },
+            ];
+
+            let index = 0;
+            let useTranslation = false;
+
+            function escapeHtml(s) {
+              return String(s)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#39;");
+            }
+
+            function slideMarkup(t) {
+              const text =
+                useTranslation && t.translation ? t.translation : t.quote;
+
+              const toggle = t.translation
+                ? `<button
+                    id="toggle-translation"
+                    type="button"
+                    class="ml-3 inline-flex items-center justify-center h-9 w-9 rounded-full bg-black/5 text-lg text-brand-black hover:bg-black/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50"
+                    aria-label="${
+                      useTranslation ? "Voir en français" : "Read in English"
+                    }"
+                    title="${
+                      useTranslation ? "Voir en français" : "Read in English"
+                    }"
+                  >
+                    <span aria-hidden="true">${
+                      useTranslation ? "🇫🇷" : "🇬🇧"
+                    }</span>
+                  </button>`
+                : "";
+
+              const imgClass =
+                "h-16 w-16 md:h-20 md:w-20 rounded-full object-cover " +
+                (t.noFrame ? "" : "ring-2 ring-black/10 shadow-md");
+
+              const fallbackAttr = t.fallback
+                ? ` onerror="this.onerror=null;this.src='${t.fallback}'"`
+                : "";
+
+              return `
+              <figure class="max-w-none">
+                <div class="qwrap">
+                  <span class="qmark">&ldquo;</span>
+                  <blockquote class="quote-close text-brand-black font-medium tracking-tight leading-[1.2] text-xl sm:text-3xl md:text-4xl lg:text-5xl w-full">
+                    ${escapeHtml(text)}
+                  </blockquote>
+                </div>
+
+                <figcaption class="mt-6 flex items-center gap-4 text-brand-black/70 text-sm md:text-base">
+                  <img
+                    src="${escapeHtml(t.img)}"
+                    alt="${escapeHtml(t.alt)}"
+                    loading="lazy"
+                    decoding="async"
+                    class="${imgClass}"${fallbackAttr}
+                  />
+                  <div>
+                    <span class="font-semibold text-brand-black">${escapeHtml(
+                      t.author
+                    )}</span>
+                    <span class="mx-1 text-brand-black/50">&mdash;</span>
+                    <span class="text-brand-black/70">${escapeHtml(
+                      t.role
+                    )}</span>
+                  </div>
+                  ${toggle}
+                </figcaption>
+              </figure>
+            `;
+            }
+
+            function render(i) {
+              quotesEl.innerHTML = slideMarkup(testimonials[i]);
+
+              const toggleBtn = document.getElementById("toggle-translation");
+              if (toggleBtn) {
+                toggleBtn.addEventListener("click", () => {
+                  useTranslation = !useTranslation;
+                  render(i);
+                });
+              }
+            }
+
+            function goNext() {
+              index = (index + 1) % testimonials.length;
+              useTranslation = false;
+              render(index);
+            }
+
+            function goPrev() {
+              index = (index - 1 + testimonials.length) % testimonials.length;
+              useTranslation = false;
+              render(index);
+            }
+
+            prevBtn.addEventListener("click", goPrev);
+            nextBtn.addEventListener("click", goNext);
+
+            render(index);
+          })();
+        </script>
+
+        <!-- JS: Subline fade-in on scroll -->
+        <script>
+          (function () {
+            const el = document.getElementById("subline");
+            if (!el) return;
+
+            const reduceMotion = window.matchMedia(
+              "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (reduceMotion) {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+              return;
+            }
+
+            const show = () => {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+            };
+
+            const hide = () => {
+              el.style.opacity = "0";
+              el.style.transform = "translateY(12px)";
+            };
+
+            hide();
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    show();
+                  } else {
+                    hide();
+                  }
+                });
+              },
+              { threshold: 0.35 }
+            );
+
+            observer.observe(el);
+          })();
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

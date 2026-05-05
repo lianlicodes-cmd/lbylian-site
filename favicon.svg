@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 320 240" width="64" height="64">
+  <title>L by Lian favicon</title>
+  <!-- Tall bar -->
+  <rect x="120" y="40" width="56" height="200" rx="6" fill="#010101"/>
+  <!-- Small square -->
+  <rect x="200" y="176" width="64" height="64" rx="4" fill="#010101"/>
+  <!-- Sulu dot -->
+  <circle cx="232" cy="150" r="18" fill="#bff47b"/>
+</svg>
