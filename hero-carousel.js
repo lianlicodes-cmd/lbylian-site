@@ -1,4 +1,4 @@
-/* JS: Hero Slideshow + Testimonials + Scroll Effects */
+/* JS: Hero Slideshow + Testimonials */
 (() => {
   const stage = document.getElementById("heroStage");
   if (!stage) return;
@@ -32,11 +32,11 @@
     {
       type: "phonesRow",
       phones: [
-        { src: "assets/1.webp" },
-        { src: "assets/2.webp" },
-        { src: "assets/3.webp" },
-        { src: "assets/4.webp" },
-        { src: "assets/5.webp" },
+        { src: "assets/1.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/2.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/3.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/4.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/5.webp", fallback: "assets/hero.jpg" },
       ],
     }
   ];
@@ -46,7 +46,6 @@
   async function showImage(slide, mode) {
     stage.innerHTML = "";
     stage.style.backgroundColor = slide.bg || "#050608";
-    
     const wrap = document.createElement("figure");
     wrap.className = "absolute inset-0 w-full h-full overflow-hidden";
     const img = document.createElement("img");
@@ -66,15 +65,17 @@
   async function showPhonesRow(phones) {
     stage.innerHTML = "";
     stage.style.backgroundImage = "url('assets/03-evening-pathway-detail.webp')";
+    stage.style.backgroundSize = "cover";
     const row = document.createElement("div");
     row.className = "relative w-full h-full flex items-center justify-center gap-4";
     stage.appendChild(row);
 
     await Promise.all(phones.map((p, i) => {
       const ph = document.createElement("div");
-      ph.className = "phone w-[40vw] max-w-[200px] aspect-[9/19.5] bg-black rounded-3xl opacity-0";
+      ph.className = "phone w-[40vw] max-w-[200px] aspect-[9/19.5] bg-black rounded-3xl opacity-0 overflow-hidden";
       const img = document.createElement("img");
       img.src = p.src;
+      img.className = "w-full h-full object-cover";
       ph.appendChild(img);
       row.appendChild(ph);
       return ph.animate([{ transform: "translateY(40px)", opacity: 0 }, { transform: "translateY(0)", opacity: 1 }], 
@@ -94,31 +95,70 @@
     loop();
   }
 
-  /* --- TESTIMONIALS LOGIC --- */
+  // --- TESTIMONIALS LOGIC ---
   const quotesEl = document.getElementById("quotes");
   if (quotesEl) {
     const testimonials = [
       {
-        quote: "Working with Lian made a clear difference. She brought clarity to the structure...",
+        quote: "Working with Lian made a clear difference. She brought clarity to the structure and presentation, and handled images, SEO and performance. Since the update, visits and engagement have increased.",
         author: "Catriona Rowbotham",
         role: "Catriona Rowbotham Garden Designs",
-        img: "Catriona Rowbotham-1.jpg"
+        img: "Catriona Rowbotham-1.jpg",
+        alt: "Portrait of Catriona Rowbotham"
       },
-      // ... (You can add the rest of your testimonial objects here later)
+      {
+        quote: "Work that goes above and beyond the brief, showing depth of thinking and a clear grounding in real-world design practice.",
+        author: "Antony Conboy",
+        role: "Mentor, CourseCareers UI/UX Design",
+        img: "antonyconboy.png",
+        alt: "Portrait of Antony Conboy"
+      },
+      {
+        quote: "Lian est une photographe d’une grande sensibilité. Elle sait mettre en valeur ses sujets et trouver le détail qui rend l’image unique.",
+        translation: "Lian is a photographer of great sensitivity. She knows how to showcase her subjects and find the small detail that makes an image unique.",
+        author: "Sophie Perraudin",
+        role: "Madame Figaro",
+        img: "Sophie Perraudin-1.jpg",
+        alt: "Portrait of Sophie Perraudin"
+      },
+      {
+        quote: "One word that stands out is how Lian works: simply. She listens to the brief and turns it into storytelling images.",
+        author: "Christian Kirk Jensen",
+        role: "Danish Pastry Design",
+        img: "Christian Kirk Jensen -1.jpg",
+        alt: "Portrait of Christian Kirk Jensen"
+      }
     ];
     
     let tIdx = 0;
+    let useTranslation = false;
+
     const render = (i) => {
       const t = testimonials[i];
-      quotesEl.innerHTML = `<blockquote class="text-xl md:text-3xl font-medium">${t.quote}</blockquote>
-                            <figcaption class="mt-4 flex items-center gap-3">
-                              <img src="${t.img}" class="h-12 w-12 rounded-full">
-                              <div><p class="font-bold">${t.author}</p><p class="text-sm">${t.role}</p></div>
-                            </figcaption>`;
+      const text = useTranslation && t.translation ? t.translation : t.quote;
+      const toggleLabel = useTranslation ? "🇫🇷" : "🇬🇧";
+
+      quotesEl.innerHTML = `
+        <figure>
+          <blockquote class="text-xl md:text-3xl font-medium leading-tight">&ldquo;${text}&rdquo;</blockquote>
+          <figcaption class="mt-6 flex items-center gap-4">
+            <img src="${t.img}" alt="${t.alt}" class="h-14 w-14 rounded-full object-cover ring-2 ring-black/5">
+            <div>
+              <p class="font-bold text-brand-black">${t.author}</p>
+              <p class="text-sm text-brand-gray">${t.role}</p>
+            </div>
+            ${t.translation ? `<button id="toggle-trans" class="ml-auto text-lg p-2 bg-black/5 rounded-full">${toggleLabel}</button>` : ""}
+          </figcaption>
+        </figure>`;
+
+      document.getElementById("toggle-trans")?.addEventListener("click", () => {
+        useTranslation = !useTranslation;
+        render(i);
+      });
     };
     
-    document.getElementById("quoteNext")?.addEventListener("click", () => { tIdx = (tIdx + 1) % testimonials.length; render(tIdx); });
-    document.getElementById("quotePrev")?.addEventListener("click", () => { tIdx = (tIdx - 1 + testimonials.length) % testimonials.length; render(tIdx); });
+    document.getElementById("quoteNext")?.addEventListener("click", () => { tIdx = (tIdx + 1) % testimonials.length; useTranslation = false; render(tIdx); });
+    document.getElementById("quotePrev")?.addEventListener("click", () => { tIdx = (tIdx - 1 + testimonials.length) % testimonials.length; useTranslation = false; render(tIdx); });
     render(0);
   }
 
