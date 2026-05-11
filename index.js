@@ -269,9 +269,7 @@
           })();
         </script>
 
-  <script>      
-
-
+  
         <!-- TESTIMONIALS -->
         <script>
           (function () {
