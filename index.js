@@ -480,7 +480,7 @@ Since the update, visits and engagement have increased. The site is more coheren
           })();
         </script>
 
-          <script>      
+         <script>
 /* JS: Hero slideshow (phone row + image slides) */
 
 (() => {
@@ -535,18 +535,17 @@ Since the update, visits and engagement have increased. The site is more coheren
 
   function showHeroPlaceholder() {
     stage.innerHTML = `
-<div class="absolute inset-0 flex items-center justify-center px-6 text-center">
-  <div class="rounded-2xl bg-white/70 ring-1 ring-black/10 px-5 py-4 backdrop-blur">
-    <p class="text-sm md:text-base text-brand-black font-semibold">Preview unavailable</p>
-    <p class="mt-1 text-xs md:text-sm text-brand-gray">Hero images couldn’t be loaded.</p>
-  </div>
-</div>
-`;
+      <div class="absolute inset-0 flex items-center justify-center px-6 text-center">
+        <div class="rounded-2xl bg-white/70 ring-1 ring-black/10 px-5 py-4 backdrop-blur">
+          <p class="text-sm md:text-base text-brand-black font-semibold">Preview unavailable</p>
+          <p class="mt-1 text-xs md:text-sm text-brand-gray">Hero images couldn’t be loaded.</p>
+        </div>
+      </div>
+    `;
   }
 
   function makeFrame(source) {
     const isContain = source.fit === "contain";
-
     const wrap = document.createElement("figure");
     wrap.className = isContain
       ? "absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center"
@@ -562,13 +561,11 @@ Since the update, visits and engagement have increased. The site is more coheren
 
     if (isContain) {
       wrap.style.padding = "clamp(12px, 3vw, 28px)";
-      img.className =
-        "w-full h-full object-contain will-change-transform";
+      img.className = "w-full h-full object-contain will-change-transform";
       img.style.maxWidth = "1400px";
       img.style.maxHeight = "100%";
     } else {
-      img.className =
-        "absolute inset-0 w-full h-full object-cover will-change-transform";
+      img.className = "absolute inset-0 w-full h-full object-cover will-change-transform";
     }
 
     wrap.appendChild(img);
@@ -576,9 +573,7 @@ Since the update, visits and engagement have increased. The site is more coheren
   }
 
   async function showImage(slide, mode) {
-    const source =
-      slide && typeof slide === "object" ? slide : { src: slide };
-
+    const source = slide && typeof slide === "object" ? slide : { src: slide };
     stage.style.backgroundImage = "none";
     stage.style.backgroundColor = source.bg || "#050608";
 
@@ -592,11 +587,7 @@ Since the update, visits and engagement have increased. The site is more coheren
 
     const loadOk = await new Promise((resolve) => {
       const done = (ok) => resolve(ok);
-      
-      if (img.complete && img.naturalWidth > 0) {
-        return done(true);
-      }
-
+      if (img.complete && img.naturalWidth > 0) return done(true);
       img.onload = () => done(true);
 
       if (source.fallback) {
@@ -626,57 +617,16 @@ Since the update, visits and engagement have increased. The site is more coheren
       };
 
       if (mode === "top") {
-        img.animate(
-          [
-            {
-              transform: "translate3d(0,-30%,0) scale(1.05)",
-              opacity: 0,
-            },
-            {
-              transform: "translate3d(0,0,0) scale(1)",
-              opacity: 1,
-            },
-          ],
-          common
-        );
+        img.animate([{ transform: "translate3d(0,-30%,0) scale(1.05)", opacity: 0 }, { transform: "translate3d(0,0,0) scale(1)", opacity: 1 }], common);
       } else if (mode === "bottom") {
-        img.animate(
-          [
-            {
-              transform: "translate3d(0,30%,0) scale(1.05)",
-              opacity: 0,
-            },
-            {
-              transform: "translate3d(0,0,0) scale(1)",
-              opacity: 1,
-            },
-          ],
-          common
-        );
+        img.animate([{ transform: "translate3d(0,30%,0) scale(1.05)", opacity: 0 }, { transform: "translate3d(0,0,0) scale(1)", opacity: 1 }], common);
       } else {
-        wrap.animate(
-          [
-            { clipPath: "inset(50% 0 50% 0)", opacity: 0 },
-            { clipPath: "inset(0 0 0 0)", opacity: 1 },
-          ],
-          common
-        );
-
-        img.animate(
-          [{ transform: "scale(1.06)" }, { transform: "scale(1)" }],
-          {
-            duration: motionMs,
-            easing: "ease-out",
-            fill: "both",
-          }
-        );
+        wrap.animate([{ clipPath: "inset(50% 0 50% 0)", opacity: 0 }, { clipPath: "inset(0 0 0 0)", opacity: 1 }], common);
+        img.animate([{ transform: "scale(1.06)" }, { transform: "scale(1)" }], { duration: motionMs, easing: "ease-out", fill: "both" });
       }
     }
 
-    const visibleDuration = Math.max(
-      0,
-      totalSlideDuration - fadeDuration
-    );
+    const visibleDuration = Math.max(0, totalSlideDuration - fadeDuration);
     await wait(visibleDuration);
 
     wrap.animate([{ opacity: 1 }, { opacity: 0 }], {
@@ -695,8 +645,7 @@ Since the update, visits and engagement have increased. The site is more coheren
     stage.style.backgroundRepeat = "no-repeat";
 
     const bg = new Image();
-    bg.onload = () =>
-      (stage.style.backgroundImage = `url('${local}')`);
+    bg.onload = () => (stage.style.backgroundImage = `url('${local}')`);
     bg.src = local;
   }
 
@@ -707,83 +656,50 @@ Since the update, visits and engagement have increased. The site is more coheren
     const isSmall = window.matchMedia("(max-width: 640px)").matches;
     const isMedium = window.matchMedia("(max-width: 1024px)").matches;
 
-    const visiblePhones = isSmall
-      ? phones.slice(0, 2)
-      : isMedium
-      ? phones.slice(0, 3)
-      : phones;
+    const visiblePhones = isSmall ? phones.slice(0, 2) : isMedium ? phones.slice(0, 3) : phones;
 
     const row = document.createElement("div");
-    row.className =
-      "relative w-full h-full flex items-center justify-center gap-[clamp(0.75rem,2vw,2.5rem)]";
+    row.className = "relative w-full h-full flex items-center justify-center gap-[clamp(0.75rem,2vw,2.5rem)]";
     stage.appendChild(row);
 
     const tick = prefersReduced ? 0 : phoneTick;
 
-    const results = await Promise.all(
-      visiblePhones.map((phone, i) => {
-        const ph = document.createElement("div");
-        ph.className =
-          "phone w-[42vw] max-w-[240px] min-w-[140px] aspect-[9/19.5] bg-black/70 overflow-hidden rounded-[1.8rem] shadow-xl opacity-0";
+    await Promise.all(visiblePhones.map((phone, i) => {
+      const ph = document.createElement("div");
+      ph.className = "phone w-[42vw] max-w-[240px] min-w-[140px] aspect-[9/19.5] bg-black/70 overflow-hidden rounded-[1.8rem] shadow-xl opacity-0";
 
-        const img = document.createElement("img");
-        img.src = phone.src;
-        img.alt = "";
-        img.loading = "eager";
-        img.decoding = "async";
-        img.className = "w-full h-full object-cover";
+      const img = document.createElement("img");
+      img.src = phone.src;
+      img.alt = "";
+      img.loading = "eager";
+      img.decoding = "async";
+      img.className = "w-full h-full object-cover";
 
-        const loaded = new Promise((resolve) => {
-          if (img.complete && img.naturalWidth > 0) return resolve(true);
-          img.onload = () => resolve(true);
-
+      const loaded = new Promise((resolve) => {
+        if (img.complete && img.naturalWidth > 0) return resolve(true);
+        img.onload = () => resolve(true);
+        img.onerror = () => {
           if (phone.fallback) {
-            img.onerror = () => {
-              img.onerror = null;
-              img.src = phone.fallback;
-              if (img.complete && img.naturalWidth > 0) return resolve(true);
-              img.onload = () => resolve(true);
-              img.onerror = () => resolve(false);
-            };
-          } else {
+            img.src = phone.fallback;
+            img.onload = () => resolve(true);
             img.onerror = () => resolve(false);
-          }
-        });
+          } else resolve(false);
+        };
+      });
 
-        ph.appendChild(img);
-        row.appendChild(ph);
+      ph.appendChild(img);
+      row.appendChild(ph);
 
-        if (!prefersReduced) {
-          ph.animate(
-            [
-              {
-                transform: "translate3d(0,40px,0) scale(.95)",
-                opacity: 0,
-              },
-              {
-                transform: "translate3d(0,0,0) scale(1)",
-                opacity: 1,
-              },
-            ],
-            {
-              duration: phoneRiseDuration,
-              delay: i * tick,
-              easing: "cubic-bezier(.2,.8,.2,1)",
-              fill: "forwards",
-            }
-          );
-        } else {
-          ph.style.opacity = 1;
-        }
+      if (!prefersReduced) {
+        ph.animate([{ transform: "translate3d(0,40px,0) scale(.95)", opacity: 0 }, { transform: "translate3d(0,0,0) scale(1)", opacity: 1 }], 
+        { duration: phoneRiseDuration, delay: i * tick, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" });
+      } else {
+        ph.style.opacity = 1;
+      }
+      return loaded;
+    }));
 
-        return loaded;
-      })
-    );
-
-    const total =
-      (visiblePhones.length - 1) * tick +
-      phoneRiseDuration +
-      phoneStillDuration;
+    const total = (visiblePhones.length - 1) * tick + phoneRiseDuration + phoneStillDuration;
     const visibleDuration = Math.max(0, total - fadeDuration);
     await wait(visibleDuration);
 
@@ -817,9 +733,7 @@ Since the update, visits and engagement have increased. The site is more coheren
   (async () => {
     const first = slides[0];
     let mode = modes[0];
-
-    if (first.type === "image" && first.fit === "contain")
-      mode = "center";
+    if (first.type === "image" && first.fit === "contain") mode = "center";
 
     if (first.type === "phonesRow") await showPhonesRow(first.phones);
     else await showImage(first, mode);
@@ -828,4 +742,4 @@ Since the update, visits and engagement have increased. The site is more coheren
     requestAnimationFrame(loop);
   })();
 })();
-        </script>
+</script>
