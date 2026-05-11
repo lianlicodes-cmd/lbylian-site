@@ -2106,23 +2106,21 @@
             const modes = ["top", "bottom", "center"];
 
             const slides = [
-              {
-                type: "image",
-                src: "assets/portfolio-images/catriona-hero-image.jpg",
-                alt: "Lumière douce d’été sur un jardin urbain paisible.",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/catriona-hero-image.jpg",
-              },
-              {
-                type: "image",
-                src: "assets/portfolio-images/lbylian-hero.jpg",
-                alt: "Maquette de design digital montrant L by Lian sur plusieurs appareils Apple.",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/lbylian-hero.jpg",
-                speedFactor: 0.6,
-                fit: "auto",
-                bg: "#050608",
-              },
+            {
+    type: "image",
+    src: "assets/catriona-hero-image.webp",
+    alt: "Soft summer light over a tranquil urban garden",
+    fallback: "assets/catriona-hero-image.webp",
+  },
+  {
+    type: "image",
+    src: "assets/lbylian-hero.webp",
+    alt: "Digital design mockup showing L by Lian across multiple Apple devices.",
+    fallback: "assets/lbylian-hero.webp",
+    speedFactor: 0.6,
+    fit: "auto",
+    bg: "#050608",
+  },
               {
                 type: "phonesRow",
                 phones: [
