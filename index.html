@@ -2074,7 +2074,8 @@
           })();
         </script>
 
-      /* JS: Hero slideshow (phone row + image slides) */
+  <script>      
+/* JS: Hero slideshow (phone row + image slides) */
 
 (() => {
   const stage = document.getElementById("heroStage");
@@ -2101,13 +2102,13 @@
       type: "image",
       src: "assets/catriona-hero-image.webp",
       alt: "Soft summer light over a tranquil urban garden",
-      fallback: "assets/catriona-hero-image.webp",
+      fallback: "assets/hero.jpg",
     },
     {
       type: "image",
       src: "assets/lbylian-hero.webp",
       alt: "Digital design mockup showing L by Lian across multiple Apple devices.",
-      fallback: "assets/lbylian-hero.webp",
+      fallback: "assets/hero.jpg",
       speedFactor: 0.6,
       fit: "auto",
       bg: "#050608",
@@ -2115,21 +2116,19 @@
     {
       type: "phonesRow",
       phones: [
-        { src: "assets/1.webp", fallback: "assets/1.webp" },
-        { src: "assets/2.webp", fallback: "assets/2.webp" },
-        { src: "assets/3.webp", fallback: "assets/3.webp" },
-        { src: "assets/4.webp", fallback: "assets/4.webp" },
-        { src: "assets/5.webp", fallback: "assets/5.webp" },
+        { src: "assets/1.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/2.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/3.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/4.webp", fallback: "assets/hero.jpg" },
+        { src: "assets/5.webp", fallback: "assets/hero.jpg" },
       ],
     }
   ];
 
-  const local = "assets/03-evening-pathway-detail.webp";
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
-
-const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-function showHeroPlaceholder() {
-  stage.innerHTML = `
+  function showHeroPlaceholder() {
+    stage.innerHTML = `
 <div class="absolute inset-0 flex items-center justify-center px-6 text-center">
   <div class="rounded-2xl bg-white/70 ring-1 ring-black/10 px-5 py-4 backdrop-blur">
     <p class="text-sm md:text-base text-brand-black font-semibold">Preview unavailable</p>
@@ -2137,297 +2136,292 @@ function showHeroPlaceholder() {
   </div>
 </div>
 `;
-}
+  }
 
-            function makeFrame(source) {
-              const isContain = source.fit === "contain";
+  function makeFrame(source) {
+    const isContain = source.fit === "contain";
 
-              const wrap = document.createElement("figure");
-              wrap.className = isContain
-                ? "absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center"
-                : "absolute inset-0 w-full h-full overflow-hidden";
+    const wrap = document.createElement("figure");
+    wrap.className = isContain
+      ? "absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center"
+      : "absolute inset-0 w-full h-full overflow-hidden";
 
-              if (source.bg) wrap.style.backgroundColor = source.bg;
+    if (source.bg) wrap.style.backgroundColor = source.bg;
 
-              const img = document.createElement("img");
-              img.src = source.src;
-              img.alt = source.alt || "";
-              img.loading = "eager";
-              img.decoding = "async";
+    const img = document.createElement("img");
+    img.src = source.src;
+    img.alt = source.alt || "";
+    img.loading = "eager";
+    img.decoding = "async";
 
-              if (isContain) {
-                wrap.style.padding = "clamp(12px, 3vw, 28px)";
-                img.className =
-                  "w-full h-full object-contain will-change-transform";
-                img.style.maxWidth = "1400px";
-                img.style.maxHeight = "100%";
-              } else {
-                img.className =
-                  "absolute inset-0 w-full h-full object-cover will-change-transform";
-              }
+    if (isContain) {
+      wrap.style.padding = "clamp(12px, 3vw, 28px)";
+      img.className =
+        "w-full h-full object-contain will-change-transform";
+      img.style.maxWidth = "1400px";
+      img.style.maxHeight = "100%";
+    } else {
+      img.className =
+        "absolute inset-0 w-full h-full object-cover will-change-transform";
+    }
 
-              wrap.appendChild(img);
-              return { wrap, img };
+    wrap.appendChild(img);
+    return { wrap, img };
+  }
+
+  async function showImage(slide, mode) {
+    const source =
+      slide && typeof slide === "object" ? slide : { src: slide };
+
+    stage.style.backgroundImage = "none";
+    stage.style.backgroundColor = source.bg || "#050608";
+
+    const speedFactor = source.speedFactor || 1;
+    const totalSlideDuration = slideDuration * speedFactor;
+    const motionMs = motionDuration * speedFactor;
+
+    const { wrap, img } = makeFrame(source);
+    stage.innerHTML = "";
+    stage.appendChild(wrap);
+
+    const loadOk = await new Promise((resolve) => {
+      const done = (ok) => resolve(ok);
+      
+      if (img.complete && img.naturalWidth > 0) {
+        return done(true);
+      }
+
+      img.onload = () => done(true);
+
+      if (source.fallback) {
+        img.onerror = () => {
+          img.onerror = null;
+          img.src = source.fallback;
+          if (img.complete && img.naturalWidth > 0) return done(true);
+          img.onload = () => done(true);
+          img.onerror = () => done(false);
+        };
+      } else {
+        img.onerror = () => done(false);
+      }
+    });
+
+    if (!loadOk) {
+      showHeroPlaceholder();
+      await wait(totalSlideDuration);
+      return;
+    }
+
+    if (!prefersReduced) {
+      const common = {
+        duration: motionMs,
+        easing: "cubic-bezier(.2,.8,.2,1)",
+        fill: "both",
+      };
+
+      if (mode === "top") {
+        img.animate(
+          [
+            {
+              transform: "translate3d(0,-30%,0) scale(1.05)",
+              opacity: 0,
+            },
+            {
+              transform: "translate3d(0,0,0) scale(1)",
+              opacity: 1,
+            },
+          ],
+          common
+        );
+      } else if (mode === "bottom") {
+        img.animate(
+          [
+            {
+              transform: "translate3d(0,30%,0) scale(1.05)",
+              opacity: 0,
+            },
+            {
+              transform: "translate3d(0,0,0) scale(1)",
+              opacity: 1,
+            },
+          ],
+          common
+        );
+      } else {
+        wrap.animate(
+          [
+            { clipPath: "inset(50% 0 50% 0)", opacity: 0 },
+            { clipPath: "inset(0 0 0 0)", opacity: 1 },
+          ],
+          common
+        );
+
+        img.animate(
+          [{ transform: "scale(1.06)" }, { transform: "scale(1)" }],
+          {
+            duration: motionMs,
+            easing: "ease-out",
+            fill: "both",
+          }
+        );
+      }
+    }
+
+    const visibleDuration = Math.max(
+      0,
+      totalSlideDuration - fadeDuration
+    );
+    await wait(visibleDuration);
+
+    wrap.animate([{ opacity: 1 }, { opacity: 0 }], {
+      duration: fadeDuration,
+      easing: "cubic-bezier(.2,.8,.2,1)",
+      fill: "forwards",
+    });
+
+    await wait(fadeDuration);
+  }
+
+  function setPhonesBackground() {
+    const local = "assets/03-evening-pathway-detail.webp";
+    stage.style.backgroundSize = "cover";
+    stage.style.backgroundPosition = "center";
+    stage.style.backgroundRepeat = "no-repeat";
+
+    const bg = new Image();
+    bg.onload = () =>
+      (stage.style.backgroundImage = `url('${local}')`);
+    bg.src = local;
+  }
+
+  async function showPhonesRow(phones) {
+    stage.innerHTML = "";
+    setPhonesBackground();
+
+    const isSmall = window.matchMedia("(max-width: 640px)").matches;
+    const isMedium = window.matchMedia("(max-width: 1024px)").matches;
+
+    const visiblePhones = isSmall
+      ? phones.slice(0, 2)
+      : isMedium
+      ? phones.slice(0, 3)
+      : phones;
+
+    const row = document.createElement("div");
+    row.className =
+      "relative w-full h-full flex items-center justify-center gap-[clamp(0.75rem,2vw,2.5rem)]";
+    stage.appendChild(row);
+
+    const tick = prefersReduced ? 0 : phoneTick;
+
+    const results = await Promise.all(
+      visiblePhones.map((phone, i) => {
+        const ph = document.createElement("div");
+        ph.className =
+          "phone w-[42vw] max-w-[240px] min-w-[140px] aspect-[9/19.5] bg-black/70 overflow-hidden rounded-[1.8rem] shadow-xl opacity-0";
+
+        const img = document.createElement("img");
+        img.src = phone.src;
+        img.alt = "";
+        img.loading = "eager";
+        img.decoding = "async";
+        img.className = "w-full h-full object-cover";
+
+        const loaded = new Promise((resolve) => {
+          if (img.complete && img.naturalWidth > 0) return resolve(true);
+          img.onload = () => resolve(true);
+
+          if (phone.fallback) {
+            img.onerror = () => {
+              img.onerror = null;
+              img.src = phone.fallback;
+              if (img.complete && img.naturalWidth > 0) return resolve(true);
+              img.onload = () => resolve(true);
+              img.onerror = () => resolve(false);
+            };
+          } else {
+            img.onerror = () => resolve(false);
+          }
+        });
+
+        ph.appendChild(img);
+        row.appendChild(ph);
+
+        if (!prefersReduced) {
+          ph.animate(
+            [
+              {
+                transform: "translate3d(0,40px,0) scale(.95)",
+                opacity: 0,
+              },
+              {
+                transform: "translate3d(0,0,0) scale(1)",
+                opacity: 1,
+              },
+            ],
+            {
+              duration: phoneRiseDuration,
+              delay: i * tick,
+              easing: "cubic-bezier(.2,.8,.2,1)",
+              fill: "forwards",
             }
+          );
+        } else {
+          ph.style.opacity = 1;
+        }
 
-            async function showImage(slide, mode) {
-              const source =
-                slide && typeof slide === "object" ? slide : { src: slide };
+        return loaded;
+      })
+    );
 
-              stage.style.backgroundImage = "none";
-              stage.style.backgroundColor = source.bg || "#050608";
+    const total =
+      (visiblePhones.length - 1) * tick +
+      phoneRiseDuration +
+      phoneStillDuration;
+    const visibleDuration = Math.max(0, total - fadeDuration);
+    await wait(visibleDuration);
 
-              const speedFactor = source.speedFactor || 1;
-              const totalSlideDuration = slideDuration * speedFactor;
-              const motionMs = motionDuration * speedFactor;
+    row.animate([{ opacity: 1 }, { opacity: 0 }], {
+      duration: fadeDuration,
+      easing: "cubic-bezier(.2,.8,.2,1)",
+      fill: "forwards",
+    });
 
-              const { wrap, img } = makeFrame(source);
-              stage.innerHTML = "";
-              stage.appendChild(wrap);
+    await wait(fadeDuration);
+  }
 
-              const loadOk = await new Promise((resolve) => {
-                const done = (ok) => resolve(ok);
-                img.onload = () => done(true);
+  async function loop() {
+    const s = slides[idx % slides.length];
+    let mode = modes[idx % modes.length];
 
-                if (source.fallback) {
-                  img.onerror = () => {
-                    img.onerror = null;
-                    img.src = source.fallback;
+    if (s.type === "image" && s.fit === "contain") mode = "center";
 
-                    img.onload = () => done(true);
-                    img.onerror = () => done(false);
-                  };
-                } else {
-                  img.onerror = () => done(false);
-                }
-              });
+    if (document.visibilityState === "hidden") {
+      await wait(slideDuration);
+    } else if (s.type === "phonesRow") {
+      await showPhonesRow(s.phones);
+    } else {
+      await showImage(s, mode);
+    }
 
-              if (!loadOk) {
-                showHeroPlaceholder();
-                await wait(totalSlideDuration);
-                return;
-              }
+    idx++;
+    requestAnimationFrame(loop);
+  }
 
-              if (!prefersReduced) {
-                const common = {
-                  duration: motionMs,
-                  easing: "cubic-bezier(.2,.8,.2,1)",
-                  fill: "both",
-                };
+  (async () => {
+    const first = slides[0];
+    let mode = modes[0];
 
-                if (mode === "top") {
-                  img.animate(
-                    [
-                      {
-                        transform: "translate3d(0,-30%,0) scale(1.05)",
-                        opacity: 0,
-                      },
-                      {
-                        transform: "translate3d(0,0,0) scale(1)",
-                        opacity: 1,
-                      },
-                    ],
-                    common
-                  );
-                } else if (mode === "bottom") {
-                  img.animate(
-                    [
-                      {
-                        transform: "translate3d(0,30%,0) scale(1.05)",
-                        opacity: 0,
-                      },
-                      {
-                        transform: "translate3d(0,0,0) scale(1)",
-                        opacity: 1,
-                      },
-                    ],
-                    common
-                  );
-                } else {
-                  wrap.animate(
-                    [
-                      { clipPath: "inset(50% 0 50% 0)", opacity: 0 },
-                      { clipPath: "inset(0 0 0 0)", opacity: 1 },
-                    ],
-                    common
-                  );
+    if (first.type === "image" && first.fit === "contain")
+      mode = "center";
 
-                  img.animate(
-                    [{ transform: "scale(1.06)" }, { transform: "scale(1)" }],
-                    {
-                      duration: motionMs,
-                      easing: "ease-out",
-                      fill: "both",
-                    }
-                  );
-                }
-              }
+    if (first.type === "phonesRow") await showPhonesRow(first.phones);
+    else await showImage(first, mode);
 
-              const visibleDuration = Math.max(
-                0,
-                totalSlideDuration - fadeDuration
-              );
-              await wait(visibleDuration);
-
-              wrap.animate([{ opacity: 1 }, { opacity: 0 }], {
-                duration: fadeDuration,
-                easing: "cubic-bezier(.2,.8,.2,1)",
-                fill: "forwards",
-              });
-
-              await wait(fadeDuration);
-            }
-
-            function setPhonesBackground() {
-              const local = "03-evening-pathway-detail.jpg";
-              const fallback =
-                "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/03-evening-pathway-detail.jpg";
-
-              stage.style.backgroundSize = "cover";
-              stage.style.backgroundPosition = "center";
-              stage.style.backgroundRepeat = "no-repeat";
-
-              const bg = new Image();
-              bg.onload = () =>
-                (stage.style.backgroundImage = `url('${local}')`);
-              bg.onerror = () =>
-                (stage.style.backgroundImage = `url('${fallback}')`);
-              bg.src = local;
-            }
-
-            async function showPhonesRow(phones) {
-              stage.innerHTML = "";
-              setPhonesBackground();
-
-              const isSmall = window.matchMedia("(max-width: 640px)").matches;
-              const isMedium = window.matchMedia("(max-width: 1024px)").matches;
-
-              const visiblePhones = isSmall
-                ? phones.slice(0, 2)
-                : isMedium
-                ? phones.slice(0, 3)
-                : phones;
-
-              const row = document.createElement("div");
-              row.className =
-                "relative w-full h-full flex items-center justify-center gap-[clamp(0.75rem,2vw,2.5rem)]";
-              stage.appendChild(row);
-
-              const tick = prefersReduced ? 0 : phoneTick;
-
-              const results = await Promise.all(
-                visiblePhones.map((phone, i) => {
-                  const ph = document.createElement("div");
-                  ph.className =
-                    "phone w-[42vw] max-w-[240px] min-w-[140px] aspect-[9/19.5] bg-black/70 overflow-hidden rounded-[1.8rem] shadow-xl opacity-0";
-
-                  const img = document.createElement("img");
-                  img.src = phone.src;
-                  img.alt = "";
-                  img.loading = "eager";
-                  img.decoding = "async";
-                  img.className = "w-full h-full object-cover";
-
-                  const loaded = new Promise((resolve) => {
-                    img.onload = () => resolve(true);
-
-                    if (phone.fallback) {
-                      img.onerror = () => {
-                        img.onerror = null;
-                        img.src = phone.fallback;
-
-                        img.onload = () => resolve(true);
-                        img.onerror = () => resolve(false);
-                      };
-                    } else {
-                      img.onerror = () => resolve(false);
-                    }
-                  });
-
-                  ph.appendChild(img);
-                  row.appendChild(ph);
-
-                  if (!prefersReduced) {
-                    ph.animate(
-                      [
-                        {
-                          transform: "translate3d(0,40px,0) scale(.95)",
-                          opacity: 0,
-                        },
-                        {
-                          transform: "translate3d(0,0,0) scale(1)",
-                          opacity: 1,
-                        },
-                      ],
-                      {
-                        duration: phoneRiseDuration,
-                        delay: i * tick,
-                        easing: "cubic-bezier(.2,.8,.2,1)",
-                        fill: "forwards",
-                      }
-                    );
-                  } else {
-                    ph.style.opacity = 1;
-                  }
-
-                  return loaded;
-                })
-              );
-
-              if (!results.some(Boolean)) {
-                showHeroPlaceholder();
-                await wait(phoneRiseDuration + phoneStillDuration);
-                return;
-              }
-
-              const total =
-                (visiblePhones.length - 1) * tick +
-                phoneRiseDuration +
-                phoneStillDuration;
-              const visibleDuration = Math.max(0, total - fadeDuration);
-              await wait(visibleDuration);
-
-              row.animate([{ opacity: 1 }, { opacity: 0 }], {
-                duration: fadeDuration,
-                easing: "cubic-bezier(.2,.8,.2,1)",
-                fill: "forwards",
-              });
-
-              await wait(fadeDuration);
-            }
-
-            async function loop() {
-              const s = slides[idx % slides.length];
-              let mode = modes[idx % modes.length];
-
-              if (s.type === "image" && s.fit === "contain") mode = "center";
-
-              if (document.visibilityState === "hidden") {
-                await wait(slideDuration);
-              } else if (s.type === "phonesRow") {
-                await showPhonesRow(s.phones);
-              } else {
-                await showImage(s, mode);
-              }
-
-              idx++;
-              requestAnimationFrame(loop);
-            }
-
-            (async () => {
-              const first = slides[0];
-              let mode = modes[0];
-
-              if (first.type === "image" && first.fit === "contain")
-                mode = "center";
-
-              if (first.type === "phonesRow") await showPhonesRow(first.phones);
-              else await showImage(first, mode);
-
-              idx = 1;
-              requestAnimationFrame(loop);
-            })();
-          })();
+    idx = 1;
+    requestAnimationFrame(loop);
+  })();
+})();
         </script>
 
         <!-- TESTIMONIALS -->
