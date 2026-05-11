@@ -2097,23 +2097,21 @@
             let idx = 0;
             const modes = ["top", "bottom", "center"];
             const slides = [
-              {
-                type: "image",
-                src: "assets/portfolio-images/catriona-hero-image.jpg",
-                alt: "Soft summer light over a tranquil urban garden",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/catriona-hero-image.jpg",
-              },
-              {
-                type: "image",
-                src: "assets/portfolio-images/lbylian-hero.jpg",
-                alt: "Digital design mockup showing L by Lian across multiple Apple devices.",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/assets/portfolio-images/lbylian-hero.jpg",
-                speedFactor: 0.6,
-                fit: "auto",
-                bg: "#050608",
-              },
+          {
+    type: "image",
+    src: "assets/catriona-hero-image.webp",
+    alt: "Soft summer light over a tranquil urban garden",
+    fallback: "assets/catriona-hero-image.webp",
+  },
+  {
+    type: "image",
+    src: "assets/lbylian-hero.webp",
+    alt: "Digital design mockup showing L by Lian across multiple Apple devices.",
+    fallback: "assets/lbylian-hero.webp",
+    speedFactor: 0.6,
+    fit: "auto",
+    bg: "#050608",
+  },
               {
                 type: "phonesRow",
                 phones: [
