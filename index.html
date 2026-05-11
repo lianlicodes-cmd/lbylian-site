@@ -104,11 +104,7 @@
     />
 
     <!-- Preload hero image (LCP) -->
-    <link
-      rel="preload"
-      as="image"
-     href="assets/lbylian-hero.webp"
-    />
+<link rel="preload" as="image" href="assets/catriona-hero-image.webp">
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -2075,6 +2071,219 @@
         </script>
 
   <script>      
+
+
+        <!-- TESTIMONIALS -->
+        <script>
+          (function () {
+            const quotesEl = document.getElementById("quotes");
+            const prevBtn = document.getElementById("quotePrev");
+            const nextBtn = document.getElementById("quoteNext");
+            if (!quotesEl || !prevBtn || !nextBtn) return;
+
+            const testimonials = [
+              {
+                quote: `Working with Lian made a clear difference. She brought clarity to the structure and presentation, and handled images, SEO and performance.
+
+She also photographed nine projects, which elevated the overall result.
+
+Since the update, visits and engagement have increased. The site is more coherent, easier to navigate, and reflects the quality of my work.`,
+                author: "Catriona Rowbotham",
+                role: "Catriona Rowbotham Garden Designs",
+                img: "Catriona Rowbotham-1.jpg",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Catriona%20Rowbotham-1.jpg",
+                alt: "Portrait of Catriona Rowbotham",
+                noFrame: false,
+              },
+              {
+                quote:
+                  "Work that goes above and beyond the brief, showing depth of thinking and a clear grounding in real-world design practice.",
+                author: "Antony Conboy",
+                role: "Mentor, CourseCareers UI/UX Design",
+                img: "antonyconboy.png",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/antonyconboy.png",
+                alt: "Portrait of Antony Conboy",
+                noFrame: false,
+              },
+              {
+                quote:
+                  "Lian est une photographe d’une grande sensibilité. Elle sait mettre en valeur ses sujets et trouver le détail qui rend l’image unique. Au Madame Figaro je lui ai confié plusieurs mandats; fiable, responsable et excellente dans ses relations avec la rédaction et ses sujets.",
+                translation:
+                  "Lian is a photographer of great sensitivity. She knows how to showcase her subjects and find the small detail that makes an image unique. At Madame Figaro I entrusted her with several assignments; reliable, responsible, and excellent with the editorial team and her subjects.",
+                author: "Sophie Perraudin",
+                role: "Madame Figaro",
+                img: "Sophie Perraudin-1.jpg",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Sophie%20Perraudin-1.jpg",
+                alt: "Portrait of Sophie Perraudin",
+                noFrame: false,
+              },
+              {
+                quote:
+                  "One word that stands out is how Lian works: simply. She listens to the brief and turns it into storytelling images. Her easy-going, kind energy warms even stern sitters. Even with awful weather or tight locations, she solves problems fast and delivers beautiful photographs.",
+                author: "Christian Kirk Jensen",
+                role: "Danish Pastry Design",
+                img: "Christian Kirk Jensen -1.jpg",
+                fallback:
+                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Christian%20Kirk%20Jensen%20-1.jpg",
+                alt: "Portrait of Christian Kirk Jensen",
+                noFrame: false,
+              },
+            ];
+
+            let index = 0;
+            let useTranslation = false;
+
+            function escapeHtml(s) {
+              return String(s)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#39;");
+            }
+
+            function slideMarkup(t) {
+              const text =
+                useTranslation && t.translation ? t.translation : t.quote;
+
+              const toggle = t.translation
+                ? `<button
+                    id="toggle-translation"
+                    type="button"
+                    class="ml-3 inline-flex items-center justify-center h-9 w-9 rounded-full bg-black/5 text-lg text-brand-black hover:bg-black/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50"
+                    aria-label="${
+                      useTranslation ? "Voir en français" : "Read in English"
+                    }"
+                    title="${
+                      useTranslation ? "Voir en français" : "Read in English"
+                    }"
+                  >
+                    <span aria-hidden="true">${
+                      useTranslation ? "🇫🇷" : "🇬🇧"
+                    }</span>
+                  </button>`
+                : "";
+
+              const imgClass =
+                "h-16 w-16 md:h-20 md:w-20 rounded-full object-cover " +
+                (t.noFrame ? "" : "ring-2 ring-black/10 shadow-md");
+
+              const fallbackAttr = t.fallback
+                ? ` onerror="this.onerror=null;this.src='${t.fallback}'"`
+                : "";
+
+              return `
+              <figure class="max-w-none">
+                <div class="qwrap">
+                  <span class="qmark">&ldquo;</span>
+                  <blockquote class="quote-close text-brand-black font-medium tracking-tight leading-[1.2] text-xl sm:text-3xl md:text-4xl lg:text-5xl w-full">
+                    ${escapeHtml(text)}
+                  </blockquote>
+                </div>
+
+                <figcaption class="mt-6 flex items-center gap-4 text-brand-black/70 text-sm md:text-base">
+                  <img
+                    src="${escapeHtml(t.img)}"
+                    alt="${escapeHtml(t.alt)}"
+                    loading="lazy"
+                    decoding="async"
+                    class="${imgClass}"${fallbackAttr}
+                  />
+                  <div>
+                    <span class="font-semibold text-brand-black">${escapeHtml(
+                      t.author
+                    )}</span>
+                    <span class="mx-1 text-brand-black/50">&mdash;</span>
+                    <span class="text-brand-black/70">${escapeHtml(
+                      t.role
+                    )}</span>
+                  </div>
+                  ${toggle}
+                </figcaption>
+              </figure>
+            `;
+            }
+
+            function render(i) {
+              quotesEl.innerHTML = slideMarkup(testimonials[i]);
+
+              const toggleBtn = document.getElementById("toggle-translation");
+              if (toggleBtn) {
+                toggleBtn.addEventListener("click", () => {
+                  useTranslation = !useTranslation;
+                  render(i);
+                });
+              }
+            }
+
+            function goNext() {
+              index = (index + 1) % testimonials.length;
+              useTranslation = false;
+              render(index);
+            }
+
+            function goPrev() {
+              index = (index - 1 + testimonials.length) % testimonials.length;
+              useTranslation = false;
+              render(index);
+            }
+
+            prevBtn.addEventListener("click", goPrev);
+            nextBtn.addEventListener("click", goNext);
+
+            render(index);
+          })();
+        </script>
+
+        <!-- JS: Subline fade-in on scroll -->
+        <script>
+          (function () {
+            const el = document.getElementById("subline");
+            if (!el) return;
+
+            const reduceMotion = window.matchMedia(
+              "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (reduceMotion) {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+              return;
+            }
+
+            const show = () => {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+            };
+
+            const hide = () => {
+              el.style.opacity = "0";
+              el.style.transform = "translateY(12px)";
+            };
+
+            hide();
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    show();
+                  } else {
+                    hide();
+                  }
+                });
+              },
+              { threshold: 0.35 }
+            );
+
+            observer.observe(el);
+          })();
+        </script>
+
+          <script>      
 /* JS: Hero slideshow (phone row + image slides) */
 
 (() => {
@@ -2424,215 +2633,6 @@
 })();
         </script>
 
-        <!-- TESTIMONIALS -->
-        <script>
-          (function () {
-            const quotesEl = document.getElementById("quotes");
-            const prevBtn = document.getElementById("quotePrev");
-            const nextBtn = document.getElementById("quoteNext");
-            if (!quotesEl || !prevBtn || !nextBtn) return;
-
-            const testimonials = [
-              {
-                quote: `Working with Lian made a clear difference. She brought clarity to the structure and presentation, and handled images, SEO and performance.
-
-She also photographed nine projects, which elevated the overall result.
-
-Since the update, visits and engagement have increased. The site is more coherent, easier to navigate, and reflects the quality of my work.`,
-                author: "Catriona Rowbotham",
-                role: "Catriona Rowbotham Garden Designs",
-                img: "Catriona Rowbotham-1.jpg",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Catriona%20Rowbotham-1.jpg",
-                alt: "Portrait of Catriona Rowbotham",
-                noFrame: false,
-              },
-              {
-                quote:
-                  "Work that goes above and beyond the brief, showing depth of thinking and a clear grounding in real-world design practice.",
-                author: "Antony Conboy",
-                role: "Mentor, CourseCareers UI/UX Design",
-                img: "antonyconboy.png",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/antonyconboy.png",
-                alt: "Portrait of Antony Conboy",
-                noFrame: false,
-              },
-              {
-                quote:
-                  "Lian est une photographe d’une grande sensibilité. Elle sait mettre en valeur ses sujets et trouver le détail qui rend l’image unique. Au Madame Figaro je lui ai confié plusieurs mandats; fiable, responsable et excellente dans ses relations avec la rédaction et ses sujets.",
-                translation:
-                  "Lian is a photographer of great sensitivity. She knows how to showcase her subjects and find the small detail that makes an image unique. At Madame Figaro I entrusted her with several assignments; reliable, responsible, and excellent with the editorial team and her subjects.",
-                author: "Sophie Perraudin",
-                role: "Madame Figaro",
-                img: "Sophie Perraudin-1.jpg",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Sophie%20Perraudin-1.jpg",
-                alt: "Portrait of Sophie Perraudin",
-                noFrame: false,
-              },
-              {
-                quote:
-                  "One word that stands out is how Lian works: simply. She listens to the brief and turns it into storytelling images. Her easy-going, kind energy warms even stern sitters. Even with awful weather or tight locations, she solves problems fast and delivers beautiful photographs.",
-                author: "Christian Kirk Jensen",
-                role: "Danish Pastry Design",
-                img: "Christian Kirk Jensen -1.jpg",
-                fallback:
-                  "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/Christian%20Kirk%20Jensen%20-1.jpg",
-                alt: "Portrait of Christian Kirk Jensen",
-                noFrame: false,
-              },
-            ];
-
-            let index = 0;
-            let useTranslation = false;
-
-            function escapeHtml(s) {
-              return String(s)
-                .replaceAll("&", "&amp;")
-                .replaceAll("<", "&lt;")
-                .replaceAll(">", "&gt;")
-                .replaceAll('"', "&quot;")
-                .replaceAll("'", "&#39;");
-            }
-
-            function slideMarkup(t) {
-              const text =
-                useTranslation && t.translation ? t.translation : t.quote;
-
-              const toggle = t.translation
-                ? `<button
-                    id="toggle-translation"
-                    type="button"
-                    class="ml-3 inline-flex items-center justify-center h-9 w-9 rounded-full bg-black/5 text-lg text-brand-black hover:bg-black/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50"
-                    aria-label="${
-                      useTranslation ? "Voir en français" : "Read in English"
-                    }"
-                    title="${
-                      useTranslation ? "Voir en français" : "Read in English"
-                    }"
-                  >
-                    <span aria-hidden="true">${
-                      useTranslation ? "🇫🇷" : "🇬🇧"
-                    }</span>
-                  </button>`
-                : "";
-
-              const imgClass =
-                "h-16 w-16 md:h-20 md:w-20 rounded-full object-cover " +
-                (t.noFrame ? "" : "ring-2 ring-black/10 shadow-md");
-
-              const fallbackAttr = t.fallback
-                ? ` onerror="this.onerror=null;this.src='${t.fallback}'"`
-                : "";
-
-              return `
-              <figure class="max-w-none">
-                <div class="qwrap">
-                  <span class="qmark">&ldquo;</span>
-                  <blockquote class="quote-close text-brand-black font-medium tracking-tight leading-[1.2] text-xl sm:text-3xl md:text-4xl lg:text-5xl w-full">
-                    ${escapeHtml(text)}
-                  </blockquote>
-                </div>
-
-                <figcaption class="mt-6 flex items-center gap-4 text-brand-black/70 text-sm md:text-base">
-                  <img
-                    src="${escapeHtml(t.img)}"
-                    alt="${escapeHtml(t.alt)}"
-                    loading="lazy"
-                    decoding="async"
-                    class="${imgClass}"${fallbackAttr}
-                  />
-                  <div>
-                    <span class="font-semibold text-brand-black">${escapeHtml(
-                      t.author
-                    )}</span>
-                    <span class="mx-1 text-brand-black/50">&mdash;</span>
-                    <span class="text-brand-black/70">${escapeHtml(
-                      t.role
-                    )}</span>
-                  </div>
-                  ${toggle}
-                </figcaption>
-              </figure>
-            `;
-            }
-
-            function render(i) {
-              quotesEl.innerHTML = slideMarkup(testimonials[i]);
-
-              const toggleBtn = document.getElementById("toggle-translation");
-              if (toggleBtn) {
-                toggleBtn.addEventListener("click", () => {
-                  useTranslation = !useTranslation;
-                  render(i);
-                });
-              }
-            }
-
-            function goNext() {
-              index = (index + 1) % testimonials.length;
-              useTranslation = false;
-              render(index);
-            }
-
-            function goPrev() {
-              index = (index - 1 + testimonials.length) % testimonials.length;
-              useTranslation = false;
-              render(index);
-            }
-
-            prevBtn.addEventListener("click", goPrev);
-            nextBtn.addEventListener("click", goNext);
-
-            render(index);
-          })();
-        </script>
-
-        <!-- JS: Subline fade-in on scroll -->
-        <script>
-          (function () {
-            const el = document.getElementById("subline");
-            if (!el) return;
-
-            const reduceMotion = window.matchMedia(
-              "(prefers-reduced-motion: reduce)"
-            ).matches;
-
-            if (reduceMotion) {
-              el.style.opacity = "1";
-              el.style.transform = "translateY(0)";
-              return;
-            }
-
-            const show = () => {
-              el.style.opacity = "1";
-              el.style.transform = "translateY(0)";
-            };
-
-            const hide = () => {
-              el.style.opacity = "0";
-              el.style.transform = "translateY(12px)";
-            };
-
-            hide();
-
-            const observer = new IntersectionObserver(
-              (entries) => {
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                    show();
-                  } else {
-                    hide();
-                  }
-                });
-              },
-              { threshold: 0.35 }
-            );
-
-            observer.observe(el);
-          })();
-        </script>
       </div>
     </div>
   </body>
