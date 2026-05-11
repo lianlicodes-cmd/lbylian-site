@@ -2106,7 +2106,7 @@
             const modes = ["top", "bottom", "center"];
 
             const slides = [
-            {
+  {
     type: "image",
     src: "assets/catriona-hero-image.webp",
     alt: "Soft summer light over a tranquil urban garden",
@@ -2121,51 +2121,47 @@
     fit: "auto",
     bg: "#050608",
   },
-              {
-                type: "phonesRow",
-                phones: [
-                  {
-                    src: "1.png",
-                    fallback:
-                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/1.png",
-                  },
-                  {
-                    src: "2.png",
-                    fallback:
-                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/2.png",
-                  },
-                  {
-                    src: "3.png",
-                    fallback:
-                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/3.png",
-                  },
-                  {
-                    src: "4.png",
-                    fallback:
-                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/4.png",
-                  },
-                  {
-                    src: "5.png",
-                    fallback:
-                      "https://raw.githubusercontent.com/lianlicodes-cmd/my-website/main/5.png",
-                  },
-                ],
-              },
-            ];
+  {
+    type: "phonesRow",
+    phones: [
+      {
+        src: "assets/1.png",
+        fallback: "assets/1.png",
+      },
+      {
+        src: "assets/2.png",
+        fallback: "assets/2.png",
+      },
+      {
+        src: "assets/3.png",
+        fallback: "assets/3.png",
+      },
+      {
+        src: "assets/4.png",
+        fallback: "assets/4.png",
+      },
+      {
+        src: "assets/5.png",
+        fallback: "assets/5.png",
+      },
+    ],
+  },
+];
 
-            const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+// Update this line specifically to fix the 404 error for the background
+const local = "assets/03-evening-pathway-detail.webp";
 
-            function showHeroPlaceholder() {
-              stage.innerHTML = `
-        <div class="absolute inset-0 flex items-center justify-center px-6 text-center">
-          <div class="rounded-2xl bg-white/70 ring-1 ring-black/10 px-5 py-4 backdrop-blur">
-            <p class="text-sm md:text-base text-brand-black font-semibold">Aperçu indisponible</p>
-            <p class="mt-1 text-xs md:text-sm text-brand-gray">Les images du hero n’ont pas pu être chargées.</p>
-          </div>
-        </div>
-      `;
-            }
-
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+function showHeroPlaceholder() {
+  stage.innerHTML = `
+<div class="absolute inset-0 flex items-center justify-center px-6 text-center">
+  <div class="rounded-2xl bg-white/70 ring-1 ring-black/10 px-5 py-4 backdrop-blur">
+    <p class="text-sm md:text-base text-brand-black font-semibold">Preview unavailable</p>
+    <p class="mt-1 text-xs md:text-sm text-brand-gray">Hero images couldn’t be loaded.</p>
+  </div>
+</div>
+`;
+}
             function makeFrame(source) {
               const isContain = source.fit === "contain";
 
