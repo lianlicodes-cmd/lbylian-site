@@ -39,7 +39,7 @@
       content="London courtyard garden wide view in soft summer light."
     />
 
-    <!-- Google Analytics -->
+   <!-- Google Analytics (consent-aware) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-DXRXF5L0DJ"
@@ -49,6 +49,21 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+
+      var lblStored = null;
+      try {
+        lblStored = JSON.parse(localStorage.getItem("lbl-cookie-consent"));
+      } catch (e) {}
+
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage:
+          lblStored && lblStored.analytics === "granted" ? "granted" : "denied",
+        wait_for_update: 500,
+      });
+
       gtag("js", new Date());
 
       gtag("config", "G-DXRXF5L0DJ");
@@ -1842,5 +1857,177 @@
         </script>
       </div>
     </div>
+
+    <!-- Cookie banner -->
+<div id="cookieBanner" class="cookie-card" role="dialog" aria-describedby="cookieBannerText" hidden>
+  <p id="cookieBannerText" class="cookie-card__text">
+    By using this website, you agree to our use of cookies. We use cookies to
+    provide you with a great experience and to help our website run effectively.
+    Read our <a href="privacy-policy.html" rel="nofollow">privacy policy</a> and
+    <a href="t-and-c.html" rel="nofollow">terms and conditions</a>.
+  </p>
+
+  <div class="cookie-card__actions">
+    <button type="button" id="cookieAccept" class="cookie-btn">Accept</button>
+    <!-- Delete this button if you want Accept only -->
+    <button type="button" id="cookieReject" class="cookie-btn cookie-btn--quiet">Decline</button>
+  </div>
+</div>
+
+<style>
+  .cookie-card {
+    position: fixed;
+    left: calc(var(--frame, 0px) + 20px);
+    bottom: calc(var(--frame, 0px) + 20px);
+    z-index: 60;
+    width: 362px;
+    max-width: calc(100vw - 2 * var(--frame, 0px) - 40px);
+    padding: 26px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 28px rgba(1, 1, 1, 0.12);
+    font-family: "Syne", system-ui, sans-serif;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .cookie-card[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cookie-card { transition: none; }
+  }
+  @media (max-width: 640px) {
+    .cookie-card {
+      left: calc(var(--frame, 0px) + 12px);
+      right: calc(var(--frame, 0px) + 12px);
+      bottom: calc(var(--frame, 0px) + 84px);
+      width: auto;
+      max-width: none;
+    }
+  }
+  .cookie-card__text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #444443;
+    text-wrap: pretty;
+  }
+  .cookie-card__text a {
+    color: #444443;
+    text-decoration: underline;
+    text-decoration-color: #05e0e9;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .cookie-card__text a:hover { color: #010101; }
+  .cookie-card__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cookie-btn {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11.5px;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0 22px;
+    min-height: 44px;
+    border-radius: 999px;
+    border: 1px solid #bff47b;
+    background: transparent;
+    color: #444443;
+    transition: background-color 150ms ease-out, color 150ms ease-out,
+      border-color 150ms ease-out;
+  }
+  .cookie-btn:hover {
+    background: #bff47b;
+    border-color: #bff47b;
+    color: #010101;
+  }
+  .cookie-btn:focus-visible {
+    outline: 2px solid #05e0e9;
+    outline-offset: 3px;
+  }
+  .cookie-btn--quiet {
+    border-color: transparent;
+    color: rgba(68, 68, 67, 0.7);
+  }
+  .cookie-btn--quiet:hover {
+    background: transparent;
+    border-color: rgba(68, 68, 67, 0.3);
+    color: #010101;
+  }
+</style>
+
+<script>
+  (function () {
+    var KEY = "lbl-cookie-consent";
+    var banner = document.getElementById("cookieBanner");
+    if (!banner) return;
+
+    var stored = null;
+    try {
+      stored = JSON.parse(localStorage.getItem(KEY));
+    } catch (e) {}
+
+    function save(choice) {
+      try {
+        localStorage.setItem(
+          KEY,
+          JSON.stringify({ analytics: choice, date: new Date().toISOString(), version: 1 })
+        );
+      } catch (e) {}
+
+      if (typeof gtag === "function") {
+        gtag("consent", "update", { analytics_storage: choice });
+      }
+    }
+
+    function hide() {
+      banner.setAttribute("data-visible", "false");
+      window.setTimeout(function () { banner.hidden = true; }, 280);
+    }
+
+    function show() {
+      banner.hidden = false;
+      window.requestAnimationFrame(function () {
+        banner.setAttribute("data-visible", "true");
+      });
+    }
+
+    document.getElementById("cookieAccept").addEventListener("click", function () {
+      save("granted");
+      hide();
+    });
+
+    var rejectBtn = document.getElementById("cookieReject");
+    if (rejectBtn) {
+      rejectBtn.addEventListener("click", function () {
+        save("denied");
+        hide();
+      });
+    }
+
+    // Any link with href="#cookie-settings" reopens the banner
+    document.addEventListener("click", function (e) {
+      var trigger = e.target.closest('[href="#cookie-settings"]');
+      if (!trigger) return;
+      e.preventDefault();
+      show();
+    });
+
+    if (!stored || (stored.analytics !== "granted" && stored.analytics !== "denied")) {
+      show();
+    }
+  })();
+</script>
   </body>
 </html>
